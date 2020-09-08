@@ -3,3 +3,6 @@ node_modules
 src
 jestconfig.json
 tsconfig.json
+.prettierrc
+tslint.json
+.vscode

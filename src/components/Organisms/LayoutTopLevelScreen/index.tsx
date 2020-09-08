@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import { StyleSheet, SectionList, View, Animated, NativeSyntheticEvent, NativeScrollEvent } from "react-native";
+import * as React from "react";
+import { useState, useEffect, useRef } from "react";
+import { SectionList, View, Animated, NativeSyntheticEvent, NativeScrollEvent } from "react-native";
 import InputSearch from "../../Molecules/InputSearch";
 import Screen from "../../Atoms/Screen";
 import H1 from "../../Atoms/H1";
-import AnimatedHeaderTitle from "../AnimatedHeaderTitle";
+import AnimatedHeaderTitle from "../../Atoms/AnimatedHeaderTitle";
 import { useTheme } from "react-native-themed-styles";
 import { styleSheetFactory } from "../../../utils/themes";
 

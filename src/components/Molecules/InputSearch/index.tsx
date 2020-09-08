@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import * as React from "react";
+import { useState, useRef } from "react";
 import { View, StyleSheet, TouchableOpacity, TextInput, Button } from "react-native";
 import Row from "../../Atoms/Row";
 import colors from "../../../values/colors";

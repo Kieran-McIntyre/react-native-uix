@@ -13,7 +13,11 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "build": "rm -rf dist && tsc",
-    "build:example": "yarn run build && cd example && yarn run clean:modules && cd .."
+    "build:example": "yarn run build && cd example && yarn run clean:modules && cd ..",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",

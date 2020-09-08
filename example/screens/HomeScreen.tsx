@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
-import { StyleSheet } from "react-native";
-// import LayoutTopLevelScreen from "../src/components/Atoms/LayoutTopLevelScreen";
+import { StyleSheet, Text } from "react-native";
+import LayoutTopLevelScreen from "../src/components/Atoms/LayoutTopLevelScreen";
 // import Avatar from "../src/components/Atoms/Avatar";
 // import GroupedTable from "../src/components/Organisms/GroupedTable";
 
-import {
-  LayoutTopLevelScreen,
-  Avatar,
-  GroupedTable,
-} from "react-native-ios-ui";
+import { Avatar } from "react-native-ios-ui";
 
 const HomeScreen = ({ navigation }) => {
   useEffect(() => {
@@ -29,8 +25,9 @@ const HomeScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <LayoutTopLevelScreen title="Home" navigation={navigation}>
-      <GroupedTable />
+    <LayoutTopLevelScreen title="Home 5" navigation={navigation}>
+      {/* <Pop url={"https://avatars2.githubusercontent.com/u/25485732?s=60&v=4"} /> */}
+      {/* <GroupedTable /> */}
     </LayoutTopLevelScreen>
   );
 };
