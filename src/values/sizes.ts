@@ -5,4 +5,5 @@ export default {
     md: 20,
     lg: 30,
   },
+  listCellActionWidth: 75,
 };

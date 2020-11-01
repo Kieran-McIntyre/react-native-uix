@@ -5,16 +5,17 @@ import TableRow from "../../Molecules/TableRow";
 
 import IGroupedTableItem from "../../../interfaces/IGroupedTableItem";
 
-const tableItems: IGroupedTableItem[] = [
-  { id: 0, label: "Enquiry", icon: "folder", iconBackgroundColor: "#FB8532" },
-  { id: 1, label: "Ongoing", icon: "folder", iconBackgroundColor: "#2188FF" },
-  { id: 2, label: "Completed", icon: "folder", iconBackgroundColor: "#34D058" },
-  { id: 3, label: "Paid", icon: "folder", iconBackgroundColor: "#8A63D2" },
-  { id: 4, label: "Invoiced", icon: "folder", iconBackgroundColor: "#09ADA0" },
-];
+export interface Props {
+  title: string;
+  items: IGroupedTableItem[];
+}
 
-const GroupedTable = () => (
-  <Section title={"Categories"}>{tableItems.map(TableRow)}</Section>
+const GroupedTable = ({ items, title }: Props) => (
+  <Section title={title}>
+    {items.map((item, index) => (
+      <TableRow key={item.id} item={item} index={index} />
+    ))}
+  </Section>
 );
 
 export default GroupedTable;

@@ -5,24 +5,17 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import HomeScreen from "./screens/HomeScreen";
+import JobListScreen from "./screens/JobListScreen";
 
 const Tab = createBottomTabNavigator();
 const JobStack = createStackNavigator();
 const ActivityStack = createStackNavigator();
 
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
-
 function JobStackScreen() {
   return (
     <JobStack.Navigator>
       <JobStack.Screen name="Home" component={HomeScreen} />
-      <JobStack.Screen name="Details" component={DetailsScreen} />
+      <JobStack.Screen name="JobList" component={JobListScreen} />
     </JobStack.Navigator>
   );
 }
@@ -31,7 +24,6 @@ function ActivityStackScreen() {
   return (
     <ActivityStack.Navigator>
       <ActivityStack.Screen name="Home" component={HomeScreen} />
-      <ActivityStack.Screen name="Details" component={DetailsScreen} />
     </ActivityStack.Navigator>
   );
 }

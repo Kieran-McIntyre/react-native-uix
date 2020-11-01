@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, TouchableHighlight } from "react-native";
 import sizes from "../../../values/sizes";
 import Row from "../../../components/Atoms/Row";
 import DisclosureIcon from "../../../components/Atoms/DisclosureIcon";
@@ -7,24 +7,41 @@ import IGroupedTableItem from "../../../interfaces/IGroupedTableItem";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
-const TableRow = (item: IGroupedTableItem, index: number) => {
-  return (
-    <View style={styles.tableRow} key={item.id}>
-      {index > 0 && <View style={styles.separatorLine} />}
+export interface Props {
+  item: IGroupedTableItem;
+  index: number;
+}
 
-      <TouchableOpacity>
+const TableRow = ({ item, index }: Props) => {
+  const { icon, iconBackgroundColor, label, count, onPress, id } = item;
+  const hasCount = count != null;
+
+  return (
+    <TouchableHighlight
+      underlayColor={colors.light.neutral}
+      onPress={onPress}
+      key={id}
+    >
+      <View style={styles.tableRow}>
+        {index > 0 && <View style={styles.separatorLine} />}
+
         <Row style={styles.content} between>
           <Row>
-            <DisclosureIcon
-              icon={item.icon}
-              backgroundColor={item.iconBackgroundColor}
-            />
-            <Text style={styles.label}>{item.label}</Text>
+            <DisclosureIcon icon={icon} backgroundColor={iconBackgroundColor} />
+            <Text style={styles.label}>{label}</Text>
           </Row>
-          <FontAwesomeIcon icon="chevron-right" color={colors.light.neutral} />
+
+          <Row>
+            {hasCount && <Text style={styles.count}>{count}</Text>}
+
+            <FontAwesomeIcon
+              icon="chevron-right"
+              color={colors.light.neutral}
+            />
+          </Row>
         </Row>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableHighlight>
   );
 };
 
@@ -33,10 +50,6 @@ export default TableRow;
 const styles = StyleSheet.create({
   tableRow: {
     flexDirection: "column",
-  },
-  modal: {
-    backgroundColor: "white",
-    borderRadius: sizes.spacing.sm,
   },
   content: {
     paddingHorizontal: 20,
@@ -51,5 +64,10 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginLeft: 12,
+  },
+  count: {
+    color: colors.light.neutralDark,
+    fontSize: 16,
+    marginRight: 5,
   },
 });

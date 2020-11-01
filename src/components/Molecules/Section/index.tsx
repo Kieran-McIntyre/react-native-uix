@@ -1,28 +1,48 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
-import H2 from "../../Atoms/H2";
+import { View, StyleSheet, Text } from "react-native";
+import H3 from "../../Atoms/H3";
 
 import sizes from "../../../values/sizes";
 
 export interface Props {
   children?: any;
-  title: string;
+  title?: string;
+  emptyStateMessage?: string;
+  shouldShowEmptyState?: boolean;
+  style?: any;
 }
 
-const Section = ({ children, title }: Props) => (
-  <View style={styles.container}>
-    <H2 style={styles.title}>{title}</H2>
+const Section = ({
+  children,
+  title,
+  emptyStateMessage,
+  shouldShowEmptyState,
+  style,
+}: Props) => {
+  const shouldRenderEmptyState = !!emptyStateMessage && shouldShowEmptyState;
 
-    <View style={styles.section}>{children}</View>
-  </View>
-);
+  return (
+    <View style={[styles.container, style]}>
+      {!!title && <H3 style={styles.title}>{title}</H3>}
+
+      {!shouldRenderEmptyState && (
+        <View style={styles.section}>{children}</View>
+      )}
+
+      {shouldRenderEmptyState && (
+        <View style={[styles.section, styles.emptyStateSection]}>
+          <Text style={styles.message}>{emptyStateMessage}</Text>
+        </View>
+      )}
+    </View>
+  );
+};
 
 export default Section;
 
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    // backgroundColor: "orange",
     padding: sizes.spacing.md,
   },
   title: {
@@ -31,5 +51,13 @@ const styles = StyleSheet.create({
   section: {
     backgroundColor: "white",
     borderRadius: sizes.spacing.sm,
+    overflow: "hidden",
+  },
+  emptyStateSection: {
+    padding: 20,
+  },
+  message: {
+    fontSize: 16,
+    textAlign: "center",
   },
 });
