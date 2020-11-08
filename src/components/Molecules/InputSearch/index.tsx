@@ -11,6 +11,7 @@ import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { InputSearchProps } from "./types"
 import { styles } from "./styles"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 export const InputSearch: React.FC<InputSearchProps> = ({
   style,
@@ -68,7 +69,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
         <View style={[styles.searchBar, style]}>
           <FontAwesomeIcon
             style={styles.searchIcon}
-            icon="search"
+            icon={faSearch}
             color={colors.light.neutralDark}
           />
 

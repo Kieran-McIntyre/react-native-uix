@@ -13,3 +13,13 @@ export interface LayoutTopLevelScreenProps {
     renderCustomHeaderAction?: any;
     moreOptions?: IHeaderActionsMoreOptions[];
 }
+
+export enum contexts {
+    FLUID_HEADER = "fluid",
+    STICKY_HEADER = "sticky",
+}
+
+export interface SectionData {
+    context: contexts;
+    data: [{ key: number; el: any }];
+}

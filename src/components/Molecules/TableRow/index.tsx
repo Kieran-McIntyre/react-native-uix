@@ -6,6 +6,7 @@ import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TableRowProps } from "./types"
 import { styles } from "./styles"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 export const TableRow: React.FC<TableRowProps> = ({ item, index }) => {
   const { icon, iconBackgroundColor, label, count, onPress, id } = item;
@@ -30,7 +31,7 @@ export const TableRow: React.FC<TableRowProps> = ({ item, index }) => {
             {hasCount && <Text style={styles.count}>{count}</Text>}
 
             <FontAwesomeIcon
-              icon="chevron-right"
+              icon={faChevronRight}
               color={colors.light.neutral}
             />
           </Row>

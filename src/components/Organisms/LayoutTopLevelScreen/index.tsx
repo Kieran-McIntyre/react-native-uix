@@ -15,17 +15,7 @@ import { HeaderActions } from "../../molecules/HeaderActions";
 import { useTheme } from "react-native-themed-styles";
 import { styleSheetFactory } from "../../../utils/themes";
 import { SegmentedControl } from "../../atoms/SegmentedControl";
-import { LayoutTopLevelScreenProps } from "./types"
-
-enum contexts {
-  FLUID_HEADER = "fluid",
-  STICKY_HEADER = "sticky",
-}
-
-interface SectionData {
-  context: contexts;
-  data: [{ key: number; el: any }];
-}
+import { LayoutTopLevelScreenProps, SectionData, contexts } from "./types"
 
 const themedStyles = styleSheetFactory((theme: any) => ({
   blendedHeader: {

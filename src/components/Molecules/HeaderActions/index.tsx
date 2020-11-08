@@ -7,6 +7,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { ActionSheet } from "../../atoms/ActionSheet";
 import { HeaderActionsProps } from "./types"
 import { styles } from "./styles"
+import { faPlusCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons"
 
 export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onEdit,
@@ -23,13 +24,13 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
           onPress={() => setShowMoreOptions(true)}
           style={styles.button}
         >
-          <FontAwesomeIcon icon="ellipsis-h" color="blue" size={20} />
+          <FontAwesomeIcon icon={faEllipsisH} color="blue" size={20} />
         </TouchableOpacity>
       )}
 
       {onAdd && (
         <TouchableOpacity onPress={onAdd}>
-          <FontAwesomeIcon icon="plus-circle" color="blue" size={20} />
+          <FontAwesomeIcon icon={faPlusCircle} color="blue" size={20} />
         </TouchableOpacity>
       )}
 

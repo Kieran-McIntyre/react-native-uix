@@ -1,6 +1,6 @@
 import { registerThemes } from "react-native-themed-styles";
 // import * as ThemedStyles from "react-native-themed-styles";
-// import { useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 
 interface Theme {
   neutralLightest: string;
@@ -23,10 +23,14 @@ const dark: Theme = {
   neutralDark: "orange",
 };
 
-const styleSheetFactory: any = registerThemes({ light, dark }, () => {
-  return "light";
-  //   const colorScheme = useColorScheme();
-  //   return ["light", "dark"].includes(colorScheme) ? colorScheme : "light";
+const styleSheetFactory: any = registerThemes({ light, dark }, (): any => {
+  const colorScheme = useColorScheme();
+
+  const isSchemeValid = !!colorScheme && ["light", "dark"].includes(colorScheme)
+
+  if (!isSchemeValid) return 'light'
+
+  return colorScheme
 });
 
 export { styleSheetFactory };
