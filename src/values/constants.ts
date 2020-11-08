@@ -1,0 +1,1 @@
+export const defaultConfigFile = './rnui.config.js'
