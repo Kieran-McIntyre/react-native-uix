@@ -1,16 +1,10 @@
 import * as React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, Image, Text } from "react-native";
 import colors from "../../../values/colors";
+import { styles } from "./styles"
+import { AvatarImageProps } from "./types"
 
-export interface Props {
-  style?: any;
-  url?: string;
-  backgroundColor?: string;
-  firstName?: string;
-  lastName?: string;
-}
-
-const AvatarImage = ({ url, style }: Props) => {
+const AvatarImage: React.FC<AvatarImageProps> = ({ url, style }) => {
   return (
     <Image
       style={[styles.avatar, styles.avatarImage, style]}
@@ -19,12 +13,12 @@ const AvatarImage = ({ url, style }: Props) => {
   );
 };
 
-const AvatarInitials = ({
+const AvatarInitials: React.FC<AvatarImageProps> = ({
   style,
   firstName,
   lastName,
   backgroundColor,
-}: Props) => {
+}) => {
   const initials: string = [firstName, lastName]
     .filter(Boolean)
     .map((name) => name?.charAt(0).toUpperCase())
@@ -42,13 +36,13 @@ const AvatarInitials = ({
   );
 };
 
-const Avatar = ({
+export const Avatar: React.FC<AvatarImageProps> = ({
   url,
   firstName,
   lastName,
   backgroundColor,
   style,
-}: Props) => {
+}) => {
   if (url) {
     return <AvatarImage style={style} url={url} />;
   }
@@ -62,26 +56,3 @@ const Avatar = ({
     />
   );
 };
-
-export default Avatar;
-
-const styles = StyleSheet.create({
-  avatar: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-  },
-
-  avatarImage: {
-    resizeMode: "cover",
-  },
-
-  avatarInitals: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  avatarInitalsText: {
-    color: "white",
-  },
-});

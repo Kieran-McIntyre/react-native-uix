@@ -1,22 +1,11 @@
 import * as React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import IListCellItem from "../../../interfaces/IListCellItem";
+import { View, Text, TouchableOpacity } from "react-native";
 import IListCellItemAction from "../../../interfaces/IListCellItemAction";
 import sizes from "../../../values/sizes";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-
-export interface Props {
-  item: IListCellItem;
-  actions: IListCellItemAction[];
-}
-
-interface ActionItemProps {
-  isStart?: boolean;
-  item: IListCellItem;
-  action: IListCellItemAction;
-  index: number;
-}
+import { ListCellActionsProps, ActionItemProps } from "./types"
+import { styles } from "./styles"
 
 const getActionStyle = (
   isStart: boolean,
@@ -37,12 +26,12 @@ const getActionStyle = (
   return [styles.action, style];
 };
 
-const ActionItem = ({
+const ActionItem: React.FC<ActionItemProps> = ({
   isStart = false,
   item,
   action,
   index,
-}: ActionItemProps) => {
+}) => {
   const style = getActionStyle(isStart, index, action);
 
   const onPressAction = () => {
@@ -62,7 +51,7 @@ const ActionItem = ({
   );
 };
 
-const ListCellActions = ({ item, actions }: Props) => {
+export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
   const startActions = actions?.filter((action) => action.isStart);
   const endActions = actions?.filter((action) => !action.isStart);
 
@@ -90,31 +79,3 @@ const ListCellActions = ({ item, actions }: Props) => {
     </View>
   );
 };
-
-export default ListCellActions;
-
-const styles = StyleSheet.create({
-  label: {
-    color: colors.light.neutralLightest,
-    fontWeight: "500",
-  },
-  icon: {
-    marginBottom: 10,
-  },
-  actionContainer: {
-    alignItems: "center",
-    backgroundColor: colors.light.neutralLightest,
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingLeft: 15,
-  },
-  action: {
-    alignItems: "center",
-    bottom: 0,
-    justifyContent: "center",
-    position: "absolute",
-    top: 0,
-    width: sizes.listCellActionWidth,
-  },
-});

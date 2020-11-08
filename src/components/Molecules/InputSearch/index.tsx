@@ -2,30 +2,23 @@ import * as React from "react";
 import { useState, useRef } from "react";
 import {
   View,
-  StyleSheet,
   TouchableOpacity,
   TextInput,
   Button,
 } from "react-native";
-import Row from "../../Atoms/Row";
+import { Row } from "../../Atoms/Row";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { InputSearchProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  style?: any;
-  placeholder?: string;
-  onChangeText?: any;
-  onFocus?: () => void;
-  onBlur?: () => void;
-}
-
-const InputSearch = ({
+export const InputSearch: React.FC<InputSearchProps> = ({
   style,
   placeholder,
   onChangeText,
   onFocus,
   onBlur,
-}: Props) => {
+}) => {
   const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef(null);
 
@@ -95,23 +88,3 @@ const InputSearch = ({
   );
 };
 
-export default InputSearch;
-
-const styles = StyleSheet.create({
-  searchBarContainer: {
-    flex: 1,
-  },
-
-  searchIcon: {
-    marginRight: 10,
-  },
-
-  searchBar: {
-    backgroundColor: colors.light.neutral,
-    height: 36,
-    borderRadius: 12,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 10,
-  },
-});

@@ -1,16 +1,12 @@
 import * as React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { Text } from "react-native"
 import colors from "../../../values/colors";
-import Row from "../../Atoms/Row";
+import { Row } from "../../Atoms/Row";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import IDetailMeta from "../../../interfaces/IDetailMeta";
+import { DetailMetaProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  meta: IDetailMeta;
-  index?: number;
-}
-
-const DetailMeta = ({ meta }: Props) => {
+export const DetailMeta: React.FC<DetailMetaProps> = ({ meta }) => {
   return (
     <Row style={styles.container}>
       <FontAwesomeIcon icon={meta.icon} color={colors.light.neutralDark} />
@@ -18,18 +14,3 @@ const DetailMeta = ({ meta }: Props) => {
     </Row>
   );
 };
-
-export default DetailMeta;
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    marginRight: 20,
-  },
-
-  label: {
-    fontSize: 14,
-    color: colors.light.neutralDark,
-    marginLeft: 5,
-  },
-});

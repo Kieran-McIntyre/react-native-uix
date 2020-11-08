@@ -1,48 +1,20 @@
 import * as React from "react";
-import { useState, useEffect, useRef } from "react";
-import {
-  SectionList,
-  View,
-  Animated,
-  NativeSyntheticEvent,
-  NativeScrollEvent,
-  Text,
-  StyleSheet,
-} from "react-native";
-import InputSearch from "../../Molecules/InputSearch";
-import Screen from "../../Atoms/Screen";
-import H2 from "../../Atoms/H2";
-import AnimatedHeaderTitle from "../../Atoms/AnimatedHeaderTitle";
-import HeaderActions from "../../Molecules/HeaderActions";
-import { useTheme } from "react-native-themed-styles";
-import { styleSheetFactory } from "../../../utils/themes";
-import SegmentedControl from "../../Atoms/SegmentedControl";
-import ISegmentedControlOption from "../../../interfaces/ISegmentedControlOption";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
-import IDetailMeta from "../../../interfaces/IDetailMeta";
-import IGroupedTableItem from "../../../interfaces/IGroupedTableItem";
-import colors from "../../../values/colors";
-import H4 from "../../Atoms/H4";
-import DetailMeta from "../../Molecules/DetailMeta";
-import TableRow from "../../Molecules/TableRow";
-import { ScrollView } from "react-native-gesture-handler";
-import ButtonPrimary from "../../Atoms/ButtonPrimary";
-import Row from "../../Atoms/Row";
+import { useEffect } from "react";
+import { View, ScrollView } from "react-native";
+import { Screen } from "../../Atoms/Screen";
+import { H2 } from "../../Atoms/H2";
+import { HeaderActions } from "../../Molecules/HeaderActions";
 
-export interface Props {
-  navigation: any;
-  children?: any;
-  onEdit?: any;
-  onAdd?: any;
-  moreOptions?: IHeaderActionsMoreOptions[];
+import { H4 } from "../../Atoms/H4";
+import { DetailMeta } from "../../Molecules/DetailMeta";
+import { TableRow } from "../../Molecules/TableRow";
+import { ButtonPrimary } from "../../Atoms/ButtonPrimary";
+import { Row } from "../../Atoms/Row";
 
-  caption?: string;
-  title: string;
-  meta?: IDetailMeta[];
-  tableItems?: IGroupedTableItem[];
-}
+import { LayoutDetailScreenProps } from "./types"
+import { styles } from "./styles"
 
-const LayoutDetailScreen = ({
+export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   navigation,
   children,
   caption,
@@ -52,7 +24,7 @@ const LayoutDetailScreen = ({
   meta,
   moreOptions,
   tableItems = [],
-}: Props) => {
+}) => {
   useEffect(() => {
     navigation.setOptions({
       backgroundColor: "red",
@@ -121,32 +93,3 @@ const LayoutDetailScreen = ({
     </Screen>
   );
 };
-
-export default LayoutDetailScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.light.neutral,
-  },
-
-  topContainer: {
-    paddingTop: 16,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-
-  actionsContainer: {
-    marginTop: 20,
-  },
-
-  titleCaption: {
-    marginBottom: 10,
-  },
-
-  metaContainer: {
-    flexDirection: "row",
-    marginTop: 20,
-  },
-});

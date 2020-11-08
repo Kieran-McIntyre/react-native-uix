@@ -1,15 +1,9 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import NativeActionSheet from "react-native-actionsheet";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
+import { ActionSheetProps } from "./types"
 
-export interface Props {
-  title?: string;
-  options: IHeaderActionsMoreOptions[];
-  onAction: any;
-}
-
-const ActionSheet = ({ title, options, onAction }: Props) => {
+export const ActionSheet: React.FC<ActionSheetProps> = ({ title, options, onAction }) => {
   const actionsheetRef = useRef(null);
 
   useEffect(() => {
@@ -30,11 +24,9 @@ const ActionSheet = ({ title, options, onAction }: Props) => {
       cancelButtonIndex={cancelButtonIndex}
       destructiveButtonIndex={destructiveButtonIndex}
       onPress={index => {
-        options[index]?.onPress && options[index].onPress();
+        options[index]?.onPress?.()
         onAction();
       }}
     />
   );
 };
-
-export default ActionSheet;

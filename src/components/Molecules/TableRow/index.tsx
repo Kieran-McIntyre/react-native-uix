@@ -1,18 +1,13 @@
 import * as React from "react";
-import { View, StyleSheet, Text, TouchableHighlight } from "react-native";
-import sizes from "../../../values/sizes";
-import Row from "../../../components/Atoms/Row";
-import DisclosureIcon from "../../../components/Atoms/DisclosureIcon";
-import IGroupedTableItem from "../../../interfaces/IGroupedTableItem";
+import { View, Text, TouchableHighlight } from "react-native";
+import { Row } from "../../../components/Atoms/Row";
+import { DisclosureIcon } from "../../../components/Atoms/DisclosureIcon";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { TableRowProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  item: IGroupedTableItem;
-  index: number;
-}
-
-const TableRow = ({ item, index }: Props) => {
+export const TableRow: React.FC<TableRowProps> = ({ item, index }) => {
   const { icon, iconBackgroundColor, label, count, onPress, id } = item;
   const hasCount = count != null;
 
@@ -44,30 +39,3 @@ const TableRow = ({ item, index }: Props) => {
     </TouchableHighlight>
   );
 };
-
-export default TableRow;
-
-const styles = StyleSheet.create({
-  tableRow: {
-    flexDirection: "column",
-  },
-  content: {
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-  },
-  separatorLine: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: colors.light.neutral,
-    flexShrink: 0,
-    marginLeft: 64,
-  },
-  label: {
-    fontSize: 16,
-    marginLeft: 12,
-  },
-  count: {
-    color: colors.light.neutralDark,
-    fontSize: 16,
-    marginRight: 5,
-  },
-});

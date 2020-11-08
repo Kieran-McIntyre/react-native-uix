@@ -1,34 +1,14 @@
 import * as React from "react";
-import { useState, useEffect, useRef } from "react";
-import {
-  SectionList,
-  View,
-  Animated,
-  NativeSyntheticEvent,
-  NativeScrollEvent,
-} from "react-native";
-import InputSearch from "../../Molecules/InputSearch";
-import Screen from "../../Atoms/Screen";
-import H1 from "../../Atoms/H1";
-import AnimatedHeaderTitle from "../../Atoms/AnimatedHeaderTitle";
-import HeaderActions from "../../Molecules/HeaderActions";
+import { useEffect } from "react";
+import { View } from "react-native";
+import { InputSearch } from "../../Molecules/InputSearch";
+import { H1 } from "../../Atoms/H1";
+import { HeaderActions } from "../../Molecules/HeaderActions";
 import { useTheme } from "react-native-themed-styles";
 import { styleSheetFactory } from "../../../utils/themes";
-import SegmentedControl from "../../Atoms/SegmentedControl";
-import ISegmentedControlOption from "../../../interfaces/ISegmentedControlOption";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
+import { SegmentedControl } from "../../Atoms/SegmentedControl";
 
-export interface Props {
-  title: string;
-  navigation: any;
-  children?: any;
-  outerChildren?: any;
-  onSearch?: any;
-  segmentedControlOptions?: ISegmentedControlOption[];
-  onEdit?: any;
-  onAdd?: any;
-  moreOptions?: IHeaderActionsMoreOptions[];
-}
+import { StaticHeaderProps } from "./types"
 
 const themedStyles = styleSheetFactory((theme: any) => ({
   blendedHeader: {
@@ -50,17 +30,15 @@ const themedStyles = styleSheetFactory((theme: any) => ({
   },
 }));
 
-const StaticHeader = ({
+export const StaticHeader: React.FC<StaticHeaderProps> = ({
   title,
   navigation,
-  children,
-  outerChildren,
   onSearch,
   segmentedControlOptions,
   onEdit,
   onAdd,
   moreOptions,
-}: Props) => {
+}) => {
   const [styles]: any = useTheme(themedStyles);
 
   useEffect(() => {
@@ -106,5 +84,3 @@ const StaticHeader = ({
     </View>
   );
 };
-
-export default StaticHeader;

@@ -1,24 +1,10 @@
 import * as React from "react";
-import { Text, StyleSheet, TextProps } from "react-native";
-import colors from "../../../values/colors";
+import { Text } from "react-native";
+import { H4Props } from "./types"
+import { styles } from "./styles"
 
-export interface Props extends TextProps {
-  children?: string;
-  style?: any;
-}
-
-const H4 = (props: Props) => (
+export const H4: React.FC<H4Props> = (props) => (
   <Text {...props} style={[styles.h4, props.style]}>
     {props.children}
   </Text>
 );
-
-export default H4;
-
-const styles = StyleSheet.create({
-  h4: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: colors.light.neutralDark,
-  },
-});

@@ -1,13 +1,9 @@
 import * as React from "react";
-import { Text, StyleSheet, TextProps } from "react-native";
+import { Text } from "react-native";
+import { H2Props } from "./types"
+import { styles } from "./styles"
 
-export interface Props extends TextProps {
-  children?: string;
-  style?: any;
-  light?: boolean;
-}
-
-const H2 = (props: Props) => {
+export const H2: React.FC<H2Props> = (props) => {
   const fontWeightStyle = props.light ? styles.light : styles.bold;
 
   return (
@@ -16,17 +12,3 @@ const H2 = (props: Props) => {
     </Text>
   );
 };
-
-export default H2;
-
-const styles = StyleSheet.create({
-  h2: {
-    fontSize: 28,
-  },
-  bold: {
-    fontWeight: "500",
-  },
-  light: {
-    fontWeight: "300",
-  },
-});

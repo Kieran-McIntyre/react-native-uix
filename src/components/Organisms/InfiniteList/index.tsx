@@ -1,36 +1,26 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import {
-  StyleSheet,
   View,
   ActivityIndicator,
-  Text,
-  TouchableOpacity,
 } from "react-native";
-import ListCell from "../../Molecules/ListCell";
-import ListCellActions from "../../Molecules/ListCellActions";
+import { ListCell } from "../../Molecules/ListCell";
+import { ListCellActions } from "../../Molecules/ListCellActions";
 import IListCellItem from "../../../interfaces/IListCellItem";
-import IListCellItemAction from "../../../interfaces/IListCellItemAction";
-import colors from "../../../values/colors";
 import usePrevious from "../../../hooks/usePrevious";
 import { SwipeListView } from "react-native-swipe-list-view";
 import sizes from "../../../values/sizes";
 
-export interface Props {
-  items: IListCellItem[];
-  initialCount: number;
-  increment: number;
-  onNewCount: any;
-  actions?: IListCellItemAction[];
-}
+import { InfiniteListProps } from "./types"
+import { styles } from "./styles"
 
-const InfiniteList = ({
+export const InfiniteList: React.FC<InfiniteListProps> = ({
   items,
   onNewCount,
   initialCount,
   increment,
   actions,
-}: Props) => {
+}) => {
   const hasItems = items && items.length > 0;
 
   const [hasFetchedAllItems, setFetchedAllItems] = useState(true);
@@ -99,21 +89,3 @@ const InfiniteList = ({
     />
   );
 };
-
-export default InfiniteList;
-
-const styles = StyleSheet.create({
-  infiniteList: {
-    backgroundColor: "white",
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.light.neutral,
-  },
-
-  loadingFooter: {
-    minHeight: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "red",
-  },
-});

@@ -1,16 +1,9 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import { RowProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  centred?: boolean;
-  between?: boolean;
-  around?: boolean;
-  style?: object;
-
-  children?: any;
-}
-
-const getStyle = (props: Props) => {
+const getStyle = (props: RowProps) => {
   if (props.centred) {
     return styles.centredRow;
   }
@@ -26,30 +19,6 @@ const getStyle = (props: Props) => {
   return styles.row;
 };
 
-const Row = (props: Props) => (
+export const Row: React.FC<RowProps> = (props) => (
   <View style={{ ...getStyle(props), ...props.style }}>{props.children}</View>
 );
-
-export default Row;
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  centredRow: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  between: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  around: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-});

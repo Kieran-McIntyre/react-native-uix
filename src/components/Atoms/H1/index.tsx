@@ -1,21 +1,10 @@
 import * as React from "react";
-import { Text, StyleSheet, TextProps } from "react-native";
+import { Text } from "react-native";
+import { H1Props } from "./types"
+import { styles } from "./styles"
 
-export interface Props extends TextProps {
-  children?: string;
-}
-
-const H1 = (props: Props) => (
+export const H1: React.FC<H1Props> = (props) => (
   <Text {...props} style={[styles.h1, props.style]}>
     {props.children}
   </Text>
 );
-
-export default H1;
-
-const styles = StyleSheet.create({
-  h1: {
-    fontSize: 34,
-    fontWeight: "bold",
-  },
-});

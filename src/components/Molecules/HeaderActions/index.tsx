@@ -1,27 +1,19 @@
 import * as React from "react";
 import { useState } from "react";
-
-import { StyleSheet } from "react-native";
-import Row from "../../Atoms/Row";
-import Button from "../../Atoms/Button";
+import { Row } from "../../Atoms/Row";
+import { Button } from "../../Atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
-import ActionSheet from "../../Atoms/ActionSheet";
+import { ActionSheet } from "../../Atoms/ActionSheet";
+import { HeaderActionsProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  onEdit?: any;
-  onAdd?: any;
-  renderCustomAction?: any;
-  moreOptions?: IHeaderActionsMoreOptions[];
-}
-
-const HeaderActions = ({
+export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onEdit,
   onAdd,
   renderCustomAction,
   moreOptions,
-}: Props) => {
+}) => {
   const [isShowingMoreOptions, setShowMoreOptions] = useState(false);
 
   return (
@@ -54,15 +46,3 @@ const HeaderActions = ({
     </Row>
   );
 };
-
-export default HeaderActions;
-
-const styles = StyleSheet.create({
-  actionContainer: {
-    marginRight: 20,
-  },
-
-  button: {
-    marginRight: 10,
-  },
-});

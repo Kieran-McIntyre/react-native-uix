@@ -1,24 +1,16 @@
 import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import H3 from "../../Atoms/H3";
+import { View, Text } from "react-native";
+import { H3 } from "../../Atoms/H3";
+import { SectionProps } from "./types"
+import { styles } from "./styles"
 
-import sizes from "../../../values/sizes";
-
-export interface Props {
-  children?: any;
-  title?: string;
-  emptyStateMessage?: string;
-  shouldShowEmptyState?: boolean;
-  style?: any;
-}
-
-const Section = ({
+export const Section: React.FC<SectionProps> = ({
   children,
   title,
   emptyStateMessage,
   shouldShowEmptyState,
   style,
-}: Props) => {
+}) => {
   const shouldRenderEmptyState = !!emptyStateMessage && shouldShowEmptyState;
 
   return (
@@ -37,27 +29,3 @@ const Section = ({
     </View>
   );
 };
-
-export default Section;
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    padding: sizes.spacing.md,
-  },
-  title: {
-    marginBottom: sizes.spacing.sm,
-  },
-  section: {
-    backgroundColor: "white",
-    borderRadius: sizes.spacing.sm,
-    overflow: "hidden",
-  },
-  emptyStateSection: {
-    padding: 20,
-  },
-  message: {
-    fontSize: 16,
-    textAlign: "center",
-  },
-});

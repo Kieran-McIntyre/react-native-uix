@@ -1,39 +1,31 @@
 // components
-export { default as AnimatedHeaderTitle } from "./components/Atoms/AnimatedHeaderTitle";
-export { default as Avatar } from "./components/Atoms/Avatar";
-export { default as DisclosureIcon } from "./components/Atoms/DisclosureIcon";
-export { default as Row } from "./components/Atoms/Row";
-export { default as Screen } from "./components/Atoms/Screen";
-export { default as H1 } from "./components/Atoms/H1";
-export { default as H2 } from "./components/Atoms/H2";
-export { default as H3 } from "./components/Atoms/H3";
-export { default as H4 } from "./components/Atoms/H4";
-export { default as Button } from "./components/Atoms/Button";
-export { default as ActionSheet } from "./components/Atoms/ActionSheet";
-export { default as RenderHTML } from "./components/Atoms/RenderHTML";
-export { default as LayoutDetailSection } from "./components/Atoms/LayoutDetailSection";
+export { AnimatedHeaderTitle } from "./components/Atoms/AnimatedHeaderTitle";
+export { Avatar } from "./components/Atoms/Avatar";
+export { DisclosureIcon } from "./components/Atoms/DisclosureIcon";
+export { Row } from "./components/Atoms/Row";
+export { Screen } from "./components/Atoms/Screen";
+export { H1 } from "./components/Atoms/H1";
+export { H2 } from "./components/Atoms/H2";
+export { H3 } from "./components/Atoms/H3";
+export { H4 } from "./components/Atoms/H4";
+export { Button } from "./components/Atoms/Button";
+export { ActionSheet } from "./components/Atoms/ActionSheet";
+export { LayoutDetailSection } from "./components/Atoms/LayoutDetailSection";
 
-export { default as HeaderActions } from "./components/Molecules/HeaderActions";
-export { default as InputSearch } from "./components/Molecules/InputSearch";
-export { default as LargeTitle } from "./components/Molecules/LargeTitle";
-export { default as Section } from "./components/Molecules/Section";
-export { default as TableRow } from "./components/Molecules/TableRow";
-export { default as ListCell } from "./components/Molecules/ListCell";
-export { default as ChatCell } from "./components/Molecules/ChatCell";
-export { default as ImageGallery } from "./components/Molecules/ImageGallery";
-export { default as Form } from "./components/Molecules/Form";
+export { HeaderActions } from "./components/Molecules/HeaderActions";
+export { InputSearch } from "./components/Molecules/InputSearch";
+export { Section } from "./components/Molecules/Section";
+export { TableRow } from "./components/Molecules/TableRow";
+export { ListCell } from "./components/Molecules/ListCell";
 
-export { default as GroupedTable } from "./components/Organisms/GroupedTable";
-export { default as LayoutTopLevelScreen } from "./components/Organisms/LayoutTopLevelScreen";
-export { default as LayoutDetailScreen } from "./components/Organisms/LayoutDetailScreen";
-export { default as InfiniteList } from "./components/Organisms/InfiniteList";
-export { default as StaticHeader } from "./components/Organisms/StaticHeader";
-export { default as StaticHeaderCollapsed } from "./components/Organisms/StaticHeaderCollapsed";
-
-export { default as PageChat } from "./components/Pages/PageChat";
+export { GroupedTable } from "./components/Organisms/GroupedTable";
+export { LayoutTopLevelScreen } from "./components/Organisms/LayoutTopLevelScreen";
+export { LayoutDetailScreen } from "./components/Organisms/LayoutDetailScreen";
+export { InfiniteList } from "./components/Organisms/InfiniteList";
+export { StaticHeader } from "./components/Organisms/StaticHeader";
+export { StaticHeaderCollapsed } from "./components/Organisms/StaticHeaderCollapsed";
 
 // values
-
 export { default as colors } from "./values/colors";
 
 // types

@@ -1,20 +1,8 @@
 import * as React from "react";
-import { StyleSheet, Animated } from "react-native";
+import { Animated } from "react-native";
+import { AnimatedHeaderTitleProps } from "./types"
+import { styles } from "./styles"
 
-export interface Props {
-  title: string;
-  style: any;
-}
-
-const AnimatedHeaderTitle = ({ title, style }: Props) => {
+export const AnimatedHeaderTitle: React.FC<AnimatedHeaderTitleProps> = ({ title, style }) => {
   return <Animated.Text style={[styles.title, style]}>{title}</Animated.Text>;
 };
-
-export default AnimatedHeaderTitle;
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-});

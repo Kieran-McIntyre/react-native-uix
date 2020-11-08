@@ -7,16 +7,15 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
 } from "react-native";
-import InputSearch from "../../Molecules/InputSearch";
-import Screen from "../../Atoms/Screen";
-import H1 from "../../Atoms/H1";
-import AnimatedHeaderTitle from "../../Atoms/AnimatedHeaderTitle";
-import HeaderActions from "../../Molecules/HeaderActions";
+import { InputSearch } from "../../Molecules/InputSearch";
+import { Screen } from "../../Atoms/Screen";
+import { H1 } from "../../Atoms/H1";
+import { AnimatedHeaderTitle } from "../../Atoms/AnimatedHeaderTitle";
+import { HeaderActions } from "../../Molecules/HeaderActions";
 import { useTheme } from "react-native-themed-styles";
 import { styleSheetFactory } from "../../../utils/themes";
-import SegmentedControl from "../../Atoms/SegmentedControl";
-import ISegmentedControlOption from "../../../interfaces/ISegmentedControlOption";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
+import { SegmentedControl } from "../../Atoms/SegmentedControl";
+import { LayoutTopLevelScreenProps } from "./types"
 
 enum contexts {
   FLUID_HEADER = "fluid",
@@ -57,20 +56,7 @@ const themedStyles = styleSheetFactory((theme: any) => ({
 const AnimatedSectionList = Animated.createAnimatedComponent(SectionList);
 const titleContainerHeight = 44;
 
-export interface Props {
-  title: string;
-  navigation: any;
-  children?: any;
-  outerChildren?: any;
-  onSearch?: any;
-  segmentedControlOptions?: ISegmentedControlOption[];
-  onEdit?: any;
-  onAdd?: any;
-  renderCustomHeaderAction?: any;
-  moreOptions?: IHeaderActionsMoreOptions[];
-}
-
-const LayoutTopLevelScreen = ({
+export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   title,
   navigation,
   children,
@@ -81,7 +67,7 @@ const LayoutTopLevelScreen = ({
   onAdd,
   moreOptions,
   renderCustomHeaderAction,
-}: Props) => {
+}) => {
   const [scrollYAnim] = useState(new Animated.Value(0));
   const [scrollYVal, setScrollYVal] = useState(0);
   const sectionListRef = useRef(null);
@@ -248,5 +234,3 @@ const LayoutTopLevelScreen = ({
     );
   }, [children]);
 };
-
-export default LayoutTopLevelScreen;
