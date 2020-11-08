@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Section } from "../../Molecules/Section";
-import { TableRow } from "../../Molecules/TableRow";
+import { Section } from "../../molecules/Section";
+import { TableRow } from "../../molecules/TableRow";
 import { GroupedTableProps } from "./types"
 
 export const GroupedTable: React.FC<GroupedTableProps> = ({ items, title }) => (

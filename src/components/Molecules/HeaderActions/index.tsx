@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
-import { Row } from "../../Atoms/Row";
-import { Button } from "../../Atoms/Button";
+import { Row } from "../../atoms/Row";
+import { Button } from "../../atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { ActionSheet } from "../../Atoms/ActionSheet";
+import { ActionSheet } from "../../atoms/ActionSheet";
 import { HeaderActionsProps } from "./types"
 import { styles } from "./styles"
 

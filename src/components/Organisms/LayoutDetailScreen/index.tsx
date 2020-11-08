@@ -1,15 +1,15 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { View, ScrollView } from "react-native";
-import { Screen } from "../../Atoms/Screen";
-import { H2 } from "../../Atoms/H2";
-import { HeaderActions } from "../../Molecules/HeaderActions";
+import { Screen } from "../../atoms/Screen";
+import { H2 } from "../../atoms/H2";
+import { HeaderActions } from "../../molecules/HeaderActions";
 
-import { H4 } from "../../Atoms/H4";
-import { DetailMeta } from "../../Molecules/DetailMeta";
-import { TableRow } from "../../Molecules/TableRow";
-import { ButtonPrimary } from "../../Atoms/ButtonPrimary";
-import { Row } from "../../Atoms/Row";
+import { H4 } from "../../atoms/H4";
+import { DetailMeta } from "../../molecules/DetailMeta";
+import { TableRow } from "../../molecules/TableRow";
+import { ButtonPrimary } from "../../atoms/ButtonPrimary";
+import { Row } from "../../atoms/Row";
 
 import { LayoutDetailScreenProps } from "./types"
 import { styles } from "./styles"

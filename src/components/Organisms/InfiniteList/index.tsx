@@ -4,8 +4,8 @@ import {
   View,
   ActivityIndicator,
 } from "react-native";
-import { ListCell } from "../../Molecules/ListCell";
-import { ListCellActions } from "../../Molecules/ListCellActions";
+import { ListCell } from "../../molecules/ListCell";
+import { ListCellActions } from "../../molecules/ListCellActions";
 import IListCellItem from "../../../interfaces/IListCellItem";
 import usePrevious from "../../../hooks/usePrevious";
 import { SwipeListView } from "react-native-swipe-list-view";

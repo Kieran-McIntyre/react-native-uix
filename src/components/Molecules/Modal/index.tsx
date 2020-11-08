@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Modal as NativeModal, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { Row } from "../../Atoms/Row";
-import { Button } from "../../Atoms/Button";
+import { Modal as NativeModal, SafeAreaView, Text, View } from "react-native";
+import { Row } from "../../atoms/Row";
+import { Button } from "../../atoms/Button";
 import { ModalProps } from "./types"
 import { styles } from "./styles"
 

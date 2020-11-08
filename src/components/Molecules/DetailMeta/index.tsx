@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text } from "react-native"
 import colors from "../../../values/colors";
-import { Row } from "../../Atoms/Row";
+import { Row } from "../../atoms/Row";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { DetailMetaProps } from "./types"
 import { styles } from "./styles"

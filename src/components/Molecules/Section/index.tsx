@@ -1,6 +1,6 @@
 import * as React from "react";
 import { View, Text } from "react-native";
-import { H3 } from "../../Atoms/H3";
+import { H3 } from "../../atoms/H3";
 import { SectionProps } from "./types"
 import { styles } from "./styles"
 

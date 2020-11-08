@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TouchableHighlight, View, Text } from "react-native";
-import { Row } from "../../../components/Atoms/Row";
+import { Row } from "../../atoms/Row";
 import colors from "../../../values/colors";
 import { ListCellProps } from "./types"
 import { styles } from "./styles"

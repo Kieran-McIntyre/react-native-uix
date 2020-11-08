@@ -1,29 +1,29 @@
 // components
-export { AnimatedHeaderTitle } from "./components/Atoms/AnimatedHeaderTitle";
-export { Avatar } from "./components/Atoms/Avatar";
-export { DisclosureIcon } from "./components/Atoms/DisclosureIcon";
-export { Row } from "./components/Atoms/Row";
-export { Screen } from "./components/Atoms/Screen";
-export { H1 } from "./components/Atoms/H1";
-export { H2 } from "./components/Atoms/H2";
-export { H3 } from "./components/Atoms/H3";
-export { H4 } from "./components/Atoms/H4";
-export { Button } from "./components/Atoms/Button";
-export { ActionSheet } from "./components/Atoms/ActionSheet";
-export { LayoutDetailSection } from "./components/Atoms/LayoutDetailSection";
+export { AnimatedHeaderTitle } from "./components/atoms/AnimatedHeaderTitle";
+export { Avatar } from "./components/atoms/Avatar";
+export { DisclosureIcon } from "./components/atoms/DisclosureIcon";
+export { Row } from "./components/atoms/Row";
+export { Screen } from "./components/atoms/Screen";
+export { H1 } from "./components/atoms/H1";
+export { H2 } from "./components/atoms/H2";
+export { H3 } from "./components/atoms/H3";
+export { H4 } from "./components/atoms/H4";
+export { Button } from "./components/atoms/Button";
+export { ActionSheet } from "./components/atoms/ActionSheet";
+export { LayoutDetailSection } from "./components/atoms/LayoutDetailSection";
 
-export { HeaderActions } from "./components/Molecules/HeaderActions";
-export { InputSearch } from "./components/Molecules/InputSearch";
-export { Section } from "./components/Molecules/Section";
-export { TableRow } from "./components/Molecules/TableRow";
-export { ListCell } from "./components/Molecules/ListCell";
+export { HeaderActions } from "./components/molecules/HeaderActions";
+export { InputSearch } from "./components/molecules/InputSearch";
+export { Section } from "./components/molecules/Section";
+export { TableRow } from "./components/molecules/TableRow";
+export { ListCell } from "./components/molecules/ListCell";
 
-export { GroupedTable } from "./components/Organisms/GroupedTable";
-export { LayoutTopLevelScreen } from "./components/Organisms/LayoutTopLevelScreen";
-export { LayoutDetailScreen } from "./components/Organisms/LayoutDetailScreen";
-export { InfiniteList } from "./components/Organisms/InfiniteList";
-export { StaticHeader } from "./components/Organisms/StaticHeader";
-export { StaticHeaderCollapsed } from "./components/Organisms/StaticHeaderCollapsed";
+export { GroupedTable } from "./components/organisms/GroupedTable";
+export { LayoutTopLevelScreen } from "./components/organisms/LayoutTopLevelScreen";
+export { LayoutDetailScreen } from "./components/organisms/LayoutDetailScreen";
+export { InfiniteList } from "./components/organisms/InfiniteList";
+export { StaticHeader } from "./components/organisms/StaticHeader";
+export { StaticHeaderCollapsed } from "./components/organisms/StaticHeaderCollapsed";
 
 // values
 export { default as colors } from "./values/colors";

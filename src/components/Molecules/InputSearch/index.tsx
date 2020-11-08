@@ -6,7 +6,7 @@ import {
   TextInput,
   Button,
 } from "react-native";
-import { Row } from "../../Atoms/Row";
+import { Row } from "../../atoms/Row";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { InputSearchProps } from "./types"

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { View } from "react-native";
-import { InputSearch } from "../../Molecules/InputSearch";
-import { HeaderActions } from "../../Molecules/HeaderActions";
+import { InputSearch } from "../../molecules/InputSearch";
+import { HeaderActions } from "../../molecules/HeaderActions";
 import { useTheme } from "react-native-themed-styles";
 import { styleSheetFactory } from "../../../utils/themes";
-import { SegmentedControl } from "../../Atoms/SegmentedControl";
+import { SegmentedControl } from "../../atoms/SegmentedControl";
 
 import { StaticHeaderCollapsedProps } from "./types"
 

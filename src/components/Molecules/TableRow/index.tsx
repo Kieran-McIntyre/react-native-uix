@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, TouchableHighlight } from "react-native";
-import { Row } from "../../../components/Atoms/Row";
-import { DisclosureIcon } from "../../../components/Atoms/DisclosureIcon";
+import { Row } from "../../atoms/Row";
+import { DisclosureIcon } from "../../atoms/DisclosureIcon";
 import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TableRowProps } from "./types"
