@@ -1,18 +1,23 @@
+import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
-import colors from "../../../values/colors";
 
-export const styles = StyleSheet.create({
+export const dynamicStyles = (
+  theme: IThemeSchema
+): StyleSheet.NamedStyles<any> => ({
   infiniteList: {
-    backgroundColor: "white",
+    backgroundColor: theme.secondarySystemBackground,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.light.neutral,
+    borderColor: theme.separator,
   },
 
   loadingFooter: {
     minHeight: 50,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "red",
+    backgroundColor: theme.secondarySystemBackground,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderColor: theme.separator,
   },
 });
+

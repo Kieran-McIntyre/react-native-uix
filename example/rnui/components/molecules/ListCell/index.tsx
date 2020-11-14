@@ -1,9 +1,9 @@
 import * as React from "react";
 import { TouchableHighlight, View, Text } from "react-native";
 import { Row } from "../../atoms/Row";
-import colors from "../../../values/colors";
 import { ListCellProps } from "./types"
-import { styles } from "./styles"
+import { dynamicStyles } from "./styles";
+import { useStyle } from "../../../hooks/useStyle";
 
 export const ListCell: React.FC<ListCellProps> = ({ item, index }) => {
   const {
@@ -15,12 +15,13 @@ export const ListCell: React.FC<ListCellProps> = ({ item, index }) => {
     renderItemStart,
   } = item;
 
+  const { styles, themeSet } = useStyle(dynamicStyles)
+
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={colors.light.neutral}
+      underlayColor={themeSet.tertiarySystemBackground}
       key={item.id}
-      delayPressIn={0}
     >
       <View style={styles.tableRow}>
         {index > 0 && <View style={styles.separatorLine} />}

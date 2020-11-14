@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import { InputSearch } from "../../molecules/InputSearch";
 import { Screen } from "../../atoms/Screen";
-import { H1 } from "../../atoms/H1";
+import { Label } from "../../atoms/Label";
 import { AnimatedHeaderTitle } from "../../atoms/AnimatedHeaderTitle";
 import { HeaderActions } from "../../molecules/HeaderActions";
-import { useTheme } from "../../../hooks/useTheme";
+import { useStyle } from "../../../hooks/useStyle";
 import { SegmentedControl } from "../../atoms/SegmentedControl";
 import { LayoutTopLevelScreenProps, SectionData, contexts } from "./types";
 import { dynamicStyles } from "./styles";
@@ -35,8 +35,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   const [scrollYAnim] = useState(new Animated.Value(0));
   const [scrollYVal, setScrollYVal] = useState(0);
   const sectionListRef = useRef(null);
-
-  const [styles, colorScheme] = useTheme(dynamicStyles);
+  const { styles, colorScheme, themeSet } = useStyle(dynamicStyles);
 
   const animatedOpacity = scrollYAnim.interpolate({
     inputRange: [30, 44],
@@ -46,18 +45,15 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
 
   const animatedBorderColor = scrollYAnim.interpolate({
     inputRange: [titleContainerHeight * 0.8, titleContainerHeight],
-    outputRange: [
-      styles.neutralLight.backgroundColor!,
-      styles.neutral.backgroundColor!,
-    ],
+    outputRange: [themeSet.systemBackground, themeSet.tertiarySystemBackground],
     extrapolate: "clamp",
   });
 
   const animatedBackgroundColor = scrollYAnim.interpolate({
     inputRange: [0, titleContainerHeight],
     outputRange: [
-      styles.neutralLight.backgroundColor!,
-      styles.neutralLightest.backgroundColor!,
+      themeSet.systemBackground,
+      themeSet.secondarySystemBackground,
     ],
     extrapolate: "clamp",
   });
@@ -90,12 +86,10 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
         />
       ),
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [colorScheme]);
 
   useEffect(() => {
     setNavigationStyle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollYVal, colorScheme]);
 
   const onScrollToSection = (index: number) => {
@@ -115,7 +109,6 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
     setScrollYVal(event.nativeEvent.contentOffset.y);
   };
 
-  // here
   const FluidHeader = () => {
     return (
       <Animated.View
@@ -124,7 +117,9 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
           { backgroundColor: animatedBackgroundColor },
         ]}
       >
-        <H1>{title}</H1>
+        <Label xl semibold>
+          {title}
+        </Label>
       </Animated.View>
     );
   };
@@ -198,6 +193,5 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
         {outerChildren}
       </Screen>
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [children, colorScheme]);
 };

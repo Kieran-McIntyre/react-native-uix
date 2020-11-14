@@ -5,9 +5,10 @@ import { Button } from "../../atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ActionSheet } from "../../atoms/ActionSheet";
-import { HeaderActionsProps } from "./types"
-import { styles } from "./styles"
-import { faPlusCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons"
+import { HeaderActionsProps } from "./types";
+import { styles } from "./styles";
+import { faPlusCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { useStyle } from "../../../hooks/useStyle";
 
 export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onEdit,
@@ -15,6 +16,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
   renderCustomAction,
   moreOptions,
 }) => {
+  const { themeSet } = useStyle()
   const [isShowingMoreOptions, setShowMoreOptions] = useState(false);
 
   return (
@@ -24,13 +26,13 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
           onPress={() => setShowMoreOptions(true)}
           style={styles.button}
         >
-          <FontAwesomeIcon icon={faEllipsisH} color="blue" size={20} />
+          <FontAwesomeIcon icon={faEllipsisH} color={themeSet.tint} size={20} />
         </TouchableOpacity>
       )}
 
       {onAdd && (
         <TouchableOpacity onPress={onAdd}>
-          <FontAwesomeIcon icon={faPlusCircle} color="blue" size={20} />
+          <FontAwesomeIcon icon={faPlusCircle} color={themeSet.tint} size={20} />
         </TouchableOpacity>
       )}
 
@@ -40,7 +42,10 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
 
       {isShowingMoreOptions && (
         <ActionSheet
-          options={[...moreOptions ?? [], { label: "Cancel", isCancel: true }]}
+          options={[
+            ...(moreOptions ?? []),
+            { label: "Cancel", isCancel: true },
+          ]}
           onAction={() => setShowMoreOptions(false)}
         />
       )}

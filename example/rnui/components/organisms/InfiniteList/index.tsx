@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { ListCell } from "../../molecules/ListCell";
 import { ListCellActions } from "../../molecules/ListCellActions";
@@ -9,7 +9,8 @@ import { SwipeListView } from "react-native-swipe-list-view";
 import sizes from "../../../values/sizes";
 
 import { InfiniteListProps } from "./types";
-import { styles } from "./styles";
+import { dynamicStyles } from "./styles";
+import { useStyle } from "../../../hooks/useStyle";
 
 export const InfiniteList: React.FC<InfiniteListProps> = ({
   items,
@@ -18,14 +19,17 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
   increment,
   actions,
 }) => {
-  const hasItems = items && items.length > 0;
-
+  const { styles, themeSet } = useStyle(dynamicStyles)
   const [hasFetchedAllItems, setFetchedAllItems] = useState(true);
   const prevItemCount = usePrevious(items.length);
 
+  const startActions = useMemo(() => actions?.filter(action => action.isStart) ?? [], [actions])
+  const endActions = useMemo(() => actions?.filter(action => !action.isStart) ?? [], [actions])
+  const rightOpenValue = useMemo(() => -1 * sizes.listCellActionWidth * endActions.length, [endActions])
+  const leftOpenValue = useMemo(() => sizes.listCellActionWidth * startActions.length, [startActions])
+
   useEffect(() => {
-    setFetchedAllItems(prevItemCount === items.length);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setFetchedAllItems(prevItemCount === items.length)
   }, [items.length]);
 
   const onRenderItem = ({
@@ -51,24 +55,19 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
 
     return (
       <View style={styles.loadingFooter}>
-        <ActivityIndicator color={"blue"} />
+        <ActivityIndicator color={themeSet.textPrimary} />
       </View>
     );
   };
 
   const renderHiddenItem = ({ item }: { item: IListCellItem }) => {
-    return <ListCellActions item={item} actions={actions ?? []} />;
+    return <ListCellActions item={item} actions={actions ?? []} />
   };
 
+  const hasItems = items && items.length > 0;
   if (!hasItems) {
     return null;
   }
-
-  const startActions = actions?.filter(action => action.isStart) ?? [];
-  const endActions = actions?.filter(action => !action.isStart) ?? [];
-
-  const rightOpenValue = -1 * sizes.listCellActionWidth * endActions.length;
-  const leftOpenValue = sizes.listCellActionWidth * startActions.length;
 
   return (
     <SwipeListView

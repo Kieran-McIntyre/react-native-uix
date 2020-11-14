@@ -1,11 +1,13 @@
+import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
-import colors from "../../../values/colors";
 
-export const styles = StyleSheet.create({
+export const dynamicStyles = (
+  theme: IThemeSchema
+): StyleSheet.NamedStyles<any> => ({
   container: {
-    backgroundColor: "white",
+    backgroundColor: theme.secondarySystemBackground,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.light.neutral,
+    borderBottomColor: theme.separator,
   },
 
   topContainer: {

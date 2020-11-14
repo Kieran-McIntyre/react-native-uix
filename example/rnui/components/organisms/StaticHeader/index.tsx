@@ -4,31 +4,11 @@ import { View } from "react-native";
 import { InputSearch } from "../../molecules/InputSearch";
 import { H1 } from "../../atoms/H1";
 import { HeaderActions } from "../../molecules/HeaderActions";
-import { useTheme } from "react-native-themed-styles";
-import { styleSheetFactory } from "../../../utils/themes";
+import { useStyle } from "../../../hooks/useStyle";
 import { SegmentedControl } from "../../atoms/SegmentedControl";
 
-import { StaticHeaderProps } from "./types"
-
-const themedStyles = styleSheetFactory((theme: any) => ({
-  blendedHeader: {
-    backgroundColor: theme.neutralLight,
-    paddingHorizontal: 20,
-  },
-  headerExtras: {
-    backgroundColor: theme.neutralLight,
-    paddingVertical: 10,
-  },
-  inputSearch: {
-    paddingBottom: 10,
-  },
-  segmentedControlWithSearch: {
-    marginTop: 15,
-  },
-  neutralLight: {
-    backgroundColor: theme.neutralLight,
-  },
-}));
+import { StaticHeaderProps } from "./types";
+import { dynamicStyles } from "./styles";
 
 export const StaticHeader: React.FC<StaticHeaderProps> = ({
   title,
@@ -39,7 +19,7 @@ export const StaticHeader: React.FC<StaticHeaderProps> = ({
   onAdd,
   moreOptions,
 }) => {
-  const [styles]: any = useTheme(themedStyles);
+  const { styles } = useStyle(dynamicStyles);
 
   useEffect(() => {
     navigation.setOptions({

@@ -1,10 +1,12 @@
+import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
-import colors from "../../../values/colors";
 
-export const styles = StyleSheet.create({
+export const dynamicStyles = (
+    theme: IThemeSchema
+): StyleSheet.NamedStyles<any> => ({
     tableRow: {
         flexDirection: "column",
-        backgroundColor: colors.light.neutralLightest,
+        backgroundColor: theme.secondarySystemBackground,
     },
     wrapper: {
         paddingHorizontal: 20,
@@ -16,15 +18,16 @@ export const styles = StyleSheet.create({
     },
     separatorLine: {
         height: StyleSheet.hairlineWidth,
-        backgroundColor: colors.light.neutral,
+        backgroundColor: theme.separator,
         flexShrink: 0,
     },
     label: {
         fontSize: 16,
-        color: colors.light.neutralDark,
+        color: theme.textSecondary,
     },
     heading: {
         marginBottom: 2,
+        color: theme.textSecondary,
     },
     description: {
         marginTop: 2,
@@ -32,9 +35,11 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 16,
         fontWeight: "500",
+        color: theme.textPrimary,
     },
     renderItemStartContent: {
         height: "100%",
         marginRight: 20,
     },
 });
+

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { View, Image, Text } from "react-native";
 import colors from "../../../values/colors";
-import { styles } from "./styles"
-import { AvatarImageProps } from "./types"
+import { styles } from "./styles";
+import { AvatarImageProps } from "./types";
 
 const AvatarImage: React.FC<AvatarImageProps> = ({ url, style }) => {
   return (
@@ -21,7 +21,7 @@ const AvatarInitials: React.FC<AvatarImageProps> = ({
 }) => {
   const initials: string = [firstName, lastName]
     .filter(Boolean)
-    .map((name) => name?.charAt(0).toUpperCase())
+    .map(name => name?.charAt(0).toUpperCase())
     .join("");
 
   const avatarStyle = {

@@ -7,24 +7,18 @@ export const dynamicStyles = (
   blendedHeader: {
     paddingHorizontal: 20,
   },
+
   headerSticky: {
-    backgroundColor: theme.neutralLight,
+    backgroundColor: theme.systemBackground,
     borderBottomWidth: 1,
     paddingTop: 10,
   },
+
   inputSearch: {
     paddingBottom: 10,
   },
+
   segmentedControlWithSearch: {
-    marginTop: 15,
-  },
-  neutralLight: {
-    backgroundColor: theme.neutralLight,
-  },
-  neutral: {
-    backgroundColor: theme.neutral,
-  },
-  neutralLightest: {
-    backgroundColor: theme.neutralLightest,
+    marginBottom: 10,
   },
 });

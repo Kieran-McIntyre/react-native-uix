@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { Provider } from "react-redux";
-import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
+import { Provider as StoreProvider } from "react-redux";
+
 import store from "./redux";
 import AppNavigation from "./navigation";
+import { ThemeProvider } from "./rnui";
+import { IThemeSchema } from "./rnui/interfaces/IThemeSchema";
 
 function App() {
+  const theme = {
+    light: {
+      tint: "blue",
+    },
+    dark: {
+      tint: "orange",
+    },
+  };
+
   return (
-    <Provider store={store}>
-      <NavigationContainer>
+    <StoreProvider store={store}>
+      <ThemeProvider theme={theme}>
         <AppNavigation />
-      </NavigationContainer>
-    </Provider>
+      </ThemeProvider>
+    </StoreProvider>
   );
 }
 

@@ -1,18 +1,21 @@
 import * as React from "react";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { View, ScrollView } from "react-native";
 import { Screen } from "../../atoms/Screen";
 import { H2 } from "../../atoms/H2";
 import { HeaderActions } from "../../molecules/HeaderActions";
 
+import { Label } from "../../atoms/Label";
 import { H4 } from "../../atoms/H4";
 import { DetailMeta } from "../../molecules/DetailMeta";
 import { TableRow } from "../../molecules/TableRow";
 import { ButtonPrimary } from "../../atoms/ButtonPrimary";
 import { Row } from "../../atoms/Row";
 
-import { LayoutDetailScreenProps } from "./types"
-import { styles } from "./styles"
+import { LayoutDetailScreenProps } from "./types";
+
+import { dynamicStyles } from "./styles";
+import { useStyle } from "../../../hooks/useStyle";
 
 export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   navigation,
@@ -25,9 +28,10 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   moreOptions,
   tableItems = [],
 }) => {
+  const { styles } = useStyle(dynamicStyles);
+
   useEffect(() => {
     navigation.setOptions({
-      backgroundColor: "red",
       shadowColor: "transparent",
       title: "",
       headerRight: () => (
@@ -38,17 +42,15 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
         />
       ),
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getFilteredMeta = () => {
+  const filteredMeta = useMemo(() => {
     if (!meta) return [];
-    return meta.filter((item) => !!item.label);
-  };
 
-  const filteredMeta = getFilteredMeta();
+    return meta.filter(item => !!item.label);
+  }, [meta]);
+
   const hasMeta = filteredMeta.length > 0;
-
   const hasTableItems = !!tableItems && tableItems.length > 0;
 
   return (
@@ -56,10 +58,13 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
       <ScrollView>
         <View>
           <View style={[styles.container, styles.topContainer]}>
-            <H4 style={styles.titleCaption}>{caption}</H4>
-            <H2 numberOfLines={2} ellipsizeMode="middle">
+            <Label style={styles.titleCaption} sm secondary>
+              {caption}
+            </Label>
+
+            <Label lg numberOfLines={2} ellipsizeMode="middle">
               {title}
-            </H2>
+            </Label>
 
             {hasMeta && (
               <View style={styles.metaContainer}>

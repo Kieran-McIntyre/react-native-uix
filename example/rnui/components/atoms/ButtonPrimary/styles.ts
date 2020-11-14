@@ -1,7 +1,9 @@
+import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
-import colors from "../../../values/colors";
 
-export const styles = StyleSheet.create({
+export const dynamicStyles = (
+    theme: IThemeSchema
+): StyleSheet.NamedStyles<any> => ({
     container: {
         flex: 1,
     },
@@ -9,13 +11,13 @@ export const styles = StyleSheet.create({
     buttonPrimary: {
         height: 44,
         borderWidth: StyleSheet.hairlineWidth,
-        borderColor: colors.light.neutral,
+        borderColor: theme.tertiarySystemBackground,
         borderRadius: 4,
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: theme.secondarySystemBackground,
 
         // shadow
-        shadowColor: colors.light.neutralDark,
+        shadowColor: theme.separator,
         shadowOffset: {
             width: 0,
             height: 2,
@@ -33,7 +35,7 @@ export const styles = StyleSheet.create({
 
     buttonPrimaryLabel: {
         fontSize: 16,
-        color: "#007afe",
+        color: theme.tint,
         fontWeight: "500",
     },
-});
+})

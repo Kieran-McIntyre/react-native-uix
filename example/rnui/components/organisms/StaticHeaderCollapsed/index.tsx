@@ -3,34 +3,11 @@ import { useEffect } from "react";
 import { View } from "react-native";
 import { InputSearch } from "../../molecules/InputSearch";
 import { HeaderActions } from "../../molecules/HeaderActions";
-import { useTheme } from "react-native-themed-styles";
-import { styleSheetFactory } from "../../../utils/themes";
+import { useStyle } from "../../../hooks/useStyle";
 import { SegmentedControl } from "../../atoms/SegmentedControl";
 
-import { StaticHeaderCollapsedProps } from "./types"
-
-const themedStyles = styleSheetFactory((theme: any) => ({
-  blendedHeader: {
-    backgroundColor: theme.neutralLightest,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
-    borderColor: theme.neutral,
-    paddingTop: 10,
-  },
-  headerExtras: {
-    backgroundColor: theme.neutralLightest,
-    paddingVertical: 5,
-  },
-  inputSearch: {
-    paddingBottom: 10,
-  },
-  segmentedControlWithSearch: {
-    marginTop: 15,
-  },
-  neutralLightest: {
-    backgroundColor: theme.neutralLightest,
-  },
-}));
+import { StaticHeaderCollapsedProps } from "./types";
+import { dynamicStyles } from "./styles";
 
 export const StaticHeaderCollapsed: React.FC<StaticHeaderCollapsedProps> = ({
   title,
@@ -43,7 +20,7 @@ export const StaticHeaderCollapsed: React.FC<StaticHeaderCollapsedProps> = ({
   onAdd,
   moreOptions,
 }) => {
-  const [styles]: any = useTheme(themedStyles);
+  const { styles } = useStyle(dynamicStyles);
 
   useEffect(() => {
     navigation.setOptions({
@@ -86,4 +63,3 @@ export const StaticHeaderCollapsed: React.FC<StaticHeaderCollapsedProps> = ({
     </View>
   );
 };
-

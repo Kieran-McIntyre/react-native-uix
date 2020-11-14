@@ -1,20 +1,19 @@
+import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-    button: {
-        fontSize: 17,
-    },
+export const dynamicStyles = (
+  theme: IThemeSchema
+): StyleSheet.NamedStyles<any> => ({
+  button: {
+    color: theme.tint,
+    fontSize: 17,
+  },
 
-    buttonSubmit: {
-        fontWeight: "500",
-    },
+  submit: {
+    fontWeight: "500",
+  },
 
-    buttonDisabled: {
-        color: "#007afe",
-        opacity: 0.5,
-    },
-
-    buttonActive: {
-        color: "#007afe",
-    },
+  disabled: {
+    opacity: 0.5,
+  },
 });
