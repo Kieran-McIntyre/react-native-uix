@@ -1,10 +1,16 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import NativeActionSheet from "react-native-actionsheet";
-import { ActionSheetProps } from "./types"
+import { ActionSheetProps } from "./types";
+import { useStyle } from "../../../hooks/useStyle";
 
-export const ActionSheet: React.FC<ActionSheetProps> = ({ title, options, onAction }) => {
+export const ActionSheet: React.FC<ActionSheetProps> = ({
+  title,
+  options,
+  onAction,
+}) => {
   const actionsheetRef = useRef(null);
+  const { themeSet } = useStyle();
 
   useEffect(() => {
     const actionsheet = actionsheetRef.current! as NativeActionSheet;
@@ -20,11 +26,12 @@ export const ActionSheet: React.FC<ActionSheetProps> = ({ title, options, onActi
     <NativeActionSheet
       ref={actionsheetRef}
       title={title}
+      tintColor={themeSet.tint}
       options={options.map(option => option.label)}
       cancelButtonIndex={cancelButtonIndex}
       destructiveButtonIndex={destructiveButtonIndex}
       onPress={index => {
-        options[index]?.onPress?.()
+        options[index]?.onPress?.();
         onAction();
       }}
     />

@@ -5,6 +5,7 @@ import { ActionSheet } from "."
 import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions"
 
 jest.mock("react-native-actionsheet")
+jest.mock("../../../hooks/useStyle")
 
 describe('Atoms - ActionSheet', () => {
     let mockPressFn = jest.fn()

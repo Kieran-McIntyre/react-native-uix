@@ -1,38 +1,34 @@
 import * as React from "react";
+import { useMemo } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import IListCellItemAction from "../../../interfaces/IListCellItemAction";
 import sizes from "../../../values/sizes";
-import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { ListCellActionsProps, ActionItemProps } from "./types"
-import { styles } from "./styles"
-
-const getActionStyle = (
-  isStart: boolean,
-  index: number,
-  action: IListCellItemAction
-) => {
-  const offset = sizes.listCellActionWidth * index;
-  const style: any = {
-    backgroundColor: action.backgroundColor,
-  };
-
-  if (isStart) {
-    style.left = -1 * offset;
-    return [styles.action, style];
-  }
-
-  style.right = offset;
-  return [styles.action, style];
-};
+import { ListCellActionsProps, ActionItemProps, ItemStyle } from "./types"
+import { dynamicStyles } from "./styles"
+import { useStyle } from "../../../hooks/useStyle";
 
 const ActionItem: React.FC<ActionItemProps> = ({
   isStart = false,
   item,
   action,
   index,
+  styles,
+  themeSet
 }) => {
-  const style = getActionStyle(isStart, index, action);
+  const style = useMemo(() => {
+    const offset = sizes.listCellActionWidth * index;
+    const itemStyle: ItemStyle = {
+      backgroundColor: action.backgroundColor,
+    };
+
+    if (isStart) {
+      itemStyle.left = -1 * offset;
+      return [styles.action, itemStyle];
+    }
+
+    itemStyle.right = offset;
+    return [styles.action, itemStyle];
+  }, [])
 
   const onPressAction = () => {
     action.onPress?.(item);
@@ -43,7 +39,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
       <FontAwesomeIcon
         style={styles.icon}
         icon={action.iconName}
-        color={colors.light.neutralLightest}
+        color={themeSet.white}
       />
 
       <Text style={styles.label}>{action.label}</Text>
@@ -54,6 +50,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
 export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
   const startActions = actions?.filter((action) => action.isStart);
   const endActions = actions?.filter((action) => !action.isStart);
+  const { styles, themeSet } = useStyle(dynamicStyles)
 
   return (
     <View style={styles.actionContainer}>
@@ -64,6 +61,8 @@ export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
           item={item}
           action={action}
           index={i}
+          styles={styles}
+          themeSet={themeSet}
         />
       ))}
 
@@ -74,6 +73,8 @@ export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
           item={item}
           action={action}
           index={i}
+          styles={styles}
+          themeSet={themeSet}
         />
       ))}
     </View>

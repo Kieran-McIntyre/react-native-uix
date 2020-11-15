@@ -1,24 +1,37 @@
 import * as React from "react";
+import { useMemo } from "react"
 import { View, Text, TouchableOpacity } from "react-native";
 import { ButtonPrimaryProps } from "./types"
-import { styles } from "./styles"
+import { dynamicStyles } from "./styles";
+import { useStyle } from "../../../hooks/useStyle";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 const BUTTON_SPACING = 16;
 
 export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ label, numberOfButtons = 1, index }) => {
-  const hasManyButtons = numberOfButtons && numberOfButtons > 1;
+  const { styles, themeSet } = useStyle(dynamicStyles)
 
-  const buttonGap = BUTTON_SPACING / numberOfButtons;
-  const marginRight = hasManyButtons && index === 0 ? buttonGap : 0;
-  const marginLeft = hasManyButtons && !!index && index > 0 ? buttonGap : 0;
+  const buttonStyle = useMemo(() => {
+    const hasManyButtons = numberOfButtons && numberOfButtons > 1;
+
+    const buttonGap = BUTTON_SPACING / numberOfButtons;
+    const marginRight = hasManyButtons && index === 0 ? buttonGap : 0;
+    const marginLeft = hasManyButtons && !!index && index > 0 ? buttonGap : 0;
+
+    return { marginRight, marginLeft }
+  }, [numberOfButtons, index])
 
   return (
-    <View style={[styles.container, { marginRight, marginLeft }]}>
-      <TouchableOpacity style={styles.buttonPrimary}>
+    <View style={[styles.container, buttonStyle]}>
+      <TouchableHighlight
+        underlayColor={themeSet.tertiarySystemBackground}
+        style={styles.buttonPrimary}
+        onPress={() => { }}
+      >
         <View style={styles.buttonPrimaryContent}>
           <Text style={styles.buttonPrimaryLabel}>{label}</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableHighlight>
     </View>
   );
 };

@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
     },
 
-    centredRow: {
+    centred: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",

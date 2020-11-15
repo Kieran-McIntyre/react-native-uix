@@ -1,16 +1,16 @@
 module.exports = {
-  "preset": "react-native",
-  "transform": {
-    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-    "^.+\\.tsx?$": "ts-jest"
+  preset: "react-native",
+  transform: {
+    "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+    "\\.(ts|tsx)$": "ts-jest"
   },
-  "globals": {
+  globals: {
     "ts-jest": {
-      "tsConfigFile": "tsconfig.jest.json"
+      tsConfig: "tsconfig.jest.json"
     }
   },
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  "moduleFileExtensions": [
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  moduleFileExtensions: [
     "ts",
     "tsx",
     "js",
@@ -18,11 +18,12 @@ module.exports = {
     "json",
     "node"
   ],
-  "modulePaths": [
+  modulePaths: [
     "<rootDir>"
   ],
-  "setupFiles": [
-    "./setup-test.js"
+  setupFiles: [
+    "<rootDir>/setup-test.js"
   ],
-  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
+  modulePathIgnorePatterns: ["<rootDir>/example/"]
 }

@@ -1,17 +1,13 @@
 import * as React from "react";
 import { useState, useRef } from "react";
-import {
-  View,
-  TouchableOpacity,
-  TextInput,
-  Button,
-} from "react-native";
+import { View, TouchableOpacity, TextInput } from "react-native";
 import { Row } from "../../atoms/Row";
-import colors from "../../../values/colors";
+import { Button } from "../../atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { InputSearchProps } from "./types"
-import { styles } from "./styles"
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import { InputSearchProps } from "./types";
+import { dynamicStyles } from "./styles";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useStyle } from "../../../hooks/useStyle";
 
 export const InputSearch: React.FC<InputSearchProps> = ({
   style,
@@ -22,6 +18,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
 }) => {
   const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef(null);
+  const { styles, themeSet } = useStyle(dynamicStyles);
 
   const onFocusInput = () => {
     setInputFocused(true);
@@ -70,12 +67,13 @@ export const InputSearch: React.FC<InputSearchProps> = ({
           <FontAwesomeIcon
             style={styles.searchIcon}
             icon={faSearch}
-            color={colors.light.neutralDark}
+            color={themeSet.textSecondary}
           />
 
           <TextInput
             ref={inputRef}
             placeholder={placeholder}
+            placeholderTextColor={themeSet.textTertiary}
             onFocus={onFocusInput}
             onBlur={onBlurInput}
             onChangeText={onChangeText}
@@ -84,8 +82,9 @@ export const InputSearch: React.FC<InputSearchProps> = ({
         </View>
       </TouchableOpacity>
 
-      {isInputFocused && <Button title="Cancel" onPress={onCancel} />}
+      {isInputFocused && (
+        <Button style={styles.button} title="Cancel" onPress={onCancel} />
+      )}
     </Row>
   );
 };
-

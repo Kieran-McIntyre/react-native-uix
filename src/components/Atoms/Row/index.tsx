@@ -1,24 +1,21 @@
 import * as React from "react";
+import { useMemo } from "react"
 import { View } from "react-native";
 import { RowProps } from "./types"
 import { styles } from "./styles"
+import { mapPropsToStyle } from "../../../utils/mapPropsToStyle";
 
-const getStyle = (props: RowProps) => {
-  if (props.centred) {
-    return styles.centredRow;
-  }
+export const Row: React.FC<RowProps> = (props) => {
+  const { style, children } = props
 
-  if (props.between) {
-    return styles.between;
-  }
+  const mappedStyles = useMemo(() => mapPropsToStyle(props, styles), [
+    styles,
+    props,
+  ]);
 
-  if (props.around) {
-    return styles.around;
-  }
-
-  return styles.row;
-};
-
-export const Row: React.FC<RowProps> = (props) => (
-  <View style={{ ...getStyle(props), ...props.style }}>{props.children}</View>
-);
+  return (
+    <View style={[styles.row, mappedStyles, style]}>
+      {children}
+    </View>
+  )
+}

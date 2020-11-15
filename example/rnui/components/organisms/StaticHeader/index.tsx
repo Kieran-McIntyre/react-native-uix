@@ -36,7 +36,6 @@ export const StaticHeader: React.FC<StaticHeaderProps> = ({
         />
       ),
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const shouldRenderHeaderExtras = !!onSearch || !!segmentedControlOptions;

@@ -1,11 +1,9 @@
 import * as React from "react";
 import { useMemo } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import IListCellItemAction from "../../../interfaces/IListCellItemAction";
 import sizes from "../../../values/sizes";
-import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { ListCellActionsProps, ActionItemProps } from "./types"
+import { ListCellActionsProps, ActionItemProps, ItemStyle } from "./types"
 import { dynamicStyles } from "./styles"
 import { useStyle } from "../../../hooks/useStyle";
 
@@ -19,7 +17,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
 }) => {
   const style = useMemo(() => {
     const offset = sizes.listCellActionWidth * index;
-    const itemStyle = {
+    const itemStyle: ItemStyle = {
       backgroundColor: action.backgroundColor,
     };
 

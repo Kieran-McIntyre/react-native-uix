@@ -1,14 +1,12 @@
 import * as React from "react";
 import { useMemo } from "react";
-import { TouchableOpacity, Text } from "react-native";
-import { ButtonProps } from "./types";
+import { Text } from "react-native";
+import { LabelProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 import { mapPropsToStyle } from "../../../utils/mapPropsToStyle";
 
-export const Button: React.FC<ButtonProps> = props => {
-  const { title, disabled, onPress, style } = props;
-
+export const Label: React.FC<LabelProps> = props => {
   const { styles } = useStyle(dynamicStyles);
 
   const mappedStyles = useMemo(() => mapPropsToStyle(props, styles), [
@@ -17,8 +15,8 @@ export const Button: React.FC<ButtonProps> = props => {
   ]);
 
   return (
-    <TouchableOpacity disabled={disabled} style={style} onPress={onPress}>
-      <Text style={[styles.button, mappedStyles]}>{title}</Text>
-    </TouchableOpacity>
+    <Text {...props} style={[styles.primary, mappedStyles, props.style]}>
+      {props.children}
+    </Text>
   );
 };

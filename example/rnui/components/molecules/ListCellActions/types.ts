@@ -16,3 +16,9 @@ export interface ActionItemProps {
     styles: StyleSheet.NamedStyles<any>;
     themeSet: IThemeSchema;
 }
+
+export interface ItemStyle {
+    backgroundColor: string;
+    left?: number;
+    right?: number;
+}

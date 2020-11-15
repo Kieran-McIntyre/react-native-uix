@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
 
     label: {
         fontSize: 14,
-        color: colors.light.neutralDark,
         marginLeft: 5,
     },
 });
