@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ActionSheet } from "."
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions"
+import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMoreOptions"
 
 jest.mock("react-native-actionsheet")
 jest.mock("../../../hooks/useStyle")

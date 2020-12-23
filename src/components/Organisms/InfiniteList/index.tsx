@@ -3,8 +3,8 @@ import { useState, useEffect, useMemo } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { ListCell } from "../../molecules/ListCell";
 import { ListCellActions } from "../../molecules/ListCellActions";
-import IListCellItem from "../../../interfaces/IListCellItem";
-import usePrevious from "../../../hooks/usePrevious";
+import { IListCellItem } from "../../../interfaces/IListCellItem";
+import { usePrevious } from "../../../hooks/usePrevious";
 import { SwipeListView } from "react-native-swipe-list-view";
 import sizes from "../../../values/sizes";
 

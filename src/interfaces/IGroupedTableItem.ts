@@ -1,6 +1,6 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-interface IGroupedTableItem {
+export interface IGroupedTableItem {
   id: number | string;
   label: string;
   icon: IconProp;
@@ -8,5 +8,3 @@ interface IGroupedTableItem {
   iconBackgroundColor: string;
   onPress: any;
 }
-
-export default IGroupedTableItem;

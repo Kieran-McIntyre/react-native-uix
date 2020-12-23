@@ -1,4 +1,4 @@
-interface IListCellItem {
+export interface IListCellItem {
   id: string;
   heading?: string;
   title: string;
@@ -7,5 +7,3 @@ interface IListCellItem {
   onPress: any;
   renderItemStart?: any;
 }
-
-export default IListCellItem;

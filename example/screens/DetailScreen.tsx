@@ -4,7 +4,7 @@ import {
   IDetailMeta,
   IGroupedTableItem,
   LayoutDetailSection,
-} from "../rnui";
+} from "react-native-ios-ui";
 import {
   faFolder,
   faMapMarkerAlt,
@@ -34,7 +34,7 @@ export const DetailScreen = ({ navigation }) => {
       icon: faFolder,
       iconBackgroundColor: "#5ac8fa",
       count: 0,
-      onPress: () => {},
+      onPress: () => { },
     },
     {
       id: "labour",
@@ -42,7 +42,7 @@ export const DetailScreen = ({ navigation }) => {
       icon: faFolder,
       iconBackgroundColor: "#fed707",
       count: 2,
-      onPress: () => {},
+      onPress: () => { },
     },
     {
       id: "parts",
@@ -50,7 +50,7 @@ export const DetailScreen = ({ navigation }) => {
       icon: faFolder,
       iconBackgroundColor: "#bf5bf1",
       count: 1,
-      onPress: () => {},
+      onPress: () => { },
     },
   ];
 

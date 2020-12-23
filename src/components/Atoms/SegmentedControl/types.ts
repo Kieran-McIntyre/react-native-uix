@@ -1,4 +1,4 @@
-import ISegmentedControlOption from "../../../interfaces/ISegmentedControlOption";
+import { ISegmentedControlOption } from "../../../interfaces/ISegmentedControlOption";
 
 export interface SegmentedControlProps {
     options: ISegmentedControlOption[];

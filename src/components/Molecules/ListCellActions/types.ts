@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
-import IListCellItem from "../../../interfaces/IListCellItem";
-import IListCellItemAction from "../../../interfaces/IListCellItemAction";
+import { IListCellItem } from "../../../interfaces/IListCellItem";
+import { IListCellItemAction } from "../../../interfaces/IListCellItemAction";
 import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 
 export interface ListCellActionsProps {

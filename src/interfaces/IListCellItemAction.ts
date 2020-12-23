@@ -1,7 +1,7 @@
-import IListCellItem from "./IListCellItem";
+import { IListCellItem } from "./IListCellItem";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-interface IListCellItemAction {
+export interface IListCellItemAction {
   id: string;
   label: string;
   iconName: IconProp;
@@ -10,4 +10,3 @@ interface IListCellItemAction {
   isStart?: boolean;
 }
 
-export default IListCellItemAction;

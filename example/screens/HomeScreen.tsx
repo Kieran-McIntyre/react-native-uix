@@ -6,15 +6,16 @@ import {
   GroupedTable,
   IGroupedTableItem,
   Avatar,
-} from "../rnui/index";
+} from "react-native-ios-ui";
 import {
   faBuilding,
   faUtensils,
   faUniversity,
+  faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { SectionUpNext } from "../components/UpNext";
-import { useStyle } from "../rnui/hooks/useStyle";
+import { useStyle } from "react-native-ios-ui";
 
 const HomeScreen = ({ navigation }) => {
   const { themeSet } = useStyle();
@@ -24,7 +25,6 @@ const HomeScreen = ({ navigation }) => {
       headerLeft: () => {
         return (
           <Avatar
-            backgroundColor={"red"}
             firstName={"James"}
             lastName={"Smith"}
             style={styles.avatar}
@@ -62,7 +62,15 @@ const HomeScreen = ({ navigation }) => {
       count: 3,
       iconBackgroundColor: themeSet.yellow,
       icon: faUniversity,
-      onPress: () => {},
+      onPress: () => { },
+    },
+    {
+      id: 3,
+      label: "Gardens",
+      count: 0,
+      iconBackgroundColor: themeSet.green,
+      icon: faLeaf,
+      onPress: () => { },
     },
   ];
 
@@ -70,22 +78,22 @@ const HomeScreen = ({ navigation }) => {
     <LayoutTopLevelScreen
       title="Home"
       navigation={navigation}
-      onSearch={() => {}}
-      onAdd={() => {}}
+      onSearch={() => { }}
+      onAdd={() => { }}
       segmentedControlOptions={[
         {
           id: 1,
           label: "Test",
-          onPress: () => {}
+          onPress: () => { }
         },
         {
           id: 2,
           label: "Test",
-          onPress: () => {}
+          onPress: () => { }
         },
       ]}
       moreOptions={[
-        {label: "Label"}
+        { label: "Label" }
       ]}
     >
       <SectionUpNext navigation={navigation} />

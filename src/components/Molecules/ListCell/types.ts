@@ -1,4 +1,4 @@
-import IListCellItem from "../../../interfaces/IListCellItem";
+import { IListCellItem } from "../../../interfaces/IListCellItem";
 
 export interface ListCellProps {
     item: IListCellItem;

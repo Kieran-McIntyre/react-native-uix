@@ -1,4 +1,4 @@
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
+import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMoreOptions";
 
 export interface ActionSheetProps {
     title?: string;

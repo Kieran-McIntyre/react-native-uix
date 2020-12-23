@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Section, Label, Row, colors, useStyle } from "../rnui";
+import { Section, Label, Row, useStyle } from "react-native-ios-ui";
 import { StyleSheet, View, TouchableHighlight } from "react-native";
 import { useSelector } from "react-redux";
 import { addDays } from "date-fns/esm";
@@ -13,7 +13,7 @@ export const SectionUpNext = ({ navigation }) => {
     return (
       <TouchableHighlight
         underlayColor={themeSet.tertiarySystemBackground}
-        onPress={() => {}}
+        onPress={() => { }}
       >
         <>
           <View style={styles.content}>
@@ -49,7 +49,7 @@ export const SectionUpNext = ({ navigation }) => {
     <Section
       title={"Up Next"}
       emptyStateMessage={"Your next booking will appear here."}
-      //   shouldShowEmptyState={!upcomingEvent}
+    //   shouldShowEmptyState={!upcomingEvent}
     >
       <EventContent />
     </Section>

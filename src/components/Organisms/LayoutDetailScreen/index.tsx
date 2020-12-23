@@ -2,11 +2,9 @@ import * as React from "react";
 import { useEffect, useMemo } from "react";
 import { View, ScrollView } from "react-native";
 import { Screen } from "../../atoms/Screen";
-import { H2 } from "../../atoms/H2";
 import { HeaderActions } from "../../molecules/HeaderActions";
 
 import { Label } from "../../atoms/Label";
-import { H4 } from "../../atoms/H4";
 import { DetailMeta } from "../../molecules/DetailMeta";
 import { TableRow } from "../../molecules/TableRow";
 import { ButtonPrimary } from "../../atoms/ButtonPrimary";

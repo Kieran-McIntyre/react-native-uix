@@ -25,7 +25,7 @@
     "react-native-actionsheet": "^2.4.2",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-image-zoom-viewer": "^2.2.27",
-    "react-native-ios-ui": "file:../react-native-ios-ui-1.0.2.tgz",
+    "react-native-ios-ui": "file:../react-native-ios-ui-1.0.4.tgz",
     "react-native-parallax-scroll-view": "^0.21.3",
     "react-native-reanimated": "^1.13.0",
     "react-native-render-html": "^4.2.0",

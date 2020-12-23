@@ -1,5 +1,5 @@
-import ISegmentedControlOption from "../../../interfaces/ISegmentedControlOption";
-import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions";
+import { ISegmentedControlOption } from "../../../interfaces/ISegmentedControlOption";
+import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMoreOptions";
 
 export interface LayoutTopLevelScreenProps {
   title: string;

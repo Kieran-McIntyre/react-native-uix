@@ -5,7 +5,7 @@ import {
     IListCellItem,
     IListCellItemAction,
     useStyle
-} from "../rnui";
+} from "react-native-ios-ui";
 import faker from "faker"
 import {
     faTrash,

@@ -3,16 +3,15 @@ import { Provider as StoreProvider } from "react-redux";
 
 import store from "./redux";
 import AppNavigation from "./navigation";
-import { ThemeProvider } from "./rnui";
-import { IThemeSchema } from "./rnui/interfaces/IThemeSchema";
+import { ThemeProvider } from "react-native-ios-ui";
 
 function App() {
-  const theme = {
+  const theme: any = {
     light: {
       tint: "blue",
     },
     dark: {
-      tint: "green",
+      tint: "pink",
     },
   };
 

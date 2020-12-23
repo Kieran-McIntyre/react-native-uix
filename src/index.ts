@@ -22,14 +22,13 @@ export { LayoutDetailScreen } from "./components/organisms/LayoutDetailScreen";
 export { InfiniteList } from "./components/organisms/InfiniteList";
 
 // types
-export { default as IGroupedTableItem } from "./interfaces/IGroupedTableItem";
-export { default as ISegmentedControlOption } from "./interfaces/ISegmentedControlOption";
-export { default as IHeaderActionsMoreOptions } from "./interfaces/IHeaderActionsMoreOptions";
-export { default as IListCellItem } from "./interfaces/IListCellItem";
-export { default as IListCellItemAction } from "./interfaces/IListCellItemAction";
-export { default as IDetailMeta } from "./interfaces/IDetailMeta";
-export { default as IChatCellItem } from "./interfaces/IChatCellItem";
-export { default as IForm } from "./interfaces/IForm";
+export { IGroupedTableItem } from "./interfaces/IGroupedTableItem";
+export { ISegmentedControlOption } from "./interfaces/ISegmentedControlOption";
+export { IHeaderActionsMoreOptions } from "./interfaces/IHeaderActionsMoreOptions";
+export { IListCellItem } from "./interfaces/IListCellItem";
+export { IListCellItemAction } from "./interfaces/IListCellItemAction";
+export { IDetailMeta } from "./interfaces/IDetailMeta";
+export { IThemeSchema, ITheme } from "./interfaces/IThemeSchema";
 
 // hooks
 export { useStyle } from "./hooks/useStyle";
