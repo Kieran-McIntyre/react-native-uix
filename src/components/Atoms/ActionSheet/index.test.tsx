@@ -1,20 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ActionSheet } from "."
-
 import IHeaderActionsMoreOptions from "../../../interfaces/IHeaderActionsMoreOptions"
 
 jest.mock("react-native-actionsheet")
 jest.mock("../../../hooks/useStyle")
 
 describe('Atoms - ActionSheet', () => {
-    let mockPressFn = jest.fn()
-    let mockActionFn = jest.fn()
+    const mockPressFn = jest.fn()
+    const mockActionFn = jest.fn()
     let options: IHeaderActionsMoreOptions[] = []
 
     beforeEach(() => {
-        mockPressFn = jest.fn()
-        mockActionFn = jest.fn()
+        mockPressFn.mockReset()
+        mockActionFn.mockReset()
 
         options = [
             {
@@ -46,7 +45,7 @@ describe('Atoms - ActionSheet', () => {
         expect(mockActionFn).toHaveBeenCalled()
     })
 
-    it('should correctly button indexes', () => {
+    it('should correctly set button indexes', () => {
         // Arrange.
         const wrapper = shallow(<ActionSheet options={options} onAction={mockActionFn} />)
 

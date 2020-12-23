@@ -10,15 +10,14 @@ export const Button: React.FC<ButtonProps> = props => {
   const { title, disabled, onPress, style } = props;
 
   const { styles } = useStyle(dynamicStyles);
-
   const mappedStyles = useMemo(() => mapPropsToStyle(props, styles), [
     styles,
     props,
   ]);
 
   return (
-    <TouchableOpacity disabled={disabled} style={style} onPress={onPress}>
-      <Text style={[styles.button, mappedStyles]}>{title}</Text>
+    <TouchableOpacity testID="button" disabled={disabled} style={style} onPress={onPress}>
+      <Text testID="button__label" style={[styles.button, mappedStyles]}>{title}</Text>
     </TouchableOpacity>
   );
 };

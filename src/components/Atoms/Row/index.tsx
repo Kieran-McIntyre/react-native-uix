@@ -14,7 +14,7 @@ export const Row: React.FC<RowProps> = (props) => {
   ]);
 
   return (
-    <View style={[styles.row, mappedStyles, style]}>
+    <View testID="row" style={[styles.row, mappedStyles, style]}>
       {children}
     </View>
   )

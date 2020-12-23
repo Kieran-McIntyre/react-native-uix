@@ -21,9 +21,10 @@ module.exports = {
   modulePaths: [
     "<rootDir>"
   ],
-  setupFiles: [
-    "<rootDir>/setup-test.js"
+  setupFilesAfterEnv: [
+    // "<rootDir>/setup-test.js"
+    "@testing-library/jest-native/extend-expect"
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],
-  modulePathIgnorePatterns: ["<rootDir>/example/"]
+  modulePathIgnorePatterns: ["<rootDir>/example/", "<rootDir>/dist/"],
 }

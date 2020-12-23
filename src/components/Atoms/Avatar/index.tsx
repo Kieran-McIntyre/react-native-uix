@@ -1,12 +1,12 @@
 import * as React from "react";
 import { View, Image, Text } from "react-native";
-import colors from "../../../values/colors";
 import { styles } from "./styles";
 import { AvatarImageProps } from "./types";
 
 const AvatarImage: React.FC<AvatarImageProps> = ({ url, style }) => {
   return (
     <Image
+      testID="typeImage"
       style={[styles.avatar, styles.avatarImage, style]}
       source={{ uri: url, cache: "force-cache" }}
     />
@@ -26,12 +26,12 @@ const AvatarInitials: React.FC<AvatarImageProps> = ({
 
   const avatarStyle = {
     ...style,
-    backgroundColor: backgroundColor ?? colors.light.neutralDark,
+    backgroundColor: backgroundColor ?? "red"
   };
 
   return (
-    <View style={[styles.avatar, styles.avatarInitals, avatarStyle]}>
-      <Text style={styles.avatarInitalsText}>{initials}</Text>
+    <View testID="typeInitials" style={[styles.avatar, styles.avatarInitals, avatarStyle]}>
+      <Text testID="typeInitials__text" style={styles.avatarInitalsText}>{initials}</Text>
     </View>
   );
 };

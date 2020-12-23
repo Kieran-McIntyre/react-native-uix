@@ -3,6 +3,8 @@ import { shallow } from "enzyme";
 import { Label } from ".";
 import toJson from "enzyme-to-json";
 
+jest.mock("../../../hooks/useStyle")
+
 describe("Atoms - Title", () => {
     it("should render content", () => {
         // Arrange.

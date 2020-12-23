@@ -12,7 +12,7 @@ function App() {
       tint: "blue",
     },
     dark: {
-      tint: "orange",
+      tint: "green",
     },
   };
 

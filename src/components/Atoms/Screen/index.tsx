@@ -7,5 +7,5 @@ import { dynamicStyles } from "./styles";
 export const Screen: React.FC<ScreenProps> = ({ children, style }) => {
   const { styles } = useStyle(dynamicStyles);
 
-  return <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>;
+  return <SafeAreaView testID="screen" style={[styles.screen, style]}>{children}</SafeAreaView>;
 };

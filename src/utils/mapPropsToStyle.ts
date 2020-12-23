@@ -1,18 +1,38 @@
-import { StyleSheet } from "react-native";
+import { PropsWithChildren } from "react"
+import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from "react-native";
 
+type MappedStyle = ViewStyle | TextStyle | ImageStyle
+
+/**
+ * mapPropsToStyle
+ * @param props 
+ * @param styles 
+ */
 export const mapPropsToStyle = (
-  props: object,
+  props: PropsWithChildren<any>,
   styles: StyleSheet.NamedStyles<any>
-) => {
-  const styleDict = {};
+): StyleSheet.NamedStyles<any> => {
+  return Object
+    .entries(props)
+    .reduce((mappedStyles, currEntry) => {
+      const [attribute, shouldInclude] = currEntry;
+      const mappedStyle = styles[attribute]
 
-  Object.entries(props).forEach(entry => {
-    const [attribute, value] = entry;
-
-    if (value && styles[attribute]) {
-      styleDict[attribute] = styles[attribute];
-    }
-  });
-
-  return Object.values(styleDict);
+      return pop(shouldInclude, mappedStyle, mappedStyles)
+    }, {})
 };
+
+const pop = (
+  shouldInclude: unknown,
+  mappedStyle: MappedStyle,
+  mappedStyles: StyleSheet.NamedStyles<any>
+) => {
+  if (!!shouldInclude && mappedStyle) {
+    return {
+      ...mappedStyles,
+      ...mappedStyle,
+    }
+  }
+
+  return mappedStyles
+}

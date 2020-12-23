@@ -2,7 +2,6 @@ import * as React from "react";
 import { View, Text, TouchableHighlight } from "react-native";
 import { Row } from "../../atoms/Row";
 import { DisclosureIcon } from "../../atoms/DisclosureIcon";
-import colors from "../../../values/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TableRowProps } from "./types";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";

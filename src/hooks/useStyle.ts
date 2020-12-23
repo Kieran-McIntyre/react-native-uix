@@ -3,15 +3,15 @@ import { StyleSheet, useColorScheme, ColorSchemeName } from "react-native";
 import { IThemeSchema } from "../interfaces/IThemeSchema";
 import { ThemeContext, DEFAULT_THEMES } from "../theme";
 
-type DynamicStyles = (theme: IThemeSchema) => StyleSheet.NamedStyles<any>;
+export type DynamicStyles = (theme: IThemeSchema) => StyleSheet.NamedStyles<any>;
 
-interface Output {
+export interface StyleOutput {
   styles: StyleSheet.NamedStyles<any>;
   colorScheme: ColorSchemeName;
   themeSet: IThemeSchema;
 }
 
-export const useStyle = (dynamicStyles?: DynamicStyles): Output => {
+export const useStyle = (dynamicStyles?: DynamicStyles): StyleOutput => {
   const colorScheme = useColorScheme() ?? "light"
   const customThemeSet = useContext(ThemeContext);
 

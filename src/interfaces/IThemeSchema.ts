@@ -19,3 +19,8 @@ export interface IThemeSchema {
   yellow: string;
   white: string;
 }
+
+export interface ITheme {
+  light: IThemeSchema,
+  dark: IThemeSchema,
+}
