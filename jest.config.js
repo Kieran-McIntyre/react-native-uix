@@ -22,7 +22,7 @@ module.exports = {
     "<rootDir>"
   ],
   setupFilesAfterEnv: [
-    // "<rootDir>/setup-test.js"
+    "<rootDir>/setup-test.js",
     "@testing-library/jest-native/extend-expect"
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DisclosureIcon } from "."
 import { View } from "react-native"
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 jest.mock("@fortawesome/react-native-fontawesome", () => ({
     FontAwesomeIcon: () => <View />
