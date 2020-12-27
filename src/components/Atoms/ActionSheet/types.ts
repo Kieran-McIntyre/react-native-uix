@@ -3,5 +3,5 @@ import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMor
 export interface ActionSheetProps {
     title?: string;
     options: IHeaderActionsMoreOptions[];
-    onAction: any;
+    onAction: () => void;
 }

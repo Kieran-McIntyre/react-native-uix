@@ -7,11 +7,7 @@ import {
 import { useColorScheme, ColorSchemeName } from "react-native";
 import { ThemeContext } from "../../../theme";
 import { ITheme } from "../../../interfaces/IThemeSchema";
-
-export interface ThemeProviderProps {
-  children: React.ReactChild;
-  theme?: ITheme;
-}
+import { ThemeProviderProps } from "./types"
 
 const DEFAULT_THEME: any = {
   light: {},

@@ -8,6 +8,7 @@ module.exports = {
             "avoid-escape"
         ],
         "nonblock-statement-body-position": "any",
-        "react-hooks/exhaustive-deps": "off"
+        "react-hooks/exhaustive-deps": "off",
+        "semi": [2, "never"]
     },
 };

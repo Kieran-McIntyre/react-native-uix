@@ -1,7 +1,9 @@
+import { ViewStyle } from "react-native";
+
 export interface SectionProps {
-    children?: any;
+    children?: React.ReactNode;
     title?: string;
     emptyStateMessage?: string;
     shouldShowEmptyState?: boolean;
-    style?: any;
+    style?: ViewStyle;
 }

@@ -1,5 +1,7 @@
+import { ViewStyle } from "react-native";
+
 export interface LayoutDetailSectionProps {
   title?: string;
-  style?: any;
-  children?: any;
+  style?: ViewStyle;
+  children?: React.ReactNode
 }

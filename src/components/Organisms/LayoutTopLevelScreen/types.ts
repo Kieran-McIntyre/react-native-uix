@@ -1,16 +1,16 @@
 import { ISegmentedControlOption } from "../../../interfaces/ISegmentedControlOption";
 import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMoreOptions";
+import { NavigationProp } from "@react-navigation/native";
 
 export interface LayoutTopLevelScreenProps {
   title: string;
-  navigation: any;
-  children?: any;
-  outerChildren?: any;
-  onSearch?: any;
+  navigation: NavigationProp<any>;
+  children?: React.ReactNode;
   segmentedControlOptions?: ISegmentedControlOption[];
-  onEdit?: any;
-  onAdd?: any;
-  renderCustomHeaderAction?: any;
+  onEdit?: () => void;
+  onAdd?: () => void;
+  onSearch?: () => void;
+  renderCustomHeaderAction?: () => JSX.Element;
   moreOptions?: IHeaderActionsMoreOptions[];
 }
 
@@ -21,5 +21,5 @@ export enum contexts {
 
 export interface SectionData {
   context: contexts;
-  data: [{ key: number; el: any }];
+  data: [{ key: number; el: () => JSX.Element }];
 }

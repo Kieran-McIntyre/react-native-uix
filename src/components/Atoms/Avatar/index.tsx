@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Image, Text } from "react-native";
 import { styles } from "./styles";
-import { AvatarImageProps } from "./types";
+import { AvatarImageProps, AvatarInitialsProps, AvatarProps } from "./types";
 
 const AvatarImage: React.FC<AvatarImageProps> = ({ url, style }) => {
   return (
@@ -13,7 +13,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({ url, style }) => {
   );
 };
 
-const AvatarInitials: React.FC<AvatarImageProps> = ({
+const AvatarInitials: React.FC<AvatarInitialsProps> = ({
   style,
   firstName,
   lastName,
@@ -36,7 +36,7 @@ const AvatarInitials: React.FC<AvatarImageProps> = ({
   );
 };
 
-export const Avatar: React.FC<AvatarImageProps> = ({
+export const Avatar: React.FC<AvatarProps> = ({
   url,
   firstName,
   lastName,

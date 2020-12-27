@@ -1,4 +1,6 @@
+import { TextStyle, Animated } from "react-native";
+
 export interface AnimatedHeaderTitleProps {
     title: string;
-    style?: any;
+    style?: Animated.WithAnimatedValue<TextStyle>
 }

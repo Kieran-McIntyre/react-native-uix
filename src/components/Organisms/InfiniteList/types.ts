@@ -5,6 +5,6 @@ export interface InfiniteListProps {
     items: IListCellItem[];
     initialCount: number;
     increment: number;
-    onNewCount: any;
+    onNewCount: (newCount: number) => void;
     actions?: IListCellItemAction[];
 }

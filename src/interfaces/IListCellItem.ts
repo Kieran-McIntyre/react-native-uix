@@ -4,6 +4,6 @@ export interface IListCellItem {
   title: string;
   description?: string;
   detail?: string;
-  onPress: any;
-  renderItemStart?: any;
+  onPress: () => void;
+  renderItemStart?: () => JSX.Element;
 }

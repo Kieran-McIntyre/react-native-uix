@@ -24,7 +24,6 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   title,
   navigation,
   children,
-  outerChildren,
   onSearch,
   segmentedControlOptions,
   onEdit,
@@ -93,18 +92,17 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   }, [scrollYVal, colorScheme]);
 
   const onScrollToSection = (index: number) => {
-    if (scrollYVal > titleContainerHeight) {
-      return;
-    }
+    if (scrollYVal > titleContainerHeight) return;
 
     const sectionList = sectionListRef.current! as SectionList;
     sectionList.scrollToLocation({ sectionIndex: index, itemIndex: index });
   };
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    Animated.event([{ nativeEvent: { contentOffset: { y: scrollYAnim } } }], {
-      useNativeDriver: false,
-    })(event);
+    Animated.event(
+      [{ nativeEvent: { contentOffset: { y: scrollYAnim } } }],
+      { useNativeDriver: false }
+    )(event);
 
     setScrollYVal(event.nativeEvent.contentOffset.y);
   };
@@ -117,16 +115,14 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
           { backgroundColor: animatedBackgroundColor },
         ]}
       >
-        <Label xl semibold>
+        <Label testID="title" xl semibold>
           {title}
         </Label>
       </Animated.View>
     );
   };
 
-  const Content = () => {
-    return <View>{children}</View>;
-  };
+  const Content = () => <View>{children}</View>
 
   const StickyHeader = ({ section: { context } }: { section: SectionData }) => {
     return (
@@ -189,8 +185,6 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
           keyExtractor={(item: any, index: number) => `${item.key}-${index}`}
           onScroll={onScroll}
         />
-
-        {outerChildren}
       </Screen>
     );
   }, [children, colorScheme]);

@@ -23,8 +23,11 @@ module.exports = {
   ],
   setupFilesAfterEnv: [
     "<rootDir>/setup-test.js",
-    "@testing-library/jest-native/extend-expect"
+    "@testing-library/jest-native/extend-expect",
+    "./node_modules/react-native-gesture-handler/jestSetup.js"
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   modulePathIgnorePatterns: ["<rootDir>/example/", "<rootDir>/dist/"],
+  transformIgnorePatterns: ["node_modules/(?!(jest-)?react-native|@?react-navigation)"],
+  // setupFiles: ["./node_modules/react-native-gesture-handler/jestSetup.js"]
 }

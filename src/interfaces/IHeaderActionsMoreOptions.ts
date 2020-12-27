@@ -1,6 +1,6 @@
 export interface IHeaderActionsMoreOptions {
   label: string;
-  onPress?: any;
+  onPress?: () => void;
   isCancel?: boolean;
   isDestructive?: boolean;
 }

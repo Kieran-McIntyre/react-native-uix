@@ -1,4 +1,6 @@
+import { ViewStyle } from "react-native";
+
 export interface ScreenProps {
-    children?: any;
-    style?: any
+    children?: React.ReactNode
+    style?: ViewStyle
 }

@@ -54,7 +54,9 @@ export const InputSearch: React.FC<InputSearchProps> = ({
       input.clear();
     }
 
-    onChangeText("");
+    if (onChangeText) {
+      onChangeText("");
+    }
   };
 
   return (

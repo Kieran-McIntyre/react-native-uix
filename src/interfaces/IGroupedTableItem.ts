@@ -6,5 +6,5 @@ export interface IGroupedTableItem {
   icon: IconProp;
   count?: number;
   iconBackgroundColor: string;
-  onPress: any;
+  onPress: () => void;
 }
