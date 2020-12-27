@@ -92,17 +92,18 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   }, [scrollYVal, colorScheme]);
 
   const onScrollToSection = (index: number) => {
-    if (scrollYVal > titleContainerHeight) return;
+    if (scrollYVal > titleContainerHeight) {
+      return;
+    }
 
     const sectionList = sectionListRef.current! as SectionList;
     sectionList.scrollToLocation({ sectionIndex: index, itemIndex: index });
   };
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    Animated.event(
-      [{ nativeEvent: { contentOffset: { y: scrollYAnim } } }],
-      { useNativeDriver: false }
-    )(event);
+    Animated.event([{ nativeEvent: { contentOffset: { y: scrollYAnim } } }], {
+      useNativeDriver: false,
+    })(event);
 
     setScrollYVal(event.nativeEvent.contentOffset.y);
   };
@@ -122,7 +123,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
     );
   };
 
-  const Content = () => <View>{children}</View>
+  const Content = () => <View>{children}</View>;
 
   const StickyHeader = ({ section: { context } }: { section: SectionData }) => {
     return (

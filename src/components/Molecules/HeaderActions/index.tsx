@@ -16,7 +16,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
   renderCustomAction,
   moreOptions,
 }) => {
-  const { themeSet } = useStyle()
+  const { themeSet } = useStyle();
   const [isShowingMoreOptions, setShowMoreOptions] = useState(false);
 
   return (
@@ -32,7 +32,11 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
 
       {onAdd && (
         <TouchableOpacity onPress={onAdd}>
-          <FontAwesomeIcon icon={faPlusCircle} color={themeSet.tint} size={20} />
+          <FontAwesomeIcon
+            icon={faPlusCircle}
+            color={themeSet.tint}
+            size={20}
+          />
         </TouchableOpacity>
       )}
 

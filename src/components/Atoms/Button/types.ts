@@ -1,7 +1,7 @@
 import { ViewStyle } from "react-native";
 
 export interface ButtonProps {
-  title: string
+  title: string;
   onPress: () => void;
   disabled?: boolean;
   submit?: boolean;

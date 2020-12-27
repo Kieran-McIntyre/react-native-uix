@@ -6,7 +6,7 @@ import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 import { mapPropsToStyle } from "../../../utils/mapPropsToStyle";
 
-export const Label: React.FC<LabelProps> = props => {
+export const Label: React.FC<LabelProps> = (props) => {
   const { styles } = useStyle(dynamicStyles);
 
   const mappedStyles = useMemo(() => mapPropsToStyle(props, styles), [

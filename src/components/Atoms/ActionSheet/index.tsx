@@ -17,9 +17,9 @@ export const ActionSheet: React.FC<ActionSheetProps> = ({
     actionsheet.show();
   }, []);
 
-  const cancelButtonIndex = options.findIndex(option => option.isCancel);
+  const cancelButtonIndex = options.findIndex((option) => option.isCancel);
   const destructiveButtonIndex = options.findIndex(
-    option => option.isDestructive
+    (option) => option.isDestructive
   );
 
   return (
@@ -27,10 +27,10 @@ export const ActionSheet: React.FC<ActionSheetProps> = ({
       ref={actionsheetRef}
       title={title}
       tintColor={themeSet.tint}
-      options={options.map(option => option.label)}
+      options={options.map((option) => option.label)}
       cancelButtonIndex={cancelButtonIndex}
       destructiveButtonIndex={destructiveButtonIndex}
-      onPress={index => {
+      onPress={(index) => {
         options[index]?.onPress?.();
         onAction();
       }}

@@ -1,6 +1,6 @@
 import * as React from "react";
 import NativeSegmentedControl from "@react-native-community/segmented-control";
-import { SegmentedControlProps } from "./types"
+import { SegmentedControlProps } from "./types";
 
 export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   options,
@@ -17,10 +17,9 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   return (
     <NativeSegmentedControl
       style={style}
-      values={options.map(option => option.label)}
+      values={options.map((option) => option.label)}
       selectedIndex={selectedIndex}
       onChange={onChange}
     />
   );
 };
-

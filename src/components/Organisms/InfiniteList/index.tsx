@@ -19,17 +19,29 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
   increment,
   actions,
 }) => {
-  const { styles, themeSet } = useStyle(dynamicStyles)
+  const { styles, themeSet } = useStyle(dynamicStyles);
   const [hasFetchedAllItems, setFetchedAllItems] = useState(true);
   const prevItemCount = usePrevious(items.length);
 
-  const startActions = useMemo(() => actions?.filter(action => action.isStart) ?? [], [actions])
-  const endActions = useMemo(() => actions?.filter(action => !action.isStart) ?? [], [actions])
-  const rightOpenValue = useMemo(() => -1 * sizes.listCellActionWidth * endActions.length, [endActions])
-  const leftOpenValue = useMemo(() => sizes.listCellActionWidth * startActions.length, [startActions])
+  const startActions = useMemo(
+    () => actions?.filter((action) => action.isStart) ?? [],
+    [actions]
+  );
+  const endActions = useMemo(
+    () => actions?.filter((action) => !action.isStart) ?? [],
+    [actions]
+  );
+  const rightOpenValue = useMemo(
+    () => -1 * sizes.listCellActionWidth * endActions.length,
+    [endActions]
+  );
+  const leftOpenValue = useMemo(
+    () => sizes.listCellActionWidth * startActions.length,
+    [startActions]
+  );
 
   useEffect(() => {
-    setFetchedAllItems(prevItemCount === items.length)
+    setFetchedAllItems(prevItemCount === items.length);
   }, [items.length]);
 
   const onRenderItem = ({
@@ -61,7 +73,7 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
   };
 
   const renderHiddenItem = ({ item }: { item: IListCellItem }) => {
-    return <ListCellActions item={item} actions={actions ?? []} />
+    return <ListCellActions item={item} actions={actions ?? []} />;
   };
 
   const hasItems = items && items.length > 0;
@@ -74,7 +86,7 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
       style={styles.infiniteList}
       data={items}
       renderItem={onRenderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
       onEndReached={onEndReached}
       onEndReachedThreshold={0}
       ListFooterComponent={LoadingFooter}

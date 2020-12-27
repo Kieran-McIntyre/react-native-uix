@@ -1,7 +1,7 @@
 import * as React from "react";
 import { TouchableHighlight, View, Text } from "react-native";
 import { Row } from "../../atoms/Row";
-import { ListCellProps } from "./types"
+import { ListCellProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
@@ -15,7 +15,7 @@ export const ListCell: React.FC<ListCellProps> = ({ item, index }) => {
     renderItemStart,
   } = item;
 
-  const { styles, themeSet } = useStyle(dynamicStyles)
+  const { styles, themeSet } = useStyle(dynamicStyles);
 
   return (
     <TouchableHighlight

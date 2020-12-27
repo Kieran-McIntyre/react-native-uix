@@ -43,9 +43,11 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   }, []);
 
   const filteredMeta = useMemo(() => {
-    if (!meta) return [];
+    if (!meta) {
+      return [];
+    }
 
-    return meta.filter(item => !!item.label);
+    return meta.filter((item) => !!item.label);
   }, [meta]);
 
   const hasMeta = filteredMeta.length > 0;

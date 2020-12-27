@@ -13,7 +13,7 @@ export const SectionUpNext = ({ navigation }) => {
     return (
       <TouchableHighlight
         underlayColor={themeSet.tertiarySystemBackground}
-        onPress={() => { }}
+        onPress={() => {}}
       >
         <>
           <View style={styles.content}>
@@ -49,7 +49,7 @@ export const SectionUpNext = ({ navigation }) => {
     <Section
       title={"Up Next"}
       emptyStateMessage={"Your next booking will appear here."}
-    //   shouldShowEmptyState={!upcomingEvent}
+      //   shouldShowEmptyState={!upcomingEvent}
     >
       <EventContent />
     </Section>

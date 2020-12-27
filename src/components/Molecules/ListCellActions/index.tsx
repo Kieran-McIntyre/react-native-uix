@@ -3,8 +3,8 @@ import { useMemo } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import sizes from "../../../values/sizes";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { ListCellActionsProps, ActionItemProps, ItemStyle } from "./types"
-import { dynamicStyles } from "./styles"
+import { ListCellActionsProps, ActionItemProps, ItemStyle } from "./types";
+import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
 const ActionItem: React.FC<ActionItemProps> = ({
@@ -13,7 +13,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
   action,
   index,
   styles,
-  themeSet
+  themeSet,
 }) => {
   const style = useMemo(() => {
     const offset = sizes.listCellActionWidth * index;
@@ -28,7 +28,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
 
     itemStyle.right = offset;
     return [styles.action, itemStyle];
-  }, [])
+  }, []);
 
   const onPressAction = () => {
     action.onPress?.(item);
@@ -50,7 +50,7 @@ const ActionItem: React.FC<ActionItemProps> = ({
 export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
   const startActions = actions?.filter((action) => action.isStart);
   const endActions = actions?.filter((action) => !action.isStart);
-  const { styles, themeSet } = useStyle(dynamicStyles)
+  const { styles, themeSet } = useStyle(dynamicStyles);
 
   return (
     <View style={styles.actionContainer}>

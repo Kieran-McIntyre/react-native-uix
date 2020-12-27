@@ -20,4 +20,3 @@ export const dynamicStyles = (
     borderColor: theme.separator,
   },
 });
-

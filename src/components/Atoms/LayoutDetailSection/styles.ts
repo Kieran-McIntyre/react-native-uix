@@ -25,4 +25,4 @@ export const dynamicStyles = (
     borderTopColor: theme.separator,
     padding: 20,
   },
-})
+});

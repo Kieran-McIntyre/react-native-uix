@@ -9,4 +9,3 @@ export interface IListCellItemAction {
   onPress: (item: IListCellItem) => void;
   isStart?: boolean;
 }
-

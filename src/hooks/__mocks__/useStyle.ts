@@ -1,11 +1,11 @@
-import { DEFAULT_THEMES } from "../../theme"
+import { DEFAULT_THEMES } from "../../theme";
 
 export const useStyle = jest.fn().mockImplementation((dynamicStyles) => {
-    const styles = dynamicStyles ? dynamicStyles(DEFAULT_THEMES.light) : {}
+  const styles = dynamicStyles ? dynamicStyles(DEFAULT_THEMES.light) : {};
 
-    return {
-        styles,
-        colorScheme: "light",
-        themeSet: DEFAULT_THEMES
-    }
-})
+  return {
+    styles,
+    colorScheme: "light",
+    themeSet: DEFAULT_THEMES,
+  };
+});

@@ -7,7 +7,7 @@ import {
 import { useColorScheme, ColorSchemeName } from "react-native";
 import { ThemeContext } from "../../../theme";
 import { ITheme } from "../../../interfaces/IThemeSchema";
-import { ThemeProviderProps } from "./types"
+import { ThemeProviderProps } from "./types";
 
 const DEFAULT_THEME: any = {
   light: {},
@@ -24,7 +24,10 @@ const getNavigationTheme = (scheme: ColorSchemeName, theme: ITheme) => {
   return navigationTheme;
 };
 
-export const ThemeProvider = ({ children, theme = DEFAULT_THEME }: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  children,
+  theme = DEFAULT_THEME,
+}: ThemeProviderProps) => {
   const scheme = useColorScheme();
   const navigationTheme = getNavigationTheme(scheme, theme);
 

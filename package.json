@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "test": "jest --config jest.config.js",
-    "lint": "eslint",
+    "lint": "eslint --ext 'js,jsx,ts,tsx' .",
     "build": "rm -rf dist && tsc"
   },
   "repository": {
@@ -77,11 +77,14 @@
     "@types/react-native": "^0.62.2",
     "@types/react-native-actionsheet": "^2.4.1",
     "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
     "babel-jest": "^26.6.3",
     "date-fns": "^2.9.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
+    "eslint": "^7.16.0",
     "jest": "^25.3.0",
     "jest-enzyme": "^7.1.2",
     "jsdom": "^16.4.0",

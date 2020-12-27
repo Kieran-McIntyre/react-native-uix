@@ -21,6 +21,6 @@ export interface IThemeSchema {
 }
 
 export interface ITheme {
-  light: IThemeSchema,
-  dark: IThemeSchema,
+  light: IThemeSchema;
+  dark: IThemeSchema;
 }

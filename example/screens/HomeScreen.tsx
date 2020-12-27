@@ -62,7 +62,7 @@ const HomeScreen = ({ navigation }) => {
       count: 3,
       iconBackgroundColor: themeSet.yellow,
       icon: faUniversity,
-      onPress: () => { },
+      onPress: () => {},
     },
     {
       id: 3,
@@ -70,7 +70,7 @@ const HomeScreen = ({ navigation }) => {
       count: 0,
       iconBackgroundColor: themeSet.green,
       icon: faLeaf,
-      onPress: () => { },
+      onPress: () => {},
     },
   ];
 
@@ -78,23 +78,21 @@ const HomeScreen = ({ navigation }) => {
     <LayoutTopLevelScreen
       title="Home"
       navigation={navigation}
-      onSearch={() => { }}
-      onAdd={() => { }}
+      onSearch={() => {}}
+      onAdd={() => {}}
       segmentedControlOptions={[
         {
           id: 1,
           label: "Test",
-          onPress: () => { }
+          onPress: () => {},
         },
         {
           id: 2,
           label: "Test",
-          onPress: () => { }
+          onPress: () => {},
         },
       ]}
-      moreOptions={[
-        { label: "Label" }
-      ]}
+      moreOptions={[{ label: "Label" }]}
     >
       <SectionUpNext navigation={navigation} />
       <GroupedTable title="Places" items={items} />

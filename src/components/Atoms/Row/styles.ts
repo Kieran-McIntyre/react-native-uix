@@ -1,20 +1,20 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    row: {
-        flexDirection: "row",
-        alignItems: "center",
-    },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
 
-    centred: {
-        justifyContent: "center",
-    },
+  centred: {
+    justifyContent: "center",
+  },
 
-    between: {
-        justifyContent: "space-between",
-    },
+  between: {
+    justifyContent: "space-between",
+  },
 
-    around: {
-        justifyContent: "space-around",
-    },
+  around: {
+    justifyContent: "space-around",
+  },
 });
