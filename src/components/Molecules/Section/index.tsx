@@ -1,6 +1,5 @@
 import * as React from "react";
 import { View, Text } from "react-native";
-// import { H3 } from "../../atoms/H3";
 import { Label } from "../../atoms/Label";
 import { SectionProps } from "./types";
 import { dynamicStyles } from "./styles";
@@ -12,12 +11,13 @@ export const Section: React.FC<SectionProps> = ({
   emptyStateMessage,
   shouldShowEmptyState,
   style,
+  ...otherProps
 }) => {
   const shouldRenderEmptyState = !!emptyStateMessage && shouldShowEmptyState;
   const { styles } = useStyle(dynamicStyles);
 
   return (
-    <View style={[styles.container, style]}>
+    <View {...otherProps} style={[styles.container, style]}>
       {!!title && (
         <Label md style={styles.title}>
           {title}

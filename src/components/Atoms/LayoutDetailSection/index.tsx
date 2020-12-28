@@ -9,11 +9,12 @@ export const LayoutDetailSection: React.FC<LayoutDetailSectionProps> = ({
   children,
   style,
   title,
+  ...otherProps
 }) => {
   const { styles } = useStyle(dynamicStyles);
 
   return (
-    <View style={[styles.layoutDetailSection, style]}>
+    <View {...otherProps} style={[styles.layoutDetailSection, style]}>
       {title && (
         <Label secondary style={styles.layoutDetailSectionTitle}>
           {title}

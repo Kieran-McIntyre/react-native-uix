@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, TouchableHighlight } from "react-native";
+import { View, TouchableHighlight } from "react-native";
 import { Row } from "../../atoms/Row";
 import { DisclosureIcon } from "../../atoms/DisclosureIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -9,7 +9,11 @@ import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 import { Label } from "../../atoms/Label";
 
-export const TableRow: React.FC<TableRowProps> = ({ item, index }) => {
+export const TableRow: React.FC<TableRowProps> = ({
+  item,
+  index,
+  ...otherProps
+}) => {
   const { icon, iconBackgroundColor, label, count, onPress, id } = item;
   const hasCount = count != null;
 
@@ -17,6 +21,8 @@ export const TableRow: React.FC<TableRowProps> = ({ item, index }) => {
 
   return (
     <TouchableHighlight
+      {...otherProps}
+      delayPressIn={0}
       underlayColor={themeSet.tertiarySystemBackground}
       onPress={onPress}
       key={id}

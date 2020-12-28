@@ -11,6 +11,8 @@ export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
   label,
   numberOfButtons = 1,
   index,
+  onPress,
+  ...otherProps
 }) => {
   const { styles, themeSet } = useStyle(dynamicStyles);
 
@@ -27,9 +29,11 @@ export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
   return (
     <View style={[styles.container, buttonStyle]}>
       <TouchableHighlight
+        {...otherProps}
+        delayPressIn={0}
         underlayColor={themeSet.tertiarySystemBackground}
         style={styles.buttonPrimary}
-        onPress={() => {}}
+        onPress={onPress}
       >
         <View style={styles.buttonPrimaryContent}>
           <Text style={styles.buttonPrimaryLabel}>{label}</Text>

@@ -7,9 +7,10 @@ import { styles } from "./styles";
 export const DisclosureIcon: React.FC<DisclosureIconProps> = ({
   icon,
   backgroundColor,
+  ...otherProps
 }) => {
   return (
-    <View style={[styles.icon, { backgroundColor }]}>
+    <View {...otherProps} style={[styles.icon, { backgroundColor }]}>
       <FontAwesomeIcon icon={icon} color="white" />
     </View>
   );

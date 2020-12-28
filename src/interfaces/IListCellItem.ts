@@ -5,5 +5,6 @@ export interface IListCellItem {
   description?: string;
   detail?: string;
   onPress: () => void;
+  // eslint-disable-next-line no-undef
   renderItemStart?: () => JSX.Element;
 }

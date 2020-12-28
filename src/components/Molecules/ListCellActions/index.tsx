@@ -47,13 +47,17 @@ const ActionItem: React.FC<ActionItemProps> = ({
   );
 };
 
-export const ListCellActions = ({ item, actions }: ListCellActionsProps) => {
+export const ListCellActions = ({
+  item,
+  actions,
+  ...otherProps
+}: ListCellActionsProps) => {
   const startActions = actions?.filter((action) => action.isStart);
   const endActions = actions?.filter((action) => !action.isStart);
   const { styles, themeSet } = useStyle(dynamicStyles);
 
   return (
-    <View style={styles.actionContainer}>
+    <View {...otherProps} style={styles.actionContainer}>
       {startActions.map((action, i) => (
         <ActionItem
           key={action.id}

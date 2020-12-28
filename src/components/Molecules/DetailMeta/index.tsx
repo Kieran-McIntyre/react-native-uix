@@ -6,11 +6,14 @@ import { DetailMetaProps } from "./types";
 import { styles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
-export const DetailMeta: React.FC<DetailMetaProps> = ({ meta }) => {
+export const DetailMeta: React.FC<DetailMetaProps> = ({
+  meta,
+  ...otherProps
+}) => {
   const { themeSet } = useStyle();
 
   return (
-    <Row style={styles.container}>
+    <Row {...otherProps} style={styles.container}>
       <FontAwesomeIcon icon={meta.icon} color={themeSet.textSecondary} />
       <Label secondary style={styles.label}>
         {meta.label}

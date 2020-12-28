@@ -25,6 +25,7 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   meta,
   moreOptions,
   tableItems = [],
+  ...otherProps
 }) => {
   const { styles } = useStyle(dynamicStyles);
 
@@ -54,7 +55,7 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   const hasTableItems = !!tableItems && tableItems.length > 0;
 
   return (
-    <Screen>
+    <Screen {...otherProps}>
       <ScrollView>
         <View>
           <View style={[styles.container, styles.topContainer]}>
@@ -75,11 +76,21 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
             )}
 
             <Row style={styles.actionsContainer}>
-              <ButtonPrimary label={"Log Time"} index={0} numberOfButtons={2} />
+              <ButtonPrimary
+                label={"Log Time"}
+                index={0}
+                numberOfButtons={2}
+                onPress={() => {
+                  console.warn("PRESS 1");
+                }}
+              />
               <ButtonPrimary
                 label={"Mark Complete"}
                 index={1}
                 numberOfButtons={2}
+                onPress={() => {
+                  console.warn("PRESS 1");
+                }}
               />
             </Row>
           </View>

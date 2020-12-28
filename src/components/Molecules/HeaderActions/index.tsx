@@ -15,12 +15,13 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onAdd,
   renderCustomAction,
   moreOptions,
+  ...otherProps
 }) => {
   const { themeSet } = useStyle();
   const [isShowingMoreOptions, setShowMoreOptions] = useState(false);
 
   return (
-    <Row style={styles.actionContainer}>
+    <Row {...otherProps} style={styles.actionContainer}>
       {moreOptions && (
         <TouchableOpacity
           onPress={() => setShowMoreOptions(true)}

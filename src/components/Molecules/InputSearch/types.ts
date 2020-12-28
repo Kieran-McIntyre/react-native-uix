@@ -1,8 +1,7 @@
-import { ViewStyle } from "react-native";
+import { TextInputProps, ViewStyle } from "react-native";
 
-export interface InputSearchProps {
+export interface InputSearchProps extends TextInputProps {
   style?: ViewStyle;
-  placeholder?: string;
   onChangeText?: (searchValue: string) => void;
   onFocus?: () => void;
   onBlur?: () => void;

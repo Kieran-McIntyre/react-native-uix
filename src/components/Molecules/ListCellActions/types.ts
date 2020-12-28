@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, ViewProps } from "react-native";
 import { IListCellItem } from "../../../interfaces/IListCellItem";
 import { IListCellItemAction } from "../../../interfaces/IListCellItemAction";
 import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 
-export interface ListCellActionsProps {
+export interface ListCellActionsProps extends ViewProps {
   item: IListCellItem;
   actions: IListCellItemAction[];
 }

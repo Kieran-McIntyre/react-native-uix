@@ -1,9 +1,7 @@
-import { ViewStyle } from "react-native";
+import { TouchableOpacityProps, ViewStyle } from "react-native";
 
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps {
   title: string;
-  onPress: () => void;
-  disabled?: boolean;
   submit?: boolean;
   style?: ViewStyle;
 }

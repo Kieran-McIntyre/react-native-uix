@@ -6,6 +6,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   options,
   style,
   selectedIndex = 0,
+  ...otherProps
 }) => {
   const onChange = (event: any) => {
     const { selectedSegmentIndex } = event.nativeEvent;
@@ -16,6 +17,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
 
   return (
     <NativeSegmentedControl
+      {...otherProps}
       style={style}
       values={options.map((option) => option.label)}
       selectedIndex={selectedIndex}

@@ -18,6 +18,7 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
   initialCount,
   increment,
   actions,
+  ...otherProps
 }) => {
   const { styles, themeSet } = useStyle(dynamicStyles);
   const [hasFetchedAllItems, setFetchedAllItems] = useState(true);
@@ -83,6 +84,7 @@ export const InfiniteList: React.FC<InfiniteListProps> = ({
 
   return (
     <SwipeListView
+      {...otherProps}
       style={styles.infiniteList}
       data={items}
       renderItem={onRenderItem}

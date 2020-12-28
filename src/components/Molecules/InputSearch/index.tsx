@@ -11,10 +11,10 @@ import { useStyle } from "../../../hooks/useStyle";
 
 export const InputSearch: React.FC<InputSearchProps> = ({
   style,
-  placeholder,
   onChangeText,
   onFocus,
   onBlur,
+  ...otherProps
 }) => {
   const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef(null);
@@ -74,7 +74,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
 
           <TextInput
             ref={inputRef}
-            placeholder={placeholder}
+            {...otherProps}
             placeholderTextColor={themeSet.textTertiary}
             onFocus={onFocusInput}
             onBlur={onBlurInput}

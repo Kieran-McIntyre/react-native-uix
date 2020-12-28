@@ -2,14 +2,13 @@ import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMor
 import { IDetailMeta } from "../../../interfaces/IDetailMeta";
 import { IGroupedTableItem } from "../../../interfaces/IGroupedTableItem";
 import { NavigationProp } from "@react-navigation/native";
+import { ViewProps } from "react-native";
 
-export interface LayoutDetailScreenProps {
+export interface LayoutDetailScreenProps extends ViewProps {
   navigation: NavigationProp<any>;
-  children?: React.ReactNode;
   onEdit?: () => void;
   onAdd?: () => void;
   moreOptions?: IHeaderActionsMoreOptions[];
-
   caption?: string;
   title: string;
   meta?: IDetailMeta[];

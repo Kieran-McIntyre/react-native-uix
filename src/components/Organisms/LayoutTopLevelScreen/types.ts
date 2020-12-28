@@ -1,11 +1,14 @@
+import { ReactNode } from "react";
 import { ISegmentedControlOption } from "../../../interfaces/ISegmentedControlOption";
 import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMoreOptions";
 import { NavigationProp } from "@react-navigation/native";
+import { Animated, SectionListProps } from "react-native";
 
-export interface LayoutTopLevelScreenProps {
+export interface LayoutTopLevelScreenProps
+  extends Animated.WithAnimatedValue<SectionListProps<any>> {
   title: string;
   navigation: NavigationProp<any>;
-  children?: React.ReactNode;
+  children?: ReactNode;
   segmentedControlOptions?: ISegmentedControlOption[];
   onEdit?: () => void;
   onAdd?: () => void;

@@ -5,7 +5,11 @@ import { ListCellProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
-export const ListCell: React.FC<ListCellProps> = ({ item, index }) => {
+export const ListCell: React.FC<ListCellProps> = ({
+  item,
+  index,
+  ...otherProps
+}) => {
   const {
     description,
     title,
@@ -20,13 +24,15 @@ export const ListCell: React.FC<ListCellProps> = ({ item, index }) => {
   return (
     <TouchableHighlight
       onPress={onPress}
+      delayPressIn={0}
       underlayColor={themeSet.tertiarySystemBackground}
       key={item.id}
+      style={styles.touchableWrapper}
     >
-      <View style={styles.tableRow}>
+      <View {...otherProps} style={styles.tableRow}>
         {index > 0 && <View style={styles.separatorLine} />}
 
-        <Row style={styles.wrapper} between>
+        <Row style={styles.contentWrapper} between>
           {!!renderItemStart && (
             <Row centred style={styles.renderItemStartContent}>
               {renderItemStart}

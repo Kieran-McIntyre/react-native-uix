@@ -30,6 +30,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   onAdd,
   moreOptions,
   renderCustomHeaderAction,
+  ...otherProps
 }) => {
   const [scrollYAnim] = useState(new Animated.Value(0));
   const [scrollYVal, setScrollYVal] = useState(0);
@@ -73,7 +74,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   };
 
   useEffect(() => {
-    setNavigationStyle();
+    // setNavigationStyle();
 
     navigation.setOptions({
       headerRight: () => (
@@ -177,6 +178,8 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
     return (
       <Screen>
         <AnimatedSectionList
+          testID="sectionList"
+          {...otherProps}
           ref={sectionListRef}
           sections={sectionData}
           renderSectionHeader={StickyHeader}

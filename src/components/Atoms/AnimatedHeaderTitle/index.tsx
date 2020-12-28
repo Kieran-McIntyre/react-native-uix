@@ -7,8 +7,13 @@ import { useStyle } from "../../../hooks/useStyle";
 export const AnimatedHeaderTitle: React.FC<AnimatedHeaderTitleProps> = ({
   title,
   style,
+  ...textProps
 }) => {
   const { styles } = useStyle(dynamicStyles);
 
-  return <Animated.Text style={[styles.title, style]}>{title}</Animated.Text>;
+  return (
+    <Animated.Text {...textProps} style={[styles.title, style]}>
+      {title}
+    </Animated.Text>
+  );
 };

@@ -4,11 +4,13 @@ import { StyleSheet } from "react-native";
 export const dynamicStyles = (
   theme: IThemeSchema
 ): StyleSheet.NamedStyles<any> => ({
-  tableRow: {
-    flexDirection: "column",
+  touchableWrapper: {
     backgroundColor: theme.secondarySystemBackground,
   },
-  wrapper: {
+  tableRow: {
+    flexDirection: "column",
+  },
+  contentWrapper: {
     paddingHorizontal: 20,
     paddingVertical: 12,
     alignItems: "flex-start",

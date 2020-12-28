@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { mapPropsToStyle } from "../../../utils/mapPropsToStyle";
 
 export const Row: React.FC<RowProps> = (props) => {
-  const { style, children } = props;
+  const { style, children, ...otherProps } = props;
 
   const mappedStyles = useMemo(() => mapPropsToStyle(props, styles), [
     styles,
@@ -14,7 +14,11 @@ export const Row: React.FC<RowProps> = (props) => {
   ]);
 
   return (
-    <View testID="row" style={[styles.row, mappedStyles, style]}>
+    <View
+      testID="row"
+      {...otherProps}
+      style={[styles.row, mappedStyles, style]}
+    >
       {children}
     </View>
   );
