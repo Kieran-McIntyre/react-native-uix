@@ -6,11 +6,10 @@ import ReactNative from "react-native";
 jest.mock("@fortawesome/react-native-fontawesome", () => ({
   FontAwesomeIcon: () => <ReactNative.View />,
 }));
-
 jest.mock("../../../hooks/useStyle");
 jest.mock("../../atoms/SegmentedControl", () => {
   return {
-    SegmentedControl: () => <ReactNative.View />,
+    SegmentedControl: () => <ReactNative.View testID="segmentedControl" />,
   };
 });
 
@@ -116,11 +115,65 @@ describe("Organisms - LayoutTopLevelScreen", () => {
     });
   });
 
-  it("has provided onSearch > should render search bar", () => {});
+  it("has provided onSearch > should render search bar", () => {
+    // Arrange.
+    const onSearchMockFn = jest.fn();
 
-  it("has NOT provided onSearch > should NOT render search bar", () => {});
+    const { getByTestId, queryByTestId } = render(
+      <LayoutTopLevelScreen
+        title={title}
+        navigation={navigation}
+        onSearch={onSearchMockFn}
+      />
+    );
 
-  it("has provided control options > should render segmented control ", () => {});
+    const searchBarElement = getByTestId("inputSearch");
 
-  it("has NOT provided control options > should NOT render segmented control ", () => {});
+    // Assert.
+    expect(queryByTestId("inputSearch")).toBe(searchBarElement);
+  });
+
+  it("has NOT provided onSearch > should NOT render search bar", () => {
+    // Arrange.
+    const { queryByTestId } = render(
+      <LayoutTopLevelScreen title={title} navigation={navigation} />
+    );
+
+    // Assert.
+    expect(queryByTestId("inputSearch")).toBeNull();
+  });
+
+  it("has provided control options > should render segmented control ", () => {
+    // Arrange.
+    const options = [
+      {
+        id: 1,
+        label: "A segmented control option",
+        onPress: jest.fn(),
+      },
+    ];
+
+    const { getByTestId, queryByTestId } = render(
+      <LayoutTopLevelScreen
+        title={title}
+        navigation={navigation}
+        segmentedControlOptions={options}
+      />
+    );
+
+    const segmentedControlElement = getByTestId("segmentedControl");
+
+    // Assert.
+    expect(queryByTestId("segmentedControl")).toBe(segmentedControlElement);
+  });
+
+  it("has NOT provided control options > should NOT render segmented control", () => {
+    // Arrange.
+    const { queryByTestId } = render(
+      <LayoutTopLevelScreen title={title} navigation={navigation} />
+    );
+
+    // Assert.
+    expect(queryByTestId("segmentedControl")).toBeNull();
+  });
 });

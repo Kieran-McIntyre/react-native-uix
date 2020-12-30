@@ -5,7 +5,7 @@ import toJson from "enzyme-to-json";
 
 jest.mock("../../../hooks/useStyle");
 
-describe("Atoms - Title", () => {
+describe("Atoms - Label", () => {
   it("should render content", () => {
     // Arrange.
     const expectedText = "Hello World!";

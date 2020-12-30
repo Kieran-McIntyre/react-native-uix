@@ -17,12 +17,13 @@ export interface LayoutTopLevelScreenProps
   moreOptions?: IHeaderActionsMoreOptions[];
 }
 
-export enum contexts {
-  FLUID_HEADER = "fluid",
-  STICKY_HEADER = "sticky",
-}
-
 export interface SectionData {
   context: contexts;
   data: [{ key: number; el: () => JSX.Element }];
+}
+
+// eslint-disable-next-line no-shadow
+export enum contexts {
+  FLUID_HEADER = "fluid",
+  STICKY_HEADER = "sticky",
 }

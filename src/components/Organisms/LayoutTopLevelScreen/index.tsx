@@ -142,6 +142,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
           {onSearch && (
             <View style={styles.inputSearch}>
               <InputSearch
+                testID="inputSearch"
                 onFocus={() => onScrollToSection(1)}
                 onBlur={() => onScrollToSection(0)}
                 placeholder={"Search"}
@@ -152,6 +153,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
 
           {segmentedControlOptions && (
             <SegmentedControl
+              testID="segmentedControl"
               style={onSearch && styles.segmentedControlWithSearch}
               options={segmentedControlOptions}
             />

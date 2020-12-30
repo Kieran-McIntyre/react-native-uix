@@ -15,6 +15,7 @@ export const DetailMeta: React.FC<DetailMetaProps> = ({
   return (
     <Row {...otherProps} style={styles.container}>
       <FontAwesomeIcon icon={meta.icon} color={themeSet.textSecondary} />
+
       <Label secondary style={styles.label}>
         {meta.label}
       </Label>

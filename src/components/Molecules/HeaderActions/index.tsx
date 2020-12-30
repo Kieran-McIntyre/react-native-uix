@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useState } from "react";
+import { TouchableOpacity } from "react-native";
 import { Row } from "../../atoms/Row";
 import { Button } from "../../atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { ActionSheet } from "../../atoms/ActionSheet";
 import { HeaderActionsProps } from "./types";
 import { styles } from "./styles";
@@ -24,6 +24,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
     <Row {...otherProps} style={styles.actionContainer}>
       {moreOptions && (
         <TouchableOpacity
+          testID={"moreOptionsButton"}
           onPress={() => setShowMoreOptions(true)}
           style={styles.button}
         >
@@ -32,7 +33,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
       )}
 
       {onAdd && (
-        <TouchableOpacity onPress={onAdd}>
+        <TouchableOpacity testID="addButton" onPress={onAdd}>
           <FontAwesomeIcon
             icon={faPlusCircle}
             color={themeSet.tint}
@@ -41,7 +42,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         </TouchableOpacity>
       )}
 
-      {onEdit && <Button title="Edit" onPress={onEdit} />}
+      {onEdit && <Button testID="editButton" title="Edit" onPress={onEdit} />}
 
       {renderCustomAction && renderCustomAction()}
 

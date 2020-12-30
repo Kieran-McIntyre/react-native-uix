@@ -11,7 +11,7 @@ describe("Atoms - Avatar", () => {
       const wrapper = getByTestId("typeImage");
 
       // Assert.
-      expect(getByTestId("typeImage")).toBe(wrapper);
+      expect(queryByTestId("typeImage")).toBe(wrapper);
       expect(queryByTestId("typeInitials")).toBeNull();
     });
   });
@@ -28,7 +28,7 @@ describe("Atoms - Avatar", () => {
       const wrapper = getByTestId("typeInitials");
 
       // Assert.
-      expect(getByTestId("typeInitials")).toBe(wrapper);
+      expect(queryByTestId("typeInitials")).toBe(wrapper);
       expect(queryByTestId("typeImage")).toBeNull();
     });
 

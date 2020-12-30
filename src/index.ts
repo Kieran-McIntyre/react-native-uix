@@ -56,8 +56,11 @@ export { LayoutTopLevelScreenProps } from "./components/organisms/LayoutTopLevel
 export { LayoutDetailScreen } from "./components/organisms/LayoutDetailScreen";
 export { LayoutDetailScreenProps } from "./components/organisms/LayoutDetailScreen/types";
 
-export { InfiniteList } from "./components/organisms/InfiniteList";
-export { InfiniteListProps } from "./components/organisms/InfiniteList/types";
+export { InfiniteFlatList } from "./components/organisms/InfiniteFlatList";
+export { InfiniteFlatListProps } from "./components/organisms/InfiniteFlatList/types";
+
+export { InfiniteSwipeListView } from "./components/organisms/InfiniteSwipeListView";
+export { InfiniteSwipeListViewProps } from "./components/organisms/InfiniteSwipeListView/types";
 
 // # types
 export { IGroupedTableItem } from "./interfaces/IGroupedTableItem";

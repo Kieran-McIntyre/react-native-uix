@@ -16,7 +16,11 @@ export const LayoutDetailSection: React.FC<LayoutDetailSectionProps> = ({
   return (
     <View {...otherProps} style={[styles.layoutDetailSection, style]}>
       {title && (
-        <Label secondary style={styles.layoutDetailSectionTitle}>
+        <Label
+          testID={"layoutDetailSection__label"}
+          secondary
+          style={styles.layoutDetailSectionTitle}
+        >
           {title}
         </Label>
       )}

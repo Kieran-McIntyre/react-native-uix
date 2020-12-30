@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  InfiniteList,
+  InfiniteSwipeListView,
   LayoutTopLevelScreen,
   IListCellItem,
   IListCellItemAction,
@@ -31,13 +31,13 @@ export const ListScreen = ({ navigation }) => {
       label: "Delete",
       iconName: faTrash,
       backgroundColor: themeSet.red,
-      onPress: (item: IListCellItem) => {},
+      onPress: (_item: IListCellItem) => {},
     },
   ];
 
   return (
     <LayoutTopLevelScreen title={"Restaraunts"} navigation={navigation}>
-      <InfiniteList
+      <InfiniteSwipeListView
         items={items}
         initialCount={itemCount}
         increment={5}

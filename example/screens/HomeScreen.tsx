@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   LayoutTopLevelScreen,
   GroupedTable,

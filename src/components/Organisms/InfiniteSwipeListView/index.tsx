@@ -8,11 +8,11 @@ import { usePrevious } from "../../../hooks/usePrevious";
 import { SwipeListView } from "react-native-swipe-list-view";
 import sizes from "../../../values/sizes";
 
-import { InfiniteListProps } from "./types";
+import { InfiniteSwipeListViewProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
-export const InfiniteList: React.FC<InfiniteListProps> = ({
+export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
   items,
   onNewCount,
   initialCount,
