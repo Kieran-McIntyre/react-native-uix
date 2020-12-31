@@ -27,3 +27,10 @@
 "react-native-swipe-list-view": "^3.2.4",
 "date-fns": "^2.9.0"
 ```
+
+## Quick Installation
+From the terminal, in your project directory run:
+
+```bash
+bash node_modules/react-native-ios-ui/install.sh
+```
