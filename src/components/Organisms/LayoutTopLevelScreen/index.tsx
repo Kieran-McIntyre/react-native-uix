@@ -16,6 +16,7 @@ import { useStyle } from "../../../hooks/useStyle";
 import { SegmentedControl } from "../../atoms/SegmentedControl";
 import { LayoutTopLevelScreenProps, SectionData, contexts } from "./types";
 import { dynamicStyles } from "./styles";
+import { PLACEHOLDER_SEARCH } from "../../../values/consts";
 
 const AnimatedSectionList = Animated.createAnimatedComponent(SectionList);
 const titleContainerHeight = 44;
@@ -30,6 +31,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   onAdd,
   moreOptions,
   renderCustomHeaderAction,
+  searchPlaceholder = PLACEHOLDER_SEARCH,
   ...otherProps
 }) => {
   const [scrollYAnim] = useState(new Animated.Value(0));
@@ -145,7 +147,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
                 testID="inputSearch"
                 onFocus={() => onScrollToSection(1)}
                 onBlur={() => onScrollToSection(0)}
-                placeholder={"Search"}
+                placeholder={searchPlaceholder}
                 onChangeText={onSearch}
               />
             </View>

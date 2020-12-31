@@ -13,8 +13,8 @@ import {
   faUniversity,
   faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
-
 import { SectionUpNext } from "../components/UpNext";
+// import { InputSearch } from "../components/InputSearch";
 import { useStyle } from "react-native-ios-ui";
 
 const HomeScreen = ({ navigation }) => {
@@ -94,6 +94,9 @@ const HomeScreen = ({ navigation }) => {
       ]}
       moreOptions={[{ label: "Label" }]}
     >
+      {/* <View style={{ paddingHorizontal: 20 }}>
+        <InputSearch />
+      </View> */}
       <SectionUpNext navigation={navigation} />
       <GroupedTable title="Places" items={items} />
     </LayoutTopLevelScreen>

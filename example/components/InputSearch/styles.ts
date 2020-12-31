@@ -1,5 +1,5 @@
-import { IThemeSchema } from "../../../interfaces/IThemeSchema";
 import { StyleSheet } from "react-native";
+import { IThemeSchema } from "react-native-ios-ui";
 
 export const dynamicStyles = (
   theme: IThemeSchema

@@ -1,20 +1,17 @@
 import * as React from "react";
 import { useState, useRef } from "react";
 import {
-  Animated,
-  Easing,
   TouchableOpacity,
   TextInput,
+  Animated,
+  Easing,
   LayoutChangeEvent,
 } from "react-native";
-import { Row } from "../../atoms/Row";
-import { Button } from "../../atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { InputSearchProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { useStyle } from "../../../hooks/useStyle";
-import { LABEL_CANCEL } from "../../../values/consts";
+import { Row, Button, useStyle } from "react-native-ios-ui";
 
 const TRANSITION_SPEED = 250;
 
@@ -168,7 +165,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
         ]}
         onLayout={onLayout}
       >
-        <Button style={styles.button} title={LABEL_CANCEL} onPress={onCancel} />
+        <Button style={styles.button} title="Cancel" onPress={onCancel} />
       </Animated.View>
     </Row>
   );

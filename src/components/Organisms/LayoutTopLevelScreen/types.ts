@@ -15,6 +15,7 @@ export interface LayoutTopLevelScreenProps
   onSearch?: () => void;
   renderCustomHeaderAction?: () => JSX.Element;
   moreOptions?: IHeaderActionsMoreOptions[];
+  searchPlaceholder?: string;
 }
 
 export interface SectionData {

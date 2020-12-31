@@ -12,6 +12,8 @@ import { InfiniteSwipeListViewProps } from "./types";
 import { dynamicStyles } from "./styles";
 import { useStyle } from "../../../hooks/useStyle";
 
+const OPEN_VALUE_MULTIPLIER = 1.5;
+
 export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
   items,
   onNewCount,
@@ -92,8 +94,8 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
       onEndReached={onEndReached}
       onEndReachedThreshold={0}
       ListFooterComponent={LoadingFooter}
-      stopLeftSwipe={leftOpenValue * 1.5}
-      stopRightSwipe={rightOpenValue * 1.5}
+      stopLeftSwipe={leftOpenValue * OPEN_VALUE_MULTIPLIER}
+      stopRightSwipe={rightOpenValue * OPEN_VALUE_MULTIPLIER}
       leftOpenValue={leftOpenValue}
       rightOpenValue={rightOpenValue}
       disableRightSwipe={startActions.length === 0}

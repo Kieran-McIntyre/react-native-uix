@@ -9,6 +9,7 @@ import { HeaderActionsProps } from "./types";
 import { styles } from "./styles";
 import { faPlusCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { useStyle } from "../../../hooks/useStyle";
+import { LABEL_EDIT, LABEL_CANCEL } from "../../../values/consts";
 
 export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onEdit,
@@ -24,7 +25,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
     <Row {...otherProps} style={styles.actionContainer}>
       {moreOptions && (
         <TouchableOpacity
-          testID={"moreOptionsButton"}
+          testID="moreOptionsButton"
           onPress={() => setShowMoreOptions(true)}
           style={styles.button}
         >
@@ -42,7 +43,9 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         </TouchableOpacity>
       )}
 
-      {onEdit && <Button testID="editButton" title="Edit" onPress={onEdit} />}
+      {onEdit && (
+        <Button testID="editButton" title={LABEL_EDIT} onPress={onEdit} />
+      )}
 
       {renderCustomAction && renderCustomAction()}
 
@@ -50,7 +53,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         <ActionSheet
           options={[
             ...(moreOptions ?? []),
-            { label: "Cancel", isCancel: true },
+            { label: LABEL_CANCEL, isCancel: true },
           ]}
           onAction={() => setShowMoreOptions(false)}
         />
