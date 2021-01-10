@@ -13,7 +13,7 @@ export interface LayoutTopLevelScreenProps
   onEdit?: () => void;
   onAdd?: () => void;
   onSearch?: () => void;
-  renderCustomHeaderAction?: () => JSX.Element;
+  headerActionChildren?: () => JSX.Element;
   moreOptions?: IHeaderActionsMoreOptions[];
   searchPlaceholder?: string;
 }

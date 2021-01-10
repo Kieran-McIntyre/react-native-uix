@@ -30,7 +30,7 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
   onEdit,
   onAdd,
   moreOptions,
-  renderCustomHeaderAction,
+  headerActionChildren,
   searchPlaceholder = PLACEHOLDER_SEARCH,
   ...otherProps
 }) => {
@@ -80,12 +80,9 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
 
     navigation.setOptions({
       headerRight: () => (
-        <HeaderActions
-          onAdd={onAdd}
-          onEdit={onEdit}
-          moreOptions={moreOptions}
-          renderCustomAction={renderCustomHeaderAction}
-        />
+        <HeaderActions onAdd={onAdd} onEdit={onEdit} moreOptions={moreOptions}>
+          {headerActionChildren}
+        </HeaderActions>
       ),
     });
   }, [colorScheme]);

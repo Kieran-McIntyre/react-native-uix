@@ -4,6 +4,5 @@ import { IHeaderActionsMoreOptions } from "../../../interfaces/IHeaderActionsMor
 export interface HeaderActionsProps extends ViewProps {
   onEdit?: () => void;
   onAdd?: () => void;
-  renderCustomAction?: () => JSX.Element;
   moreOptions?: IHeaderActionsMoreOptions[];
 }

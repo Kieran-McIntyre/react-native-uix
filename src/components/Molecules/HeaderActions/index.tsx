@@ -14,7 +14,7 @@ import { LABEL_EDIT, LABEL_CANCEL } from "../../../values/consts";
 export const HeaderActions: React.FC<HeaderActionsProps> = ({
   onEdit,
   onAdd,
-  renderCustomAction,
+  children,
   moreOptions,
   ...otherProps
 }) => {
@@ -47,7 +47,7 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
         <Button testID="editButton" title={LABEL_EDIT} onPress={onEdit} />
       )}
 
-      {renderCustomAction && renderCustomAction()}
+      {children}
 
       {isShowingMoreOptions && (
         <ActionSheet

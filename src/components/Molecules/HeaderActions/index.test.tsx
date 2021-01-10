@@ -151,6 +151,14 @@ describe("Molecules - HeaderActions", () => {
   });
 
   describe("custom actions", () => {
-    it("can render custom header actions", () => {});
+    it("should render children", () => {
+      // Arrange.
+      const child = <View testID={"child"} />;
+      const { getByTestId } = render(<HeaderActions>{child}</HeaderActions>);
+      const renderedChild = getByTestId("child");
+
+      // Assert.
+      expect(getByTestId("child")).toBe(renderedChild);
+    });
   });
 });
