@@ -33,7 +33,6 @@ export const DEFAULT_THEMES: {
   dark: {
     textPrimary: "rgb(255, 255, 255)",
     textSecondary: "#7E7E84",
-    // textSecondary: "rgb(235, 235, 245)",
     textTertiary: "#D3D3DB", // placeholder
     textQuarternary: "pink", // disabled
 

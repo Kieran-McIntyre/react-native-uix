@@ -2,10 +2,10 @@ import React from "react";
 import { Provider as StoreProvider } from "react-redux";
 import store from "./redux";
 import AppNavigation from "./navigation";
-import { ThemeProvider } from "react-native-ios-ui";
+import { ThemeProvider, ITheme } from "react-native-ios-ui";
 
 function App() {
-  const theme: any = {
+  const theme: ITheme = {
     light: {
       tint: "blue",
     },

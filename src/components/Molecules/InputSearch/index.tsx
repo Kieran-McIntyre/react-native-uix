@@ -122,6 +122,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
         onPress={onFocusInput}
       >
         <Animated.View
+          testID={"searchBarWrapper"}
           style={[
             styles.searchBar,
             style,
@@ -138,6 +139,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
 
           <TextInput
             ref={inputRef}
+            testID="textInput"
             {...otherProps}
             placeholderTextColor={themeSet.textTertiary}
             onFocus={onFocusInput}
@@ -148,7 +150,11 @@ export const InputSearch: React.FC<InputSearchProps> = ({
           />
 
           {!!inputValue && (
-            <TouchableOpacity onPress={onClearInput} style={styles.clearIcon}>
+            <TouchableOpacity
+              testID="buttonClear"
+              onPress={onClearInput}
+              style={styles.clearIcon}
+            >
               <FontAwesomeIcon
                 icon={faTimesCircle}
                 color={themeSet.textSecondary}
@@ -159,6 +165,7 @@ export const InputSearch: React.FC<InputSearchProps> = ({
       </TouchableOpacity>
 
       <Animated.View
+        testID="buttonCancelWrapper"
         style={[
           styles.buttonContainer,
           {
@@ -168,7 +175,12 @@ export const InputSearch: React.FC<InputSearchProps> = ({
         ]}
         onLayout={onLayout}
       >
-        <Button style={styles.button} title={LABEL_CANCEL} onPress={onCancel} />
+        <Button
+          testID="buttonCancel"
+          style={styles.button}
+          title={LABEL_CANCEL}
+          onPress={onCancel}
+        />
       </Animated.View>
     </Row>
   );

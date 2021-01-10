@@ -1,7 +1,7 @@
 {
   "name": "react-native-ios-ui",
   "title": "React Native Ios Ui",
-  "version": "1.0.4",
+  "version": "1.0.12",
   "description": "TODO",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -89,6 +89,7 @@
     "jest-enzyme": "^7.1.2",
     "jsdom": "^16.4.0",
     "jsdom-global": "^3.0.2",
+    "mockdate": "^3.0.2",
     "react": "^16.9.0",
     "react-dom": "^17.0.1",
     "react-native": "^0.61.5",

@@ -18,7 +18,7 @@ const getNavigationTheme = (scheme: ColorSchemeName, theme: ITheme) => {
   const navigationTheme = scheme === "dark" ? DarkTheme : DefaultTheme;
 
   if (scheme && theme?.[scheme]?.tint) {
-    navigationTheme.colors.primary = theme[scheme].tint;
+    navigationTheme.colors.primary = theme[scheme].tint!;
   }
 
   return navigationTheme;

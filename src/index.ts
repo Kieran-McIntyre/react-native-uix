@@ -69,7 +69,11 @@ export { IHeaderActionsMoreOptions } from "./interfaces/IHeaderActionsMoreOption
 export { IListCellItem } from "./interfaces/IListCellItem";
 export { IListCellItemAction } from "./interfaces/IListCellItemAction";
 export { IDetailMeta } from "./interfaces/IDetailMeta";
-export { IThemeSchema, ITheme } from "./interfaces/IThemeSchema";
+export {
+  IThemeSchema,
+  ITheme,
+  IThemeOptionalSchema,
+} from "./interfaces/IThemeSchema";
 
 // # hooks
 export { useStyle } from "./hooks/useStyle";
