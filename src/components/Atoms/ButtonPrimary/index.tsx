@@ -27,16 +27,19 @@ export const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
   }, [numberOfButtons, index]);
 
   return (
-    <View style={[styles.container, buttonStyle]}>
+    <View style={[styles.container, buttonStyle]} testID="button">
       <TouchableHighlight
         {...otherProps}
         delayPressIn={0}
         underlayColor={themeSet.tertiarySystemBackground}
         style={styles.buttonPrimary}
         onPress={onPress}
+        testID="button__touchable"
       >
         <View style={styles.buttonPrimaryContent}>
-          <Text style={styles.buttonPrimaryLabel}>{label}</Text>
+          <Text testID="button__label" style={styles.buttonPrimaryLabel}>
+            {label}
+          </Text>
         </View>
       </TouchableHighlight>
     </View>

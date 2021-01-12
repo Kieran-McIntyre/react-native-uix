@@ -1,6 +1,10 @@
 import * as React from "react";
 import NativeSegmentedControl from "@react-native-community/segmented-control";
 import { SegmentedControlProps } from "./types";
+import {
+  NativeSegmentedControlIOSChangeEvent,
+  NativeSyntheticEvent,
+} from "react-native";
 
 export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   options,
@@ -8,7 +12,9 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
   selectedIndex = 0,
   ...otherProps
 }) => {
-  const onChange = (event: any) => {
+  const onChange = (
+    event: NativeSyntheticEvent<NativeSegmentedControlIOSChangeEvent>
+  ) => {
     const { selectedSegmentIndex } = event.nativeEvent;
     const selectedOption = options[selectedSegmentIndex];
 

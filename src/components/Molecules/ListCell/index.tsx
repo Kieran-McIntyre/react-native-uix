@@ -28,9 +28,12 @@ export const ListCell: React.FC<ListCellProps> = ({
       underlayColor={themeSet.tertiarySystemBackground}
       key={item.id}
       style={styles.touchableWrapper}
+      testID="listCell__wrapper"
     >
       <View {...otherProps} style={styles.tableRow}>
-        {index > 0 && <View style={styles.separatorLine} />}
+        {index > 0 && (
+          <View testID="listCell__separatorLine" style={styles.separatorLine} />
+        )}
 
         <Row style={styles.contentWrapper} between>
           {!!renderItemStart && (
@@ -41,10 +44,20 @@ export const ListCell: React.FC<ListCellProps> = ({
 
           <View style={styles.content}>
             {!!heading && (
-              <Text style={[styles.label, styles.heading]}>{heading}</Text>
+              <Text
+                style={[styles.label, styles.heading]}
+                testID="listCell__heading"
+              >
+                {heading}
+              </Text>
             )}
 
-            <Text style={styles.title} ellipsizeMode="middle" numberOfLines={2}>
+            <Text
+              style={styles.title}
+              ellipsizeMode="middle"
+              numberOfLines={2}
+              testID="listCell__title"
+            >
               {title}
             </Text>
 
@@ -53,6 +66,7 @@ export const ListCell: React.FC<ListCellProps> = ({
                 style={[styles.label, styles.description]}
                 ellipsizeMode="middle"
                 numberOfLines={1}
+                testID="listCell__description"
               >
                 {description}
               </Text>
@@ -60,7 +74,12 @@ export const ListCell: React.FC<ListCellProps> = ({
           </View>
           <Row>
             {!!detail && (
-              <Text style={[styles.label, styles.heading]}>{detail}</Text>
+              <Text
+                style={[styles.label, styles.heading]}
+                testID="listCell__detail"
+              >
+                {detail}
+              </Text>
             )}
           </Row>
         </Row>
