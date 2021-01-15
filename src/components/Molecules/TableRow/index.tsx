@@ -26,19 +26,28 @@ export const TableRow: React.FC<TableRowProps> = ({
       underlayColor={themeSet.tertiarySystemBackground}
       onPress={onPress}
       key={id}
+      testID="tableRow__wrapper"
     >
       <View style={styles.tableRow}>
-        {index > 0 && <View style={styles.separatorLine} />}
+        {index > 0 && (
+          <View style={styles.separatorLine} testID="tableRow__separatorLine" />
+        )}
 
         <Row style={styles.content} between>
           <Row>
-            <DisclosureIcon icon={icon} backgroundColor={iconBackgroundColor} />
-            <Label style={styles.label}>{label}</Label>
+            <DisclosureIcon
+              icon={icon}
+              backgroundColor={iconBackgroundColor}
+              testID="tableRow__icon"
+            />
+            <Label style={styles.label} testID="tableRow__label">
+              {label}
+            </Label>
           </Row>
 
           <Row>
             {hasCount && (
-              <Label secondary style={styles.count}>
+              <Label secondary style={styles.count} testID="tableRow__count">
                 {count}
               </Label>
             )}

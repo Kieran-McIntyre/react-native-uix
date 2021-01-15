@@ -35,14 +35,20 @@ const ActionItem: React.FC<ActionItemProps> = ({
   };
 
   return (
-    <TouchableOpacity style={style} onPress={onPressAction}>
+    <TouchableOpacity
+      style={style}
+      onPress={onPressAction}
+      testID={`actionItem__wrapper-${action.label}`}
+    >
       <FontAwesomeIcon
         style={styles.icon}
         icon={action.iconName}
         color={themeSet.white}
       />
 
-      <Text style={styles.label}>{action.label}</Text>
+      <Text testID={`actionItem__label-${action.label}`} style={styles.label}>
+        {action.label}
+      </Text>
     </TouchableOpacity>
   );
 };

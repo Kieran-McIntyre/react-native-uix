@@ -19,18 +19,25 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <View {...otherProps} style={[styles.container, style]}>
       {!!title && (
-        <Label md style={styles.title}>
+        <Label md style={styles.title} testID="section__title">
           {title}
         </Label>
       )}
 
       {!shouldRenderEmptyState && (
-        <View style={styles.section}>{children}</View>
+        <View style={styles.section} testID="section__content">
+          {children}
+        </View>
       )}
 
       {shouldRenderEmptyState && (
-        <View style={[styles.section, styles.emptyStateSection]}>
-          <Text style={styles.message}>{emptyStateMessage}</Text>
+        <View
+          style={[styles.section, styles.emptyStateSection]}
+          testID="section__emptyState"
+        >
+          <Text style={styles.message} testID="section__emptyState-message">
+            {emptyStateMessage}
+          </Text>
         </View>
       )}
     </View>
