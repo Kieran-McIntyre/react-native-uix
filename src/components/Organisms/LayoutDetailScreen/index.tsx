@@ -21,6 +21,7 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
   onAdd,
   meta,
   moreOptions,
+  primaryActions,
   tableItems = [],
   ...otherProps
 }) => {
@@ -48,52 +49,63 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
     return meta.filter((item) => !!item.label);
   }, [meta]);
 
-  const hasMeta = filteredMeta.length > 0;
-  const hasTableItems = !!tableItems && tableItems.length > 0;
+  const hasMeta = !!filteredMeta?.length;
+  const hasTableItems = !!tableItems?.length;
+  const hasPrimaryActions = !!primaryActions?.length;
 
   return (
     <Screen {...otherProps}>
       <ScrollView>
         <View>
           <View style={[styles.container, styles.topContainer]}>
-            <Label style={styles.titleCaption} sm secondary>
-              {caption}
-            </Label>
+            {caption && (
+              <Label
+                style={styles.titleCaption}
+                sm
+                secondary
+                testID="layoutDetail__caption"
+              >
+                {caption}
+              </Label>
+            )}
 
-            <Label lg numberOfLines={2} ellipsizeMode="middle">
+            <Label
+              lg
+              numberOfLines={2}
+              ellipsizeMode="middle"
+              testID="layoutDetail__title"
+            >
               {title}
             </Label>
 
             {hasMeta && (
-              <View style={styles.metaContainer}>
+              <View testID="layoutDetail__meta" style={styles.metaContainer}>
                 {filteredMeta.map((item, i) => (
                   <DetailMeta key={item.id} meta={item} index={i} />
                 ))}
               </View>
             )}
 
-            <Row style={styles.actionsContainer}>
-              <ButtonPrimary
-                label={"Log Time"}
-                index={0}
-                numberOfButtons={2}
-                onPress={() => {
-                  console.warn("PRESS 1");
-                }}
-              />
-              <ButtonPrimary
-                label={"Mark Complete"}
-                index={1}
-                numberOfButtons={2}
-                onPress={() => {
-                  console.warn("PRESS 1");
-                }}
-              />
-            </Row>
+            {hasPrimaryActions && (
+              <Row
+                testID="layoutDetail__primaryActions"
+                style={styles.actionsContainer}
+              >
+                {primaryActions?.map((action, i) => (
+                  <ButtonPrimary
+                    label={action.label}
+                    index={i}
+                    numberOfButtons={primaryActions.length}
+                    onPress={action.onPress}
+                    key={`${action.label}-${i}`}
+                  />
+                ))}
+              </Row>
+            )}
           </View>
 
           {hasTableItems && (
-            <View style={[styles.container]}>
+            <View testID="layoutDetail__table" style={[styles.container]}>
               {tableItems.map((item, index) => (
                 <TableRow key={item.id} item={item} index={index} />
               ))}
