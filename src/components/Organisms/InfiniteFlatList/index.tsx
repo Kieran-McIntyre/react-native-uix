@@ -33,7 +33,7 @@ export const InfiniteFlatList: React.FC<InfiniteFlatListProps> = ({
     }
 
     return (
-      <View style={styles.loadingFooter}>
+      <View style={styles.loadingFooter} testID="infiniteFlatList__loading">
         <ActivityIndicator color={themeSet.textPrimary} />
       </View>
     );
@@ -51,6 +51,7 @@ export const InfiniteFlatList: React.FC<InfiniteFlatListProps> = ({
       onEndReached={onEndReached}
       onEndReachedThreshold={0}
       ListFooterComponent={LoadingFooter}
+      testID="infiniteFlatList"
     />
   );
 };

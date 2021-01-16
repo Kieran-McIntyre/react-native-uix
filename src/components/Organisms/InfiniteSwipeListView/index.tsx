@@ -47,16 +47,6 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
     setFetchedAllItems(prevItemCount === items.length);
   }, [items.length]);
 
-  const onRenderItem = ({
-    item,
-    index,
-  }: {
-    item: IListCellItem;
-    index: number;
-  }) => {
-    return <ListCell item={item} index={index} />;
-  };
-
   const onEndReached = () => {
     if (onNewCount) {
       onNewCount(initialCount + increment);
@@ -69,7 +59,7 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
     }
 
     return (
-      <View style={styles.loadingFooter}>
+      <View style={styles.loadingFooter} testID="swipeListView__loading">
         <ActivityIndicator color={themeSet.textPrimary} />
       </View>
     );
@@ -89,7 +79,7 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
       {...otherProps}
       style={styles.infiniteList}
       data={items}
-      renderItem={onRenderItem}
+      renderItem={ListCell}
       keyExtractor={(item) => item.id}
       onEndReached={onEndReached}
       onEndReachedThreshold={0}
@@ -101,6 +91,7 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
       disableRightSwipe={startActions.length === 0}
       disableLeftSwipe={endActions.length === 0}
       renderHiddenItem={actions && renderHiddenItem}
+      testID="swipeListView"
     />
   );
 };
