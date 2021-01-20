@@ -96,7 +96,7 @@ function App() {
 ### Core Components
 
 - [ActionSheet]()
-- [Avatar](/blob/master/src/components/Atoms/Avatar/index.md)
+- [Avatar](/src/components/Atoms/Avatar/index.md)
 - [Button]()
 - [ButtonPrimary]()
 - [LayoutDetailSection]()
