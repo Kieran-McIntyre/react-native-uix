@@ -1,36 +1,132 @@
-# react-native-ios-ui
+# package-name
 
-### Peer Dependencies
+_package-name_ is an opinionated React Native UI component library that gets you up and running with your app in minutes.
 
-```json
-"react": "^16.8.1",
-"react-native": ">=0.60.0-rc.0 <1.0.x",
-"@react-native-community/masked-view": "^0.1.10",
-"@react-navigation/bottom-tabs": "^5.8.0",
-"@react-navigation/native": "^5.7.3",
-"@react-navigation/stack": "^5.9.0",
-"react-native-gesture-handler": "^1.8.0",
-"react-native-reanimated": "^1.13.0",
-"react-native-safe-area-context": "^3.1.7",
-"react-native-screens": "^2.10.1",
-"react-native-svg": "^12.1.0",
-"@fortawesome/fontawesome-svg-core": "^1.2.30",
-"@fortawesome/free-brands-svg-icons": "^5.14.0",
-"@fortawesome/free-solid-svg-icons": "^5.14.0",
-"@fortawesome/react-native-fontawesome": "^0.2.5",
-"react-native-themed-styles": "^0.0.4",
-"@react-native-community/segmented-control": "^2.1.1",
-"react-native-actionsheet": "^2.4.2",
-"react-native-webview": "^8.1.2",
-"react-native-render-html": "^4.2.0",
-"react-native-image-zoom-viewer": "^2.2.27",
-"react-native-swipe-list-view": "^3.2.4",
-"date-fns": "^2.9.0"
-```
+### Features
 
-## Quick Installation
-From the terminal, in your project directory run:
+- Library of iOS-Style UI Components
+- Supports both iOS and Android platforms
+- Supports Dark Mode out-of-the-box
+- Full theme support
+- TypeScript support
+
+# Example
+
+- ...
+
+## Installation
+
+## 📦 Installation
 
 ```bash
-bash node_modules/react-native-ios-ui/install.sh
+npm install package-name
 ```
+
+```bash
+yarn add package-name
+```
+
+
+This project has several project peer dependencies. To install these quickly, from the terminal in your project directory run the shell script:
+
+```sh
+bash node_modules/package-name/install.sh
+```
+
+This will install the peer dependencies after choosing your desired package manager.
+
+## 🔨 Usage
+
+```javascript
+import { ThemeProvider, useStyle, LayoutTopLevelScreen, GroupedTable } from "react-native-ios-ui";
+
+function HomeScreen() {
+    const { themeSet } = useStyle();
+
+    const tableItems = [
+        {
+            id: 0,
+            label: "Hotels",
+            count: 2,
+            iconBackgroundColor: themeSet.red,
+            icon: faBuilding,
+            onPress: () => {},
+        },
+        {
+            id: 1,
+            label: "Restaraunts",
+            count: 2,
+            iconBackgroundColor: themeSet.teal,
+            icon: faUtensils,
+            onPress: () => {},
+        },
+        {
+            id: 2,
+            label: "Universities",
+            count: 3,
+            iconBackgroundColor: themeSet.yellow,
+            icon: faUniversity,
+            onPress: () => {},
+        },
+    ];
+
+    return (
+        <LayoutTopLevelScreen title="Home" navigation={navigation}>
+            <GroupedTable title="Places" items={tableItems} />
+        </LayoutTopLevelScreen>
+    );
+}
+
+function App() {
+    const HomeStack = createStackNavigator();
+
+    return (
+        <ThemeProvider>
+            <HomeStack.Navigator>
+                <HomeStack.Screen name="Home" component={HomeScreen} />
+            </HomeStack.Navigator>
+        </ThemeProvider>
+    );
+}
+
+```
+
+## 📦 Components
+
+### Core Components
+
+- [ActionSheet]()
+- [Avatar](/blob/master/src/components/Atoms/Avatar/index.md)
+- [Button]()
+- [ButtonPrimary]()
+- [LayoutDetailSection]()
+- [ThemeProvider]()
+- [GroupedTable]()
+- [InfiniteFlatList]()
+- [InfiniteSwipeListView]()
+- [LayoutDetailScreen]()
+- [LayoutTopLevelScreen]()
+
+### Other Components
+
+- [AnimatedHeaderTitle]()
+- [DisclosureIcon]()
+- [Label]()
+- [Row]()
+- [Screen]()
+- [SegmentedControl]()
+- [DetailMeta]()
+- [HeaderActions]()
+- [InputSearch]()
+- [ListCell]()
+- [ListCellActions]()
+- [Section]()
+- [TableRow]()
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
