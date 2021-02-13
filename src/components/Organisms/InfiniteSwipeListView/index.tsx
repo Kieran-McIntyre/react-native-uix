@@ -77,6 +77,21 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
     );
   };
 
+  const onRenderItem = ({	
+    item,	
+    index,	
+  }: {	
+    item: IListCellItem;	
+    index: number;	
+  }) => {	
+    return (
+      <ListCell 
+        item={item} 
+        index={index} 
+      />
+    );
+  };
+
   const hasItems = items && items.length > 0;
   if (!hasItems) {
     return null;
@@ -87,7 +102,7 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
       {...otherProps}
       style={styles.infiniteList}
       data={items}
-      renderItem={ListCell}
+      renderItem={onRenderItem}
       keyExtractor={(item) => item.id}
       onEndReached={onEndReached}
       onEndReachedThreshold={0}

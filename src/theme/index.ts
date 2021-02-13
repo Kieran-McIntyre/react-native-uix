@@ -8,8 +8,8 @@ export const DEFAULT_THEMES: {
   light: {
     textPrimary: "black",
     textSecondary: "#7E7E84",
-    textTertiary: "#D3D3DB", // placeholder
-    textQuarternary: "pink", // disabled
+    textTertiary: "#7E7E84", // placeholder
+    textQuarternary: "#D3D3DB", // disabled
 
     tint: "#007afe",
 
@@ -34,7 +34,7 @@ export const DEFAULT_THEMES: {
     textPrimary: "rgb(255, 255, 255)",
     textSecondary: "#7E7E84",
     textTertiary: "#D3D3DB", // placeholder
-    textQuarternary: "pink", // disabled
+    textQuarternary: "#D3D3DB", // disabled
 
     tint: "#0c84ff",
 
