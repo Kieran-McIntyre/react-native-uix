@@ -6,6 +6,7 @@ import {
   GroupedTable,
   IGroupedTableItem,
   Avatar,
+  useStyle
 } from "react-native-ios-ui";
 import {
   faBuilding,
@@ -13,9 +14,6 @@ import {
   faUniversity,
   faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
-import { SectionUpNext } from "../components/UpNext";
-// import { InputSearch } from "../components/InputSearch";
-import { useStyle } from "react-native-ios-ui";
 
 const HomeScreen = ({ navigation }) => {
   const { themeSet } = useStyle();
@@ -32,7 +30,6 @@ const HomeScreen = ({ navigation }) => {
         );
       },
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const items: IGroupedTableItem[] = [
@@ -94,11 +91,10 @@ const HomeScreen = ({ navigation }) => {
       ]}
       moreOptions={[{ label: "Label" }]}
     >
-      {/* <View style={{ paddingHorizontal: 20 }}>
-        <InputSearch />
-      </View> */}
-      <SectionUpNext navigation={navigation} />
-      <GroupedTable title="Places" items={items} />
+      <GroupedTable
+        title="Places" 
+        items={items} 
+      />
     </LayoutTopLevelScreen>
   );
 };
