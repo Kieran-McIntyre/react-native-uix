@@ -79,9 +79,16 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
             </Label>
 
             {hasMeta && (
-              <View testID="layoutDetail__meta" style={styles.metaContainer}>
+              <View 
+                testID="layoutDetail__meta"
+                style={styles.metaContainer}
+              >
                 {filteredMeta.map((item, i) => (
-                  <DetailMeta key={item.id} meta={item} index={i} />
+                  <DetailMeta 
+                    key={item.id}
+                    meta={item}
+                    index={i}
+                  />
                 ))}
               </View>
             )}
@@ -105,9 +112,15 @@ export const LayoutDetailScreen: React.FC<LayoutDetailScreenProps> = ({
           </View>
 
           {hasTableItems && (
-            <View testID="layoutDetail__table" style={[styles.container]}>
+            <View 
+              testID="layoutDetail__table"
+              style={[styles.container]}
+            >
               {tableItems.map((item, index) => (
-                <TableRow key={item.id} item={item} index={index} />
+                <TableRow key={item.id}
+                  item={item}
+                  index={index} 
+                />
               ))}
             </View>
           )}

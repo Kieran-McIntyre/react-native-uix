@@ -30,29 +30,45 @@ export const TableRow: React.FC<TableRowProps> = ({
     >
       <View style={styles.tableRow}>
         {index > 0 && (
-          <View style={styles.separatorLine} testID="tableRow__separatorLine" />
+          <View 
+            style={styles.separatorLine}
+            testID="tableRow__separatorLine" 
+          />
         )}
 
-        <Row style={styles.content} between>
+        <Row 
+          style={styles.content}
+          between
+        >
           <Row>
             <DisclosureIcon
               icon={icon}
               backgroundColor={iconBackgroundColor}
               testID="tableRow__icon"
             />
-            <Label style={styles.label} testID="tableRow__label">
+            <Label 
+              style={styles.label}
+              testID="tableRow__label"
+            >
               {label}
             </Label>
           </Row>
 
           <Row>
             {hasCount && (
-              <Label secondary style={styles.count} testID="tableRow__count">
+              <Label 
+                secondary
+                style={styles.count}
+                testID="tableRow__count"
+              >
                 {count}
               </Label>
             )}
 
-            <FontAwesomeIcon icon={faChevronRight} color={themeSet.separator} />
+            <FontAwesomeIcon 
+              icon={faChevronRight}
+              color={themeSet.separator}
+            />
           </Row>
         </Row>
       </View>

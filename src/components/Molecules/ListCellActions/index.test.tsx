@@ -29,7 +29,10 @@ describe("Molecules - ListCellActions", () => {
     ];
 
     const { getByTestId } = render(
-      <ListCellActions item={item} actions={actions} />
+      <ListCellActions 
+        item={item}
+        actions={actions} 
+      />
     );
 
     const actionElement = getByTestId("actionItem__wrapper-ActionOne");
@@ -56,7 +59,10 @@ describe("Molecules - ListCellActions", () => {
     ];
 
     const { getByTestId } = render(
-      <ListCellActions item={item} actions={actions} />
+      <ListCellActions 
+        item={item}
+        actions={actions} 
+      />
     );
 
     const actionElement = getByTestId("actionItem__wrapper-ActionOne");
@@ -81,7 +87,10 @@ describe("Molecules - ListCellActions", () => {
     ];
 
     const { getByTestId } = render(
-      <ListCellActions item={item} actions={actions} />
+      <ListCellActions 
+        item={item}
+        actions={actions} 
+      />
     );
 
     const labelElement = getByTestId("actionItem__label-ActionOne");
@@ -102,7 +111,10 @@ describe("Molecules - ListCellActions", () => {
     ];
 
     const { queryByTestId } = render(
-      <ListCellActions item={item} actions={actions} />
+      <ListCellActions 
+        item={item}
+        actions={actions} 
+      />
     );
 
     // Assert.
@@ -146,7 +158,10 @@ describe("Molecules - ListCellActions", () => {
     it("should apply correct styles", () => {
       // Arrange.
       const { getByTestId } = render(
-        <ListCellActions item={item} actions={actions} />
+        <ListCellActions 
+          item={item}
+          actions={actions} 
+        />
       );
 
       const actionAWrapper = getByTestId("actionItem__wrapper-ActionStartA");

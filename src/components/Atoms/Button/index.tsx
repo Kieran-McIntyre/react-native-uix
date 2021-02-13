@@ -16,8 +16,15 @@ export const Button: React.FC<ButtonProps> = (props) => {
   ]);
 
   return (
-    <TouchableOpacity testID="button" {...otherProps} style={style}>
-      <Text testID="button__label" style={[styles.button, mappedStyles]}>
+    <TouchableOpacity 
+      testID="button"
+      {...otherProps}
+      style={style}
+    >
+      <Text 
+        testID="button__label"
+        style={[styles.button, mappedStyles]}
+      >
         {title}
       </Text>
     </TouchableOpacity>

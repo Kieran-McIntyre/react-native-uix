@@ -22,19 +22,29 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
   const [isShowingMoreOptions, setShowMoreOptions] = useState(false);
 
   return (
-    <Row {...otherProps} style={styles.actionContainer}>
+    <Row 
+      {...otherProps}
+      style={styles.actionContainer}
+    >
       {moreOptions && (
         <TouchableOpacity
           testID="moreOptionsButton"
           onPress={() => setShowMoreOptions(true)}
           style={styles.button}
         >
-          <FontAwesomeIcon icon={faEllipsisH} color={themeSet.tint} size={20} />
+          <FontAwesomeIcon 
+            icon={faEllipsisH}
+            color={themeSet.tint}
+            size={20} 
+          />
         </TouchableOpacity>
       )}
 
       {onAdd && (
-        <TouchableOpacity testID="addButton" onPress={onAdd}>
+        <TouchableOpacity 
+          testID="addButton"
+          onPress={onAdd}
+        >
           <FontAwesomeIcon
             icon={faPlusCircle}
             color={themeSet.tint}
@@ -44,7 +54,11 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
       )}
 
       {onEdit && (
-        <Button testID="editButton" title={LABEL_EDIT} onPress={onEdit} />
+        <Button 
+          testID="editButton"
+          title={LABEL_EDIT}
+          onPress={onEdit} 
+        />
       )}
 
       {children}

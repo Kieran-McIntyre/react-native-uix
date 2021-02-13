@@ -80,7 +80,11 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
 
     navigation.setOptions({
       headerRight: () => (
-        <HeaderActions onAdd={onAdd} onEdit={onEdit} moreOptions={moreOptions}>
+        <HeaderActions 
+          onAdd={onAdd}
+          onEdit={onEdit}
+          moreOptions={moreOptions}
+        >
           {headerActionChildren}
         </HeaderActions>
       ),
@@ -116,7 +120,11 @@ export const LayoutTopLevelScreen: React.FC<LayoutTopLevelScreenProps> = ({
           { backgroundColor: animatedBackgroundColor },
         ]}
       >
-        <Label testID="title" xl semibold>
+        <Label 
+          testID="title"
+          xl
+          semibold
+        >
           {title}
         </Label>
       </Animated.View>

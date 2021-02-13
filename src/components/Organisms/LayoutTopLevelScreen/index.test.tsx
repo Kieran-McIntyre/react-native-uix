@@ -26,7 +26,10 @@ describe("Organisms - LayoutTopLevelScreen", () => {
   it("should render", () => {
     // Arrange.
     const { getByTestId } = render(
-      <LayoutTopLevelScreen title={title} navigation={navigation} />
+      <LayoutTopLevelScreen 
+        title={title}
+        navigation={navigation} 
+      />
     );
 
     const sectionListElement = getByTestId("sectionList");
@@ -39,7 +42,10 @@ describe("Organisms - LayoutTopLevelScreen", () => {
     it("should set header title", () => {
       // Arrange.
       const { getByTestId } = render(
-        <LayoutTopLevelScreen title={title} navigation={navigation} />
+        <LayoutTopLevelScreen 
+          title={title}
+          navigation={navigation} 
+        />
       );
 
       const titleElement = getByTestId("title");
@@ -50,7 +56,12 @@ describe("Organisms - LayoutTopLevelScreen", () => {
 
     it("should set header options", () => {
       // Arrange.
-      render(<LayoutTopLevelScreen title={title} navigation={navigation} />);
+      render(
+        <LayoutTopLevelScreen 
+          title={title}
+          navigation={navigation}
+        />
+      );
 
       const expectedNthCallOne = expect.objectContaining({
         headerRight: expect.any(Function),
@@ -83,7 +94,10 @@ describe("Organisms - LayoutTopLevelScreen", () => {
     it("should update header style", () => {
       // Arrange.
       const { getByTestId } = render(
-        <LayoutTopLevelScreen title={title} navigation={navigation} />
+        <LayoutTopLevelScreen 
+          title={title}
+          navigation={navigation}
+        />
       );
 
       const eventData = {
@@ -136,7 +150,10 @@ describe("Organisms - LayoutTopLevelScreen", () => {
   it("has NOT provided onSearch > should NOT render search bar", () => {
     // Arrange.
     const { queryByTestId } = render(
-      <LayoutTopLevelScreen title={title} navigation={navigation} />
+      <LayoutTopLevelScreen 
+        title={title}
+        navigation={navigation}
+      />
     );
 
     // Assert.
@@ -170,7 +187,10 @@ describe("Organisms - LayoutTopLevelScreen", () => {
   it("has NOT provided control options > should NOT render segmented control", () => {
     // Arrange.
     const { queryByTestId } = render(
-      <LayoutTopLevelScreen title={title} navigation={navigation} />
+      <LayoutTopLevelScreen 
+        title={title}
+        navigation={navigation} 
+      />
     );
 
     // Assert.

@@ -10,8 +10,14 @@ export const DisclosureIcon: React.FC<DisclosureIconProps> = ({
   ...otherProps
 }) => {
   return (
-    <View {...otherProps} style={[styles.icon, { backgroundColor }]}>
-      <FontAwesomeIcon icon={icon} color="white" />
+    <View 
+      {...otherProps}
+      style={[styles.icon, { backgroundColor }]}
+    >
+      <FontAwesomeIcon 
+        icon={icon}
+        color="white" 
+      />
     </View>
   );
 };

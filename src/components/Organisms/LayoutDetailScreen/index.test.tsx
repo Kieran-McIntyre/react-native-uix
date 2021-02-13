@@ -21,7 +21,10 @@ describe("Organisms - LayoutDetailScreen", () => {
   it("should render title", () => {
     // Arrange.
     const { getByTestId } = render(
-      <LayoutDetailScreen navigation={navigation} title={title} />
+      <LayoutDetailScreen 
+        navigation={navigation}
+        title={title} 
+      />
     );
     const titleElement = getByTestId("layoutDetail__title");
 
@@ -50,7 +53,10 @@ describe("Organisms - LayoutDetailScreen", () => {
     it("does NOT have caption > should NOT render caption", () => {
       // Arrange.
       const { queryByTestId } = render(
-        <LayoutDetailScreen navigation={navigation} title={title} />
+        <LayoutDetailScreen 
+          navigation={navigation}
+          title={title}
+        />
       );
 
       // Assert.
@@ -75,7 +81,11 @@ describe("Organisms - LayoutDetailScreen", () => {
       ];
 
       const { getAllByTestId, queryByTestId } = render(
-        <LayoutDetailScreen navigation={navigation} title={title} meta={meta} />
+        <LayoutDetailScreen 
+          navigation={navigation}
+          title={title}
+          meta={meta}
+        />
       );
       const metaElements = getAllByTestId("detailMeta");
 
@@ -87,7 +97,10 @@ describe("Organisms - LayoutDetailScreen", () => {
     it("does NOT have meta > should NOT render meta", () => {
       // Arrange.
       const { queryByTestId } = render(
-        <LayoutDetailScreen navigation={navigation} title={title} />
+        <LayoutDetailScreen 
+          navigation={navigation}
+          title={title}
+        />
       );
 
       // Assert.
@@ -128,7 +141,10 @@ describe("Organisms - LayoutDetailScreen", () => {
     it("does NOT have tableItems > should NOT render table", () => {
       // Arrange.
       const { queryByTestId } = render(
-        <LayoutDetailScreen navigation={navigation} title={title} />
+        <LayoutDetailScreen 
+          navigation={navigation}
+          title={title} 
+        />
       );
 
       // Assert.
@@ -167,7 +183,10 @@ describe("Organisms - LayoutDetailScreen", () => {
     it("does NOT have primaryActions > should NOT render actions", () => {
       // Arrange.
       const { queryByTestId } = render(
-        <LayoutDetailScreen navigation={navigation} title={title} />
+        <LayoutDetailScreen
+          navigation={navigation}
+          title={title}
+        />
       );
 
       // Assert.

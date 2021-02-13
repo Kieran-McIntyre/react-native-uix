@@ -15,7 +15,10 @@ describe("Atoms - Button", () => {
   it("should render title", () => {
     // Arrange.
     const { getByTestId } = render(
-      <Button title={title} onPress={mockPressFn} />
+      <Button 
+        title={title}
+        onPress={mockPressFn} 
+      />
     );
     const wrapper = getByTestId("button__label");
 
@@ -26,7 +29,10 @@ describe("Atoms - Button", () => {
   it("should be pressable", () => {
     // Arrange.
     const { getByTestId } = render(
-      <Button title={title} onPress={mockPressFn} />
+      <Button 
+        title={title}
+        onPress={mockPressFn} 
+      />
     );
     const label = getByTestId("button__label");
 
@@ -40,7 +46,11 @@ describe("Atoms - Button", () => {
   it("is disabled > should be disabled", () => {
     // Arrange.
     const { getByTestId } = render(
-      <Button title={title} onPress={mockPressFn} disabled={true} />
+      <Button 
+        title={title}
+        onPress={mockPressFn}
+        disabled={true}
+      />
     );
     const label = getByTestId("button__label");
 
@@ -55,7 +65,11 @@ describe("Atoms - Button", () => {
   it("is submit type > should be submit type", () => {
     // Arrange.
     const { getByTestId } = render(
-      <Button title={title} onPress={mockPressFn} submit={true} />
+      <Button 
+        title={title}
+        onPress={mockPressFn}
+        submit={true}
+      />
     );
     const label = getByTestId("button__label");
 

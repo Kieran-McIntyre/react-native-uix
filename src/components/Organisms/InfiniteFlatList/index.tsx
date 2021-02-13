@@ -33,16 +33,16 @@ export const InfiniteFlatList: React.FC<InfiniteFlatListProps> = ({
     }
 
     return (
-      <View style={styles.loadingFooter} testID="infiniteFlatList__loading">
+      <View 
+        style={styles.loadingFooter}
+        testID="infiniteFlatList__loading"
+      >
         <ActivityIndicator color={themeSet.textPrimary} />
       </View>
     );
   };
 
-  const hasItems = data && data.length > 0;
-  if (!hasItems) {
-    return null;
-  }
+  if (!data?.length) return null;
 
   return (
     <FlatList

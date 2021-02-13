@@ -17,15 +17,25 @@ export const Section: React.FC<SectionProps> = ({
   const { styles } = useStyle(dynamicStyles);
 
   return (
-    <View {...otherProps} style={[styles.container, style]}>
+    <View 
+      {...otherProps}
+      style={[styles.container, style]}
+    >
       {!!title && (
-        <Label md style={styles.title} testID="section__title">
+        <Label 
+          md
+          style={styles.title}
+          testID="section__title"
+        >
           {title}
         </Label>
       )}
 
       {!shouldRenderEmptyState && (
-        <View style={styles.section} testID="section__content">
+        <View 
+          style={styles.section}
+          testID="section__content"
+        >
           {children}
         </View>
       )}
@@ -35,7 +45,10 @@ export const Section: React.FC<SectionProps> = ({
           style={[styles.section, styles.emptyStateSection]}
           testID="section__emptyState"
         >
-          <Text style={styles.message} testID="section__emptyState-message">
+          <Text 
+            style={styles.message}
+            testID="section__emptyState-message"
+          >
             {emptyStateMessage}
           </Text>
         </View>

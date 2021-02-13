@@ -30,14 +30,26 @@ export const ListCell: React.FC<ListCellProps> = ({
       style={styles.touchableWrapper}
       testID="listCell__wrapper"
     >
-      <View {...otherProps} style={styles.tableRow}>
+      <View 
+        {...otherProps}
+        style={styles.tableRow}
+      >
         {index > 0 && (
-          <View testID="listCell__separatorLine" style={styles.separatorLine} />
+          <View 
+            testID="listCell__separatorLine"
+            style={styles.separatorLine}
+          />
         )}
 
-        <Row style={styles.contentWrapper} between>
+        <Row
+          style={styles.contentWrapper}
+          between
+        >
           {!!renderItemStart && (
-            <Row centred style={styles.renderItemStartContent}>
+            <Row 
+              centred
+              style={styles.renderItemStartContent}
+            >
               {renderItemStart}
             </Row>
           )}

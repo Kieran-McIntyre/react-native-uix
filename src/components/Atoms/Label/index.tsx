@@ -15,7 +15,10 @@ export const Label: React.FC<LabelProps> = (props) => {
   ]);
 
   return (
-    <Text {...props} style={[styles.primary, mappedStyles, props.style]}>
+    <Text 
+      {...props}
+      style={[styles.primary, mappedStyles, props.style]}
+    >
       {props.children}
     </Text>
   );

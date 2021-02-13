@@ -21,7 +21,10 @@ describe("Atoms - ButtonPrimary", () => {
     const mockOnPressFn = jest.fn();
 
     const { getByTestId } = render(
-      <ButtonPrimary label={label} onPress={mockOnPressFn} />
+      <ButtonPrimary 
+        label={label}
+        onPress={mockOnPressFn} 
+      />
     );
     const touchable = getByTestId("button__touchable");
 

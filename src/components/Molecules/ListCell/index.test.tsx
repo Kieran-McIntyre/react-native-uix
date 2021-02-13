@@ -19,7 +19,12 @@ describe("Molecules - ListCell", () => {
 
   it("should render title", () => {
     // Arrange.
-    const { getByTestId } = render(<ListCell index={0} item={item} />);
+    const { getByTestId } = render(
+      <ListCell 
+        index={0}
+        item={item}
+      />
+    );
     const buttonLabel = getByTestId("listCell__title");
 
     // Assert.
@@ -28,7 +33,12 @@ describe("Molecules - ListCell", () => {
 
   it("can click cell", () => {
     // Arrange.
-    const { getByTestId } = render(<ListCell index={0} item={item} />);
+    const { getByTestId } = render(
+      <ListCell 
+        index={0}
+        item={item} 
+      />
+    );
     const buttonWrapper = getByTestId("listCell__wrapper");
 
     // Assert.
@@ -44,7 +54,12 @@ describe("Molecules - ListCell", () => {
   describe("index", () => {
     it("index is zero > should NOT render seperator line", () => {
       // Arrange.
-      const { queryByTestId } = render(<ListCell index={0} item={item} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={item} 
+        />
+      );
 
       // Assert.
       expect(queryByTestId("listCell__separatorLine")).toBeNull();
@@ -52,7 +67,12 @@ describe("Molecules - ListCell", () => {
 
     it("index is greater than zero > should render seperator line", () => {
       // Arrange.
-      const { queryByTestId } = render(<ListCell index={1} item={item} />);
+      const { queryByTestId } = render(
+        <ListCell
+          index={1}
+          item={item} 
+        />
+      );
 
       // Assert.
       expect(queryByTestId("listCell__separatorLine")).not.toBeNull();
@@ -67,7 +87,11 @@ describe("Molecules - ListCell", () => {
         renderItemStart: <View testID="itemStart" />,
       };
 
-      const { queryByTestId } = render(<ListCell index={0} item={newItem} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={newItem}
+        />);
 
       // Assert.
       expect(queryByTestId("itemStart")).not.toBeNull();
@@ -80,7 +104,12 @@ describe("Molecules - ListCell", () => {
         renderItemStart: null,
       };
 
-      const { queryByTestId } = render(<ListCell index={0} item={newItem} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={newItem} 
+        />
+      );
 
       // Assert.
       expect(queryByTestId("itemStart")).toBeNull();
@@ -97,7 +126,10 @@ describe("Molecules - ListCell", () => {
       };
 
       const { getByTestId, queryByTestId } = render(
-        <ListCell index={0} item={newItem} />
+        <ListCell 
+          index={0}
+          item={newItem}
+        />
       );
       const headerElement = getByTestId("listCell__heading");
 
@@ -113,7 +145,12 @@ describe("Molecules - ListCell", () => {
         heading: null,
       };
 
-      const { queryByTestId } = render(<ListCell index={0} item={newItem} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={newItem} 
+        />
+      );
 
       // Assert.
       expect(queryByTestId("listCell__heading")).toBeNull();
@@ -130,7 +167,10 @@ describe("Molecules - ListCell", () => {
       };
 
       const { getByTestId, queryByTestId } = render(
-        <ListCell index={0} item={newItem} />
+        <ListCell 
+          index={0}
+          item={newItem}
+        />
       );
       const headerElement = getByTestId("listCell__description");
 
@@ -146,7 +186,12 @@ describe("Molecules - ListCell", () => {
         description: null,
       };
 
-      const { queryByTestId } = render(<ListCell index={0} item={newItem} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={newItem} 
+        />
+      );
 
       // Assert.
       expect(queryByTestId("listCell__description")).toBeNull();
@@ -163,7 +208,10 @@ describe("Molecules - ListCell", () => {
       };
 
       const { getByTestId, queryByTestId } = render(
-        <ListCell index={0} item={newItem} />
+        <ListCell
+          index={0}
+          item={newItem}
+        />
       );
       const headerElement = getByTestId("listCell__detail");
 
@@ -179,7 +227,12 @@ describe("Molecules - ListCell", () => {
         detail: null,
       };
 
-      const { queryByTestId } = render(<ListCell index={0} item={newItem} />);
+      const { queryByTestId } = render(
+        <ListCell 
+          index={0}
+          item={newItem}
+        />
+      );
 
       // Assert.
       expect(queryByTestId("listCell__detail")).toBeNull();

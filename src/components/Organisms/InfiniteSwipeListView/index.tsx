@@ -59,14 +59,22 @@ export const InfiniteSwipeListView: React.FC<InfiniteSwipeListViewProps> = ({
     }
 
     return (
-      <View style={styles.loadingFooter} testID="swipeListView__loading">
+      <View 
+        style={styles.loadingFooter}
+        testID="swipeListView__loading"
+      >
         <ActivityIndicator color={themeSet.textPrimary} />
       </View>
     );
   };
 
   const renderHiddenItem = ({ item }: { item: IListCellItem }) => {
-    return <ListCellActions item={item} actions={actions ?? []} />;
+    return (
+      <ListCellActions 
+        item={item}
+        actions={actions ?? []}
+      />
+    );
   };
 
   const hasItems = items && items.length > 0;

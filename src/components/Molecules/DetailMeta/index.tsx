@@ -13,10 +13,20 @@ export const DetailMeta: React.FC<DetailMetaProps> = ({
   const { themeSet } = useStyle();
 
   return (
-    <Row {...otherProps} style={styles.container} testID="detailMeta">
-      <FontAwesomeIcon icon={meta.icon} color={themeSet.textSecondary} />
+    <Row 
+      {...otherProps}
+      style={styles.container}
+      testID="detailMeta">
+      <FontAwesomeIcon 
+        icon={meta.icon}
+        color={themeSet.textSecondary} 
+      />
 
-      <Label testID="label" secondary style={styles.label}>
+      <Label 
+        testID="label"
+        secondary
+        style={styles.label}
+      >
         {meta.label}
       </Label>
     </Row>

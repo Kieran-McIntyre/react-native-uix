@@ -27,7 +27,12 @@ describe("Molecules - TableRow", () => {
     // Arrange.
     const index = 0;
 
-    const { getByTestId } = render(<TableRow index={index} item={item} />);
+    const { getByTestId } = render(
+      <TableRow
+        index={index}
+        item={item} 
+      />
+    );
     const wrapperElement = getByTestId("tableRow__wrapper");
 
     // Assert.
@@ -51,7 +56,12 @@ describe("Molecules - TableRow", () => {
         count,
       };
 
-      const { getByTestId } = render(<TableRow index={index} item={newItem} />);
+      const { getByTestId } = render(
+        <TableRow 
+          index={index}
+          item={newItem} 
+        />
+      );
       const countElement = getByTestId("tableRow__count");
 
       // Assert.
@@ -66,7 +76,12 @@ describe("Molecules - TableRow", () => {
         count,
       };
 
-      const { getByTestId } = render(<TableRow index={index} item={newItem} />);
+      const { getByTestId } = render(
+        <TableRow 
+          index={index}
+          item={newItem} 
+        />
+      );
       const countElement = getByTestId("tableRow__count");
 
       // Assert.
@@ -82,7 +97,10 @@ describe("Molecules - TableRow", () => {
       };
 
       const { queryByTestId } = render(
-        <TableRow index={index} item={newItem} />
+        <TableRow 
+          index={index}
+          item={newItem} 
+        />
       );
       const countElement = queryByTestId("tableRow__count");
 
@@ -96,7 +114,12 @@ describe("Molecules - TableRow", () => {
       // Arrange.
       const index = 0;
 
-      const { queryByTestId } = render(<TableRow index={index} item={item} />);
+      const { queryByTestId } = render(
+        <TableRow 
+          index={index}
+          item={item}
+        />
+      );
       const seperatorElement = queryByTestId("tableRow__separatorLine");
 
       // Assert.
@@ -107,7 +130,12 @@ describe("Molecules - TableRow", () => {
       // Arrange.
       const index = 1;
 
-      const { queryByTestId } = render(<TableRow index={index} item={item} />);
+      const { queryByTestId } = render(
+        <TableRow 
+          index={index}
+          item={item}
+        />
+      );
       const seperatorElement = queryByTestId("tableRow__separatorLine");
 
       // Assert.

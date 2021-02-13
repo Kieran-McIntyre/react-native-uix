@@ -14,7 +14,10 @@ describe("Atoms - DisclosureIcon", () => {
     const icon: any = <View />;
 
     const wrapper = shallow(
-      <DisclosureIcon icon={icon} backgroundColor={backgroundColor} />
+      <DisclosureIcon 
+        icon={icon}
+        backgroundColor={backgroundColor}
+      />
     );
 
     // Assert.

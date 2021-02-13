@@ -12,7 +12,10 @@ export const AnimatedHeaderTitle: React.FC<AnimatedHeaderTitleProps> = ({
   const { styles } = useStyle(dynamicStyles);
 
   return (
-    <Animated.Text {...textProps} style={[styles.title, style]}>
+    <Animated.Text 
+      {...textProps}
+      style={[styles.title, style]}
+    >
       {title}
     </Animated.Text>
   );

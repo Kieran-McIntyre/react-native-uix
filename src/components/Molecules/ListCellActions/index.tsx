@@ -46,7 +46,10 @@ const ActionItem: React.FC<ActionItemProps> = ({
         color={themeSet.white}
       />
 
-      <Text testID={`actionItem__label-${action.label}`} style={styles.label}>
+      <Text 
+        testID={`actionItem__label-${action.label}`}
+        style={styles.label}
+      >
         {action.label}
       </Text>
     </TouchableOpacity>
@@ -63,7 +66,10 @@ export const ListCellActions = ({
   const { styles, themeSet } = useStyle(dynamicStyles);
 
   return (
-    <View {...otherProps} style={styles.actionContainer}>
+    <View 
+      {...otherProps}
+      style={styles.actionContainer}
+    >
       {startActions.map((action, i) => (
         <ActionItem
           key={action.id}

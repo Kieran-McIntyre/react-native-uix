@@ -23,7 +23,10 @@ describe("Atoms - Avatar", () => {
     it("has NO url > should render initials type", () => {
       // Arrange.
       const { getByTestId, queryByTestId } = render(
-        <Avatar firstName={firstName} lastName={lastName} />
+        <Avatar 
+          firstName={firstName}
+          lastName={lastName}
+        />
       );
       const wrapper = getByTestId("typeInitials");
 
@@ -37,7 +40,10 @@ describe("Atoms - Avatar", () => {
       const expectedInitials = "JS";
 
       const { getByTestId } = render(
-        <Avatar firstName={firstName} lastName={lastName} />
+        <Avatar
+          firstName={firstName}
+          lastName={lastName}
+        />
       );
       const textWrapper = getByTestId("typeInitials__text");
 
@@ -69,7 +75,10 @@ describe("Atoms - Avatar", () => {
       const defaultBackgroundColor = "red";
 
       const { getByTestId } = render(
-        <Avatar firstName={firstName} lastName={lastName} />
+        <Avatar 
+          firstName={firstName}
+          lastName={lastName} 
+        />
       );
       const wrapper = getByTestId("typeInitials");
 

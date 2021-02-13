@@ -13,6 +13,7 @@ export interface LayoutTopLevelScreenProps
   onEdit?: () => void;
   onAdd?: () => void;
   onSearch?: () => void;
+  // eslint-disable-next-line no-undef
   headerActionChildren?: () => JSX.Element;
   moreOptions?: IHeaderActionsMoreOptions[];
   searchPlaceholder?: string;
@@ -20,6 +21,7 @@ export interface LayoutTopLevelScreenProps
 
 export interface SectionData {
   context: contexts;
+  // eslint-disable-next-line no-undef
   data: [{ key: number; el: () => JSX.Element }];
 }
 

@@ -9,7 +9,10 @@ jest.mock("@react-navigation/native", () => {
   return {
     NavigationContainer: ({ children, theme }: any) => {
       return (
-        <ReactNative.View testID="navigationContainer" style={theme}>
+        <ReactNative.View 
+          testID="navigationContainer"
+          style={theme}
+        >
           {children}
         </ReactNative.View>
       );

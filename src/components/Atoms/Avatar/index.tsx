@@ -34,7 +34,10 @@ const AvatarInitials: React.FC<AvatarInitialsProps> = ({
       testID="typeInitials"
       style={[styles.avatar, styles.avatarInitals, avatarStyle]}
     >
-      <Text testID="typeInitials__text" style={styles.avatarInitalsText}>
+      <Text
+        testID="typeInitials__text"
+        style={styles.avatarInitalsText}
+      >
         {initials}
       </Text>
     </View>
@@ -49,7 +52,12 @@ export const Avatar: React.FC<AvatarProps> = ({
   style,
 }) => {
   if (url) {
-    return <AvatarImage style={style} url={url} />;
+    return (
+      <AvatarImage 
+        style={style}
+        url={url} 
+      />
+    );
   }
 
   return (

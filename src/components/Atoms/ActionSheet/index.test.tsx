@@ -36,7 +36,10 @@ describe("Atoms - ActionSheet", () => {
   it("should call onPress", () => {
     // Arrange.
     const wrapper = shallow(
-      <ActionSheet options={options} onAction={mockActionFn} />
+      <ActionSheet 
+        options={options}
+        onAction={mockActionFn} 
+      />
     );
 
     // Act.
@@ -50,7 +53,10 @@ describe("Atoms - ActionSheet", () => {
   it("should correctly set button indexes", () => {
     // Arrange.
     const wrapper = shallow(
-      <ActionSheet options={options} onAction={mockActionFn} />
+      <ActionSheet 
+        options={options}
+        onAction={mockActionFn} 
+      />
     );
 
     // Assert.
@@ -62,7 +68,11 @@ describe("Atoms - ActionSheet", () => {
     // Arrange.
     const title = "A title for the action sheet!";
     const wrapper = shallow(
-      <ActionSheet title={title} options={[]} onAction={mockActionFn} />
+      <ActionSheet 
+        title={title}
+        options={[]}
+        onAction={mockActionFn} 
+      />
     );
 
     // Assert.
