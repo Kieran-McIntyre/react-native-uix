@@ -37,7 +37,10 @@ describe("Organisms - GroupedTable", () => {
   it("renders title", () => {
     // Arrange.
     const { getByTestId } = render(
-      <GroupedTable title={title} items={items} />
+      <GroupedTable 
+        title={title}
+        items={items} 
+      />
     );
 
     const titleElement = getByTestId("section__title");
@@ -49,7 +52,10 @@ describe("Organisms - GroupedTable", () => {
   it("renders all table rows", () => {
     // Arrange.
     const { getAllByTestId } = render(
-      <GroupedTable title={title} items={items} />
+      <GroupedTable 
+        title={title}
+        items={items} 
+      />
     );
 
     const tableRows = getAllByTestId("tableRow__wrapper");

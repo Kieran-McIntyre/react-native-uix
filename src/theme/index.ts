@@ -8,7 +8,7 @@ export const DEFAULT_THEMES: {
   light: {
     textPrimary: "black",
     textSecondary: "#7E7E84",
-    textTertiary: "red", // placeholder
+    textTertiary: "#D3D3DB", // placeholder
     textQuarternary: "pink", // disabled
 
     tint: "#007afe",

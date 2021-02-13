@@ -14,6 +14,7 @@ import {
   faUniversity,
   faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
+import { SectionUpNext } from "../components/SectionUpNext";
 
 const HomeScreen = ({ navigation }) => {
   const { themeSet } = useStyle();
@@ -26,6 +27,7 @@ const HomeScreen = ({ navigation }) => {
             firstName={"James"}
             lastName={"Smith"}
             style={styles.avatar}
+            url={"https://randomuser.me/api/portraits/men/43.jpg"}
           />
         );
       },
@@ -39,9 +41,7 @@ const HomeScreen = ({ navigation }) => {
       count: 2,
       iconBackgroundColor: themeSet.red,
       icon: faBuilding,
-      onPress: () => {
-        navigation.navigate("Detail");
-      },
+      onPress: () => {},
     },
     {
       id: 1,
@@ -77,20 +77,28 @@ const HomeScreen = ({ navigation }) => {
       navigation={navigation}
       onSearch={() => {}}
       onAdd={() => {}}
+      searchPlaceholder="Search for hotels, restaraunts..."
       segmentedControlOptions={[
         {
           id: 1,
-          label: "Test",
+          label: "Trips",
           onPress: () => {},
         },
         {
           id: 2,
-          label: "Test",
+          label: "Bookings",
           onPress: () => {},
         },
       ]}
-      moreOptions={[{ label: "Label" }]}
+      moreOptions={[
+        {
+          label: "Logout", 
+          onPress: () => {}
+        }
+      ]}
     >
+      <SectionUpNext />
+      
       <GroupedTable
         title="Places" 
         items={items} 

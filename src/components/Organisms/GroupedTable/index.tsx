@@ -8,9 +8,16 @@ export const GroupedTable: React.FC<GroupedTableProps> = ({
   title,
   ...otherProps
 }) => (
-  <Section {...otherProps} title={title}>
+  <Section 
+    {...otherProps} 
+    title={title}
+  >
     {items.map((item, index) => (
-      <TableRow key={item.id} item={item} index={index} />
+      <TableRow 
+        key={item.id}
+        item={item}
+        index={index} 
+      />
     ))}
   </Section>
 );

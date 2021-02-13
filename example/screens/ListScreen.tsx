@@ -13,7 +13,15 @@ const INITIAL_ITEM_COUNT = 15;
 const INCREMENT_COUNT = 10;
 
 export const ListScreen = ({ navigation }) => {
-  const [items, setItems] = useState<IListCellItem[]>([]);
+  const [items, setItems] = useState<IListCellItem[]>([{
+    id: "1",
+    title: "The Burger Company",
+    description: "Notting Hill, London",
+    onPress: () => {
+      navigation.navigate("Detail");
+    },
+  }]);
+
   const [itemCount, setItemCount] = useState(INITIAL_ITEM_COUNT);
   const { themeSet } = useStyle();
 
@@ -23,7 +31,7 @@ export const ListScreen = ({ navigation }) => {
     const newItems: IListCellItem[] = [...Array(INCREMENT_COUNT).keys()].map(_i => ({
       id: faker.random.uuid(),
       title: faker.company.companyName(),
-      description: faker.name.jobDescriptor(),
+      description: faker.address.city(),
       onPress: () => {},
     }));
 

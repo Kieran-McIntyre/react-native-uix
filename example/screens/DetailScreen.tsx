@@ -4,26 +4,30 @@ import {
   IDetailMeta,
   IGroupedTableItem,
   LayoutDetailSection,
+  Label,
+  useStyle,
 } from "react-native-ios-ui";
 import {
   faFolder,
   faMapMarkerAlt,
-  faCalendarPlus,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
-import { View, Image, Text } from "react-native";
+import { View, Image } from "react-native";
 import ParallaxScrollView from "react-native-parallax-scroll-view";
 
 export const DetailScreen = ({ navigation }) => {
+  const { themeSet } = useStyle();
+
   const detailMeta: IDetailMeta[] = [
     {
       id: "location",
-      label: "Manchester",
+      label: "London, Notting Hill",
       icon: faMapMarkerAlt,
     },
     {
-      id: "created",
-      label: "2016 - 2019",
-      icon: faCalendarPlus,
+      id: "time",
+      label: "Open Now: 12:30 - 23:00",
+      icon: faClock,
     },
   ];
 
@@ -56,15 +60,13 @@ export const DetailScreen = ({ navigation }) => {
 
   return (
     <ParallaxScrollView
-      backgroundColor="blue"
-      contentBackgroundColor="pink"
+      contentBackgroundColor={themeSet.systemBackground}
       parallaxHeaderHeight={300}
       renderBackground={() => (
         <View key="background">
           <Image
             source={{
-              uri:
-                "https://assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdmsimgs%2Fthe-university-of-manchester-min_1219152588.jpg&action=ProductDetailFullWidth2",
+              uri: "https://static.designmynight.com/uploads/2017/11/honesttt-optimised.jpg",
               width: 600,
               height: 300,
             }}
@@ -82,14 +84,14 @@ export const DetailScreen = ({ navigation }) => {
       )}
     >
       <LayoutDetailScreen
-        title={"The University of Manchester"}
-        caption={"Caption"}
+        title={"The Burger Company"}
+        caption={"American, British, Vegetarian Friendly"}
         navigation={navigation}
         meta={detailMeta}
         tableItems={tableItems}
       >
         <LayoutDetailSection title="Description">
-          <Text>Hi</Text>
+          <Label>Hi</Label>
         </LayoutDetailSection>
       </LayoutDetailScreen>
     </ParallaxScrollView>

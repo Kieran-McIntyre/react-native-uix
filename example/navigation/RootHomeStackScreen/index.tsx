@@ -11,16 +11,30 @@ const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="List" component={ListScreen} />
-      <HomeStack.Screen name="Detail" component={DetailScreen} />
+      <HomeStack.Screen 
+        name="Home"
+        component={HomeScreen}
+      />
+
+      <HomeStack.Screen 
+        name="List"
+        component={ListScreen} 
+      />
+
+      <HomeStack.Screen 
+        name="Detail"
+        component={DetailScreen} 
+      />
     </HomeStack.Navigator>
   );
 }
 
 export default function RootHomeStackScreen() {
   return (
-    <RootStack.Navigator mode="modal" headerMode="none">
+    <RootStack.Navigator 
+      mode="modal"
+      headerMode="none"
+    >
       <RootStack.Screen
         name="Home"
         component={HomeStackScreen}

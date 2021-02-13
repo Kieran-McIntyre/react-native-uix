@@ -14,7 +14,10 @@ export const LayoutDetailSection: React.FC<LayoutDetailSectionProps> = ({
   const { styles } = useStyle(dynamicStyles);
 
   return (
-    <View {...otherProps} style={[styles.layoutDetailSection, style]}>
+    <View 
+      {...otherProps} 
+      style={[styles.layoutDetailSection, style]}
+    >
       {title && (
         <Label
           testID={"layoutDetailSection__label"}
