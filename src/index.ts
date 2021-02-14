@@ -21,6 +21,9 @@ export { LabelProps } from "./components/atoms/Label/types";
 export { Button } from "./components/atoms/Button";
 export { ButtonProps } from "./components/atoms/Button/types";
 
+export { ButtonPrimary } from "./components/atoms/ButtonPrimary";
+export { ButtonPrimaryProps } from "./components/atoms/ButtonPrimary/types";
+
 export { ActionSheet } from "./components/atoms/ActionSheet";
 export { ActionSheetProps } from "./components/atoms/ActionSheet/types";
 

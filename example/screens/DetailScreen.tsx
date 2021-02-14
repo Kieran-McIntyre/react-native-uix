@@ -8,9 +8,10 @@ import {
   useStyle,
 } from "react-native-ios-ui";
 import {
-  faFolder,
+  faUtensils,
   faMapMarkerAlt,
   faClock,
+  faPen
 } from "@fortawesome/free-solid-svg-icons";
 import { View, Image } from "react-native";
 import ParallaxScrollView from "react-native-parallax-scroll-view";
@@ -33,28 +34,32 @@ export const DetailScreen = ({ navigation }) => {
 
   const tableItems: IGroupedTableItem[] = [
     {
-      id: "review",
-      label: "Reviews",
-      icon: faFolder,
-      iconBackgroundColor: "#5ac8fa",
-      count: 0,
+      id: "menu",
+      label: "Menu",
+      icon: faUtensils,
+      iconBackgroundColor: themeSet.teal,
       onPress: () => {},
     },
     {
-      id: "labour",
-      label: "Courses",
-      icon: faFolder,
-      iconBackgroundColor: "#fed707",
+      id: "reviews",
+      label: "Reviews",
+      icon: faPen,
+      iconBackgroundColor: themeSet.yellow,
       count: 2,
       onPress: () => {},
     },
+  ];
+
+  const primaryActions: any = [
     {
-      id: "parts",
-      label: "Accomodation",
-      icon: faFolder,
-      iconBackgroundColor: "#bf5bf1",
-      count: 1,
-      onPress: () => {},
+      label: "Reserve a table",
+      numberOfButtons: 2,
+      index: 0,
+    },
+    {
+      label: "Website",
+      numberOfButtons: 2,
+      index: 1,
     },
   ];
 
@@ -76,7 +81,7 @@ export const DetailScreen = ({ navigation }) => {
               position: "absolute",
               top: 0,
               width: 600,
-              backgroundColor: "rgba(0,0,0,.8)",
+              backgroundColor: "rgba(0,0,0,.5)",
               height: 300,
             }}
           />
@@ -89,9 +94,12 @@ export const DetailScreen = ({ navigation }) => {
         navigation={navigation}
         meta={detailMeta}
         tableItems={tableItems}
+        primaryActions={primaryActions}
       >
         <LayoutDetailSection title="Description">
-          <Label>Hi</Label>
+          <Label>
+            At The Burger Company the range of food is endless, cooked with fresh ingredients and served hot.
+          </Label>
         </LayoutDetailSection>
       </LayoutDetailScreen>
     </ParallaxScrollView>

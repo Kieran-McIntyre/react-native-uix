@@ -12,7 +12,7 @@ You can think of this library like TailwindUI.
 - Full theme support
 - TypeScript support
 
-IMAGE_HERE
+![package_name](https://media4.giphy.com/media/vG6Kknk22tCBa25kcM/giphy.gif)
 
 # Example
 
