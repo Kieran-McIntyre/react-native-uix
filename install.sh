@@ -49,7 +49,7 @@ install_dependencies(){
 
 clear
 
-printf "Thank you for choosing \e[36;3mreact-native-ios-ui\e[0m! Which package manager would you like to use to install the Peer Dependencies? \n\n"
+printf "Thank you for choosing \e[36;3mreact-native-uix\e[0m! Which package manager would you like to use to install the Peer Dependencies? \n\n"
 
 show_package_manager_menu
 

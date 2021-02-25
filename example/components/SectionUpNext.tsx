@@ -1,5 +1,5 @@
 import React  from "react";	
-import { Section, Label, Row, useStyle } from "react-native-ios-ui";	
+import { Section, Label, Row, useStyle } from "react-native-uix";	
 import { StyleSheet, View } from "react-native";	
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";	
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";	

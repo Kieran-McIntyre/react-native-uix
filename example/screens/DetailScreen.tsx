@@ -6,7 +6,7 @@ import {
   LayoutDetailSection,
   Label,
   useStyle,
-} from "react-native-ios-ui";
+} from "react-native-uix";
 import {
   faUtensils,
   faMapMarkerAlt,

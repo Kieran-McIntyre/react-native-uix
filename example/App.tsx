@@ -1,6 +1,6 @@
 import React from "react";
 import AppNavigation from "./navigation";
-import { ThemeProvider, ITheme } from "react-native-ios-ui";
+import { ThemeProvider, ITheme } from "react-native-uix";
 
 const App: React.FC = () => {
   const theme: ITheme = {

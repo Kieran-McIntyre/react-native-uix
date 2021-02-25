@@ -5,7 +5,7 @@ import {
   IListCellItem,
   IListCellItemAction,
   useStyle,
-} from "react-native-ios-ui";
+} from "react-native-uix";
 import faker from "faker";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 

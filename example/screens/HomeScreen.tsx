@@ -7,7 +7,7 @@ import {
   IGroupedTableItem,
   Avatar,
   useStyle
-} from "react-native-ios-ui";
+} from "react-native-uix";
 import {
   faBuilding,
   faUtensils,
