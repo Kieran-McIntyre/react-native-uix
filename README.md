@@ -29,10 +29,10 @@ yarn add react-native-uix
 
 This project has several project peer dependencies. A few of these include:
 
-- [react-navigation]()
-- [font-awesome]()
-- [react-native-actionsheet]()
-- [react-native-community/segmented-control]()
+- [react-navigation](https://github.com/react-navigation/react-navigation)
+- [font-awesome](https://github.com/FortAwesome/Font-Awesome)
+- [react-native-actionsheet](https://github.com/beefe/react-native-actionsheet)
+- [react-native-community/segmented-control](https://www.npmjs.com/package/@react-native-community/segmented-control)
 
 Refer to the project [package.json](https://github.com/Kieran-McIntyre/react-native-uix/blob/master/package.json) file to view all required peer dependencies. 
 
@@ -195,6 +195,10 @@ const MyComponent = () => {
 }
 ```
 
+## Roadmap
+
+- Documentation for individual components
+- JSON form component
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
