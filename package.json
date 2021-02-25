@@ -1,8 +1,8 @@
 {
-  "name": "react-native-ios-ui",
-  "title": "React Native Ios Ui",
-  "version": "1.0.12",
-  "description": "TODO",
+  "name": "react-native-uix",
+  "title": "react-native-uix",
+  "version": "1.0.1",
+  "description": "An opinionated React Native UI component library that gets you up and running in minutes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -15,13 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-ios-ui.git",
-    "baseUrl": "https://github.com/github_account/react-native-ios-ui"
+    "url": "git+https://github.com/github_account/react-native-uix.git",
+    "baseUrl": "https://github.com/github_account/react-native-uix"
   },
   "keywords": [
     "react-native",
     "ios",
-    "ui"
+    "ui",
+    "component library",
+    "dark mode"
   ],
   "author": {
     "name": "Kieran McIntyre",
